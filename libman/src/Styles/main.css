@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fdfffc;
+    font-family: 'Poppins', sans-serif;
+}
+.userName{
+    border: 1px solid #fe5f55 !important;
+    background-color: rgba(254, 95, 85, 0.15);
+    color: #fe5f55;
+    /* font-weight: bolder !important; */
+}
+.navbar-nav .active{
+    background-color: black;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-right: 1rem !important;
+    text-align: center;
+    color: #fdfffc !important;
+    border-radius: 0.2rem;
+}
+.activeAplha{
+    color: #fe5f55;
+    font-weight: 500;
+}
+/* .card_parent{
+    border-radius: 0.3rem !important;
+} */
+.card_img{
+    aspect-ratio: 3/2 !important;
+    border-radius: 0.3rem !important;
+}
+.card_body{
+    margin-top: -3rem !important;
+    background-color: #fdfffc !important;
+    color: #011627;
+    border-radius: 0.3rem !important;
+}
+.card_body .book_name{
+    font-size: 1.1rem !important;
+}
+.card_body .book_author{
+    opacity: 0.3;
+    font-size: 0.9rem !important;
+}
+.card_body .book_desc{
+    font-size: 0.8rem;
+}
+/* .alphabets{} */
