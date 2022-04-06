@@ -10,14 +10,14 @@ function NavLinks() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className='shadow-none border-0' />
+            <Navbar.Collapse id="responsive-navbar-nav" className=''>
                 <Nav className="me-auto ms-auto">
-                    <Nav.Link href="#features" className='text-uppercase active pe-3'>HOME</Nav.Link>
-                    <Nav.Link href="#pricing" className='text-uppercase pe-3'>best sellers</Nav.Link>
-                    <Nav.Link href="#features" className='text-uppercase pe-3'>favourites</Nav.Link>
-                    <Nav.Link href="#pricing" className='text-uppercase pe-3'>wishlist</Nav.Link>
-                    <Nav.Link href="#features" className='text-uppercase pe-3'>cart</Nav.Link>
+                    <Nav.Link href="#home" className='text-uppercase px-3'>HOME</Nav.Link>
+                    <Nav.Link href="#bestsellers" className='text-uppercase px-3'>best sellers</Nav.Link>
+                    <Nav.Link href="#favourites" className='text-uppercase px-3'>favourites</Nav.Link>
+                    <Nav.Link href="#wishlist" className='text-uppercase px-3'>wishlist</Nav.Link>
+                    <Nav.Link href="#cart" className='text-uppercase px-3'>cart</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Container>
