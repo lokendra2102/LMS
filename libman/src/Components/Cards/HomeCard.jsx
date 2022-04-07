@@ -6,9 +6,10 @@ import {
 
 } from 'react-bootstrap'
 import Cards from './Card'
+import Pagination from './Pagination'
 
 
-function HomeCard() {
+function HomeCard({width}) {
   return (
     <Container fluid className='mt-2'>
         <Container fluid className='px-5 d-flex align-items-center justify-content-between book_head'>
@@ -22,10 +23,11 @@ function HomeCard() {
         <Container fluid className='mt-3 px-4'>
             <Row>
                 {[1,2,3,4,5,6].map(e =>{
-                    return <Cards key={e}/>
+                    return <Cards k={e}/>
                 })}
             </Row>
         </Container>
+        <Pagination/>
     </Container>
   )
 }

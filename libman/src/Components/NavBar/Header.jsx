@@ -3,10 +3,10 @@ import AlphaNavLinks from './AlphaNavLinks'
 import NavHead from './NavHead'
 import NavLinks from './NavLinks'
 
-function Header() {
+function Header({width}) {
   return (
     <>
-        <NavHead/>
+        <NavHead width={width}/>
         <NavLinks/>
         <AlphaNavLinks/>
     </>

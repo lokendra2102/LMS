@@ -13,9 +13,9 @@ import { IconContext } from 'react-icons'
 
 import im from '../../Images/971.jpg'
 
-function Cards({key}) {
+function Cards({k}) {
   return (
-    <Col key={key} xs={12} md={6} lg={4} xl={3} xxl={3} className="mb-3">
+    <Col key={k} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3">
         <Card className='w-100 border-0 card_parent text-center p-3 shadow'>
             <Container fluid className='card_img_container'>
                 <Card.Img variant="top" className='card_img' src={im} />
@@ -67,7 +67,7 @@ function Cards({key}) {
                         <IconContext.Provider value = {{className:"card_icon1"}}>
                             <IoWalletOutline/> 
                         </IconContext.Provider>
-                        <p className='mb-0'>buy now</p>
+                        <p className='mb-0 buy_text'>buy now</p>
                     </Button>
                 </Container>
             </Card.Body>

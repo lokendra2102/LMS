@@ -9,7 +9,7 @@ import {
 function NavLinks() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Container>
+        <Container fluid>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" className='shadow-none border-0' />
             <Navbar.Collapse id="responsive-navbar-nav" className=''>
                 <Nav className="me-auto ms-auto">
