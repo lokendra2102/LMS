@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import HomeCard from './Cards/HomeCard'
+import CartHome from './Cart/CartHome'
 import Footer from './Footer/Footer'
 
 import Header from './NavBar/Header'
@@ -29,7 +30,8 @@ function Main() {
   return (
       <>
         <Header width={width}/>
-        <HomeCard width={width}/>
+        {/* <HomeCard width={width}/> */}
+        <CartHome/>
         <Footer/>
       </>
   )

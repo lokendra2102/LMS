@@ -8,6 +8,8 @@ body{
     background-color: #fdfffc;
     font-family: 'Poppins', sans-serif;
 }
+
+/* -----------------------   HOME       ------------------------------- */
 .userName{
     border: 1px solid #fe5f55 !important;
     background-color: rgba(254, 95, 85, 0.15);
@@ -166,6 +168,68 @@ ul{
     border: none !important;
     border-bottom:1px solid #fdfffc !important;
 }
+.tab-content{
+    width: 80%;
+}
+.nav-pills .nav-item .nav-link {
+    padding: 0.5rem 3rem !important;
+    color: #011627 !important;
+}
+.nav-pills .nav-link.active{
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+}
+.login_btn,.signup_btn{
+    background-color: #011627 !important;
+}
+.google_icon{color: #35c855;}
+.facebook_icon{color: #1d4ed8;}
+.linkedin_icon{color: #1d4ed8;}
+.signup_modal_btn, .loginsignup_modal_btn{cursor:text;}
+.err_text{
+    background-color: rgba(254, 95, 85, 0.25) !important;
+    color: #fe5f55;
+}
+
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+
+.cart_header{
+    color: #011627 !important;
+}
+.cart_img{
+    aspect-ratio: 3/2 !important;
+}
+.cart_body_desc,.cart_isbn_number{
+    opacity: 0.7;
+    font-size: 0.85rem !important;
+}
+.remove_cart{
+    color: #fe5f55 !important;
+}
+.quan_btn{
+    border: none !important;
+    background-color: rgba(87, 115, 153, 0.2) !important;
+    color: #011627 !important;
+}
+.quan_btn:hover{
+    background-color: rgba(87, 115, 153, 0.8) !important;
+    color: #fdfffc !important;
+}
+sub{
+    bottom: -0.11rem !important;
+    opacity: 0.5;
+}
+sup{
+    top: -0.35rem !important;
+    opacity: 0.5;
+}
+.cart_summary_container{
+    background-color: #d1d5db !important;
+}
+
+/* -----------------------   CART       ------------------------------- */
 
 @media only screen and (min-width:350px) and (max-width:577px){
     .app_name{
@@ -178,6 +242,9 @@ ul{
         padding: 1rem !important;
         margin: 0 !important;
         overflow: hidden;
+    }
+    .home_nav{
+        width: 50%;
     }
     .searchScreen{
         display: none !important;
@@ -212,14 +279,22 @@ ul{
     .contact_desc,.office_desc,.botton_nav,.bottom_nav_container .copyright,.product_updates .input_email, .product_updates .input_submit{
         font-size: 0.8rem !important;
     }
+    .tab-content{
+        width: 90%;
+    }
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
+
+    
 }
 @media only screen and (min-width:350px) and (max-width:451px){
-    .nav-link{
-        flex-wrap: wrap;
-        white-space: nowrap;
-    }
     .book_head{
         padding: 1rem !important;
+    }
+    .nav-pills .nav-item .nav-link {
+        padding: 0.5rem 1.5rem !important;
     }
     .card_body .buy_btn{
         min-width: 90%;
@@ -237,6 +312,10 @@ ul{
     .card_img_container .rating_btn{
         right: 26%;
     }
+    /* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
     
 }
 @media only screen and (min-width:450px) and (max-width:577px){
@@ -250,6 +329,11 @@ ul{
     .card_img_container .rating_btn{
         right: 20%;
     }
+
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:576px) and (max-width:611px){
     .card_body{
@@ -269,6 +353,10 @@ ul{
         color: #ff9f1c;
         font-size: 0.5rem !important;
     }
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:576px) and (max-width:773px){
     .searchScreen{
@@ -311,6 +399,10 @@ ul{
     .bottom_nav_container .copyright{
         text-align: center !important;
     }
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:773px) and (max-width:993px){
     .footer_1{
@@ -319,6 +411,10 @@ ul{
     .bottom_nav_container .copyright{
         text-align: center !important;
     }
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:992px) and (max-width:1140px){
     .card_img_container .heart_btn{
@@ -337,6 +433,10 @@ ul{
     .card_body .card_icon,.card_body .card_icon1{
         font-size: 1rem !important;
     }
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:1400px) and (max-width:1501px){
     .card_img_container .heart_btn{
@@ -355,4 +455,8 @@ ul{
     .card_body .card_icon,.card_body .card_icon1{
         font-size: 1rem !important;
     }
+/* -----------------------   HOME       ------------------------------- */
+
+/* -----------------------   CART       ------------------------------- */
+/* -----------------------   CART       ------------------------------- */
 }
