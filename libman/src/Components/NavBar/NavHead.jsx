@@ -4,11 +4,17 @@ import {
     FormControl,
     Col,
     Row,
+    Dropdown,
     InputGroup,
     Button
 
 } from 'react-bootstrap'
-import {FiSearch} from 'react-icons/fi'
+import { FiSearch,FiBook,FiShoppingCart,FiHeart } from 'react-icons/fi'
+import { IconContext } from 'react-icons'
+import { MdLogout } from 'react-icons/md'
+import { BiEditAlt } from 'react-icons/bi'
+import { AiOutlineAppstoreAdd } from 'react-icons/ai'
+
 
 function NavHead({width}) {
 
@@ -32,10 +38,53 @@ function NavHead({width}) {
                 </InputGroup>
             </Col>
             <Col  xs={6} sm={6} md={2} lg={3} className="d-flex justify-content-center align-items-center">
-                <Container fluid  className='d-flex justify-content-end align-items-end'>    
-                    <Button className="userName shadow-none">
-                        <p className='mb-0 userName_p'>{width}</p>
-                    </Button>
+                <Container fluid  className='d-flex justify-content-end align-items-end'>
+                    <Dropdown
+                        drop='bottom'
+                    >
+                        <Dropdown.Toggle className='d-flex justify-content-center align-items-center userName shadow-none' id="dropdown-basic">
+                            <p className='mb-0 userName_p'>{width}</p>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                <IconContext.Provider value = {{className:"edit_icon fs-6 me-2 my-auto"}}>
+                                    <BiEditAlt /> 
+                                </IconContext.Provider>
+                                Edit Profile
+                            </Dropdown.Item>
+                            <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                <IconContext.Provider value = {{className:"book_icon me-2 my-auto"}}>
+                                    <FiBook /> 
+                                </IconContext.Provider>
+                                Become Author
+                            </Dropdown.Item>
+                            <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
+                                    <FiShoppingCart /> 
+                                </IconContext.Provider>
+                                Cart
+                            </Dropdown.Item>
+                            <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                <IconContext.Provider value = {{className:"wishlist_icon me-2 my-auto"}}>
+                                    <AiOutlineAppstoreAdd /> 
+                                </IconContext.Provider>
+                                Wishlist
+                            </Dropdown.Item>
+                            <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                <IconContext.Provider value = {{className:"favourites_icon me-2 my-auto"}}>
+                                    <FiHeart /> 
+                                </IconContext.Provider>
+                                Favourites
+                            </Dropdown.Item>
+                            <Dropdown.Item className='mt-2 px-3 d-flex justify-content-start align-items-center text-center text-uppercase w-100 logout_btn'>
+                                <IconContext.Provider value = {{className:"log_out_icon me-2 my-auto"}}>
+                                    <MdLogout /> 
+                                </IconContext.Provider>
+                                Log out
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Container>
             </Col>
             <Col xs={12} className="searchScreen_small d-none d-flex justify-content-center align-items-center">

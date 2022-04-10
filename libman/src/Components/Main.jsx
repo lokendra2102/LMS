@@ -6,7 +6,7 @@ import Footer from './Footer/Footer'
 import Header from './NavBar/Header'
 
 function Main() {
-  const [width, setWidth] = useState('Lokendra_S')
+  const [width, setWidth] = useState('Lokendra')
   const [w,setW] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Main() {
       if (w < 451){
           setWidth(width[0])
       }else{
-          setWidth('Lokendra_S')
+          setWidth('Lokendra')
       }
       console.log(w)
     }
@@ -30,8 +30,8 @@ function Main() {
   return (
       <>
         <Header width={width}/>
-        {/* <HomeCard width={width}/> */}
-        <CartHome />
+        <HomeCard width={width}/>
+        {/* <CartHome /> */}
         <Footer/>
       </>
   )
