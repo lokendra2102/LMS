@@ -31,7 +31,7 @@ function Main() {
       <>
         <Header width={width}/>
         {/* <HomeCard width={width}/> */}
-        <CartHome/>
+        <CartHome />
         <Footer/>
       </>
   )
