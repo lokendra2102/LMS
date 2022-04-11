@@ -4,6 +4,7 @@ import CartHome from './Cart/CartHome'
 import Footer from './Footer/Footer'
 
 import Header from './NavBar/Header'
+import BookContent from './SingleBook/BookContent'
 
 function Main() {
   const [width, setWidth] = useState('Lokendra')
@@ -30,8 +31,9 @@ function Main() {
   return (
       <>
         <Header width={width}/>
-        <HomeCard width={width}/>
+        {/* <HomeCard width={width}/> */}
         {/* <CartHome /> */}
+        <BookContent/>
         <Footer/>
       </>
   )

@@ -108,12 +108,12 @@ body{
 .card_body .card_icon1{
     margin-right: 0.4rem !important;
 }
-.card_body .cart_btn{
+.card_body .cart_btn,.card_body1 .cart_btn{
     border: 1px solid #fe5f55 !important;
     background-color: rgba(254, 95, 85, 0.25);
     color: #fe5f55;
 }
-.card_body .buy_btn{
+.card_body .buy_btn,.card_body1 .buy_btn{
     font-size: 0.9rem !important;
     border: 1px solid #577399 !important;
     background-color: rgba(87, 115, 153, 0.2);
@@ -241,10 +241,23 @@ sup{
 .accordion-button:focus{
     box-shadow: none !important;
 }
-.paypal_icon,.mastercard_icon,.paytm_icon{
-    /* padding: 1rem !important; */
-}
 /* -----------------------   CART       ------------------------------- */
+/*---------------------------   SINGLE BOOK       ---------------------------------------*/
+.single_book_img_container{
+    /* width: 50% !important;
+    height: 50% !important; */
+    /* aspect-ratio: 16/9 !important; */
+}
+.about_book_header{
+    letter-spacing: 0.1rem !important;
+}
+.about_content{
+    opacity: 0.7 !important;
+}
+.single_book_img{
+    aspect-ratio: 3/2 !important;
+}
+/*---------------------------   SINGLE BOOK       ---------------------------------------*/
 
 @media only screen and (min-width:350px) and (max-width:577px){
     .app_name{
@@ -380,7 +393,7 @@ sup{
 /* -----------------------   CART       ------------------------------- */
 /* -----------------------   CART       ------------------------------- */
 }
-@media only screen and (min-width:576px) and (max-width:773px){
+@media only screen and (min-width:576px) and (max-width:768px){
     .searchScreen{
         display: none !important;
     }
@@ -431,7 +444,7 @@ sup{
     }
     /* -----------------------   CART       ------------------------------- */
 }
-@media only screen and (min-width:773px) and (max-width:993px){
+@media only screen and (min-width:768px) and (max-width:992px){
     .footer_1{
         flex-direction: column;
     }
@@ -446,6 +459,12 @@ sup{
 
     /* -----------------------   CART       ------------------------------- */
     /* -----------------------   CART       ------------------------------- */
+    .single_book_text,.about_author_content{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
 }
 @media only screen and (min-width:992px) and (max-width:1140px){
     .card_img_container .heart_btn{
@@ -468,6 +487,12 @@ sup{
 
 /* -----------------------   CART       ------------------------------- */
 /* -----------------------   CART       ------------------------------- */
+    .about_author_content{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
 }
 @media only screen and (min-width:1400px) and (max-width:1501px){
     .card_img_container .heart_btn{
