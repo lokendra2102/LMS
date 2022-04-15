@@ -27,7 +27,7 @@ function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl}) {
       {[1,2,3,].map(e => {
         return(
           <Row key={e} className='mb-3 shadow-sm cart_product_container'>
-            <Col xs={12} sm={4} md={5} lg={4} xl={4} xxl={4}>
+            <Col xs={12} sm={4} md={5} lg={4} xl={4} xxl={4} className=" d-flex justify-content-center align-items-center">
               <Container fluid className='p-1 cart_img_container'>
                 <Card.Img variant="top" className='w-100 h-100 cart_img' src={im} />
               </Container>
