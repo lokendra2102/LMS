@@ -261,6 +261,38 @@ sup{
 .single_book_img{
     aspect-ratio: 3/2 !important;
 }
+.card-body .actors,.movies{
+    overflow-x: scroll;
+    justify-content: start;
+}
+.actor_image,.review_user{
+    max-height: 100px !important;
+    height: 100px !important;
+    max-width: 100px !important;
+    width: 100px !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 50% !important;
+}
+.review_user{
+    max-height: 80px !important;
+    max-width: 80px !important;
+}
+.review_text{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.mainHeaderPosters{
+    flex: 0 0 20% !important;
+}
+.poster{
+    width: 100% !important;
+    height: 100% !important;
+}
+.tab-content{
+    width: 100% !important;
+}
 /*---------------------------   SINGLE BOOK       ---------------------------------------*/
 
 @media only screen and (min-width:350px) and (max-width:577px){

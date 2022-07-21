@@ -6,6 +6,9 @@ import {
     Button, 
     Col
 } from 'react-bootstrap'
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+
 import { IconContext } from 'react-icons'
 import { BsStarFill,BsCartPlus,BsStarHalf,BsStar } from 'react-icons/bs'
 import { IoWalletOutline,IoHeartOutline } from 'react-icons/io5'
@@ -16,9 +19,9 @@ function BookContent() {
   return (
     <Container className='single_book_container my-4p-0'>
         <Row className='gap-3 d-flex justify-content-center align-items-center'>
-            <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} className="my-lg-4 shadow mx-3 ">
+            <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} className="mx-4 my-lg-4 shadow mx-3 ">
                 <Card className='w-100 border-0 p-xs-1 p-lg-3'>
-                    <Card.Body className='d-flex flex-column flex-md-row mx-4 card_body1 p-0 py-4'>
+                    <Card.Body className='d-flex flex-column flex-md-row card_body1 p-0 py-4'>
                         <Container fluid className='d-flex justify-content-center align-items-center single_book_img_container'>
                             <Card.Img variant="top" className='single_book_img' src={im} />
                         </Container>
@@ -72,6 +75,88 @@ function BookContent() {
                             </Container>
                         </Container>
                     </Card.Body>
+                    <Card.Body className='moviePosters'>
+                        <Card.Text className='pb-2 fw-bold fs-4'>Movie Media</Card.Text>
+                        <Tabs
+                            defaultActiveKey="Posters"
+                            id="fill-tab-example"
+                            className="mb-3"
+                            fill
+                            >
+                            <Tab eventKey="Posters" className='w-100' title="Posters">
+                                <Container fluid className='d-flex m-0 p-0 flex-row movies justify-content-start align-items-center gap-3'>
+                                    {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
+                                        return(
+                                            <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
+                                                <Card.Img src={im} className="poster" />
+                                            </Container>
+                                        )
+                                    })}
+                                </Container>
+                            </Tab>
+                            <Tab eventKey="Images" title="Images">
+                                <Container fluid className='d-flex m-0 p-0 flex-row movies justify-content-start align-items-center gap-3'>
+                                    {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
+                                        return(
+                                            <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
+                                                <Card.Img src={im} className={`poster media `} />
+                                            </Container>
+                                        )
+                                    })}
+                                </Container>
+                            </Tab>
+                            <Tab eventKey="Videos" title="Videos">
+                                <Container fluid className='d-flex m-0 p-0 flex-row movies justify-content-start align-items-center gap-3'>
+                                    {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
+                                        return(
+                                            <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
+                                                <Card.Img src={im} className={`poster  media `} />
+                                            </Container>
+                                        )
+                                    })}
+                                </Container>
+                            </Tab>
+                        </Tabs>
+                    </Card.Body>
+                    <Card.Body className='cast_head'>
+                        <Card.Text className='pb-2 fw-bold fs-4'>Cast And Crew</Card.Text>
+                        <Container fluid className='d-flex flex-row actors gap-4'>
+                            {
+                                [1,2,3,4,5,6,7,8,9,0].map(e => {
+                                    return(
+                                        <div className='text-center'>
+                                            <Card.Img src={im} className="actor_image"/>
+                                            <Card.Text className='mt-2'>HELLOE</Card.Text>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </Container>
+                    </Card.Body>
+                </Card>
+                <Card className='w-100 border-0 p-xs-1 p-lg-3'>
+                    <Card.Text className='fs-4 fw-bold'>Reviews</Card.Text>
+                    {
+                        [1,2,3,4,5,6,7,8,9,0].map((e)=>{
+                            return(
+                                <Card.Body key={e} className='p-2 m-2 shadow-sm'>
+                                    <Card.Body className='p-2'>
+                                        <Card.Title className='d-flex flex-row'>
+                                            <Card.Img src={im} className="review_user" />
+                                            <Container fluid className='p-0 ms-2 d-flex flex-column justify-content-center'>
+                                                <Card.Text className="p-0 m-0">Hello world</Card.Text>
+                                                <Card.Text className="p-0 m-0 fs-6">date</Card.Text>
+                                                <Card.Text className="p-0 m-0 fs-6">rating</Card.Text>
+                                            </Container>
+                                        </Card.Title>
+                                        <Card.Text className='p-0 review_text'>
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos consequuntur illum iusto adipisci asperiores assumenda odit deserunt a omnis ex. Accusantium dolorum suscipit cumque nostrum rerum reprehenderit itaque repudiandae reiciendis.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card.Body>
+                            )
+                        })
+                    }
                 </Card>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} className="mb-4 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">

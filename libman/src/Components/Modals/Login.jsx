@@ -10,7 +10,7 @@ import {
 
 import Icon from './Icon';
 
-function Login({handleShow,handleClose,show}) {
+function Login({handleShow,handleClose,show,loginDet}) {
     const [key, setKey] = useState('Login');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -37,7 +37,7 @@ function Login({handleShow,handleClose,show}) {
                 setErr('Please Enter Password')
             }else{
                 setErr(null)
-                console.log(email,password)
+                loginDet(email,password)
             }
         }
         if (key === "Signup"){
@@ -91,7 +91,7 @@ function Login({handleShow,handleClose,show}) {
                                     <Form.Group className="mb-3" controlId="">
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control 
-                                            type="email" 
+                                            type="text" 
                                             className='shadow-none' 
                                             placeholder="Enter email"
                                             value={email}
@@ -142,7 +142,7 @@ function Login({handleShow,handleClose,show}) {
                                     <Form.Group className="mb-3" controlId="">
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control 
-                                            type="email" 
+                                            type="text" 
                                             className='shadow-none' 
                                             placeholder="Enter email"
                                             value={email}

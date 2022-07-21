@@ -6,9 +6,10 @@ import {
     Card,
 
 } from 'react-bootstrap'
-import { BsCartPlus,BsStarFill,BsStarHalf,BsStar } from 'react-icons/bs'
-import { IoWalletOutline,IoHeartOutline } from 'react-icons/io5'
-// import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { BsStarFill,BsStarHalf,BsStar } from 'react-icons/bs'
+import { RiVideoAddLine } from 'react-icons/ri'
+import { IoHeartOutline } from 'react-icons/io5'
+import { MdOutlineVideoLibrary } from 'react-icons/md'
 import { IconContext } from 'react-icons'
 
 import im from '../../Images/971.jpg'
@@ -16,7 +17,7 @@ import Login from '../Modals/Login'
 import { BookContext } from '../../Context/App.context'
 
 function Cards({k}) {
-    const { isLoggedIn } = useContext(BookContext)
+    const { isLoggedIn,userSignIn,data } = useContext(BookContext)
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -48,6 +49,7 @@ function Cards({k}) {
                             </IconContext.Provider> */}
                         </Button>
                     </Container>
+                    <p>{data}</p>
                     <Card.Body className='shadow-sm mx-4 card_body'>
                         <Card.Title className='fs-5 book_name'>Book Name</Card.Title>
                         <Card.Title className='fs-6 book_author'>Book Author</Card.Title>
@@ -77,20 +79,20 @@ function Cards({k}) {
                         <Container fluid className='d-flex gap-3 justify-content-center'>
                             <Button variant="danger" onClick={handleClick} className='cart_btn shadow-none'>
                                 <IconContext.Provider value = {{className:"card_icon"}}>
-                                    <BsCartPlus />
+                                    <RiVideoAddLine />
                                 </IconContext.Provider>
                             </Button>
-                            <Button variant="dark" className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
+                            <Button variant="dark" onClick={handleClick} className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
                                 <IconContext.Provider value = {{className:"card_icon1"}}>
-                                    <IoWalletOutline/> 
+                                    <MdOutlineVideoLibrary/> 
                                 </IconContext.Provider>
-                                <p className='mb-0 buy_text'>buy now</p>
+                                <p className='mb-0 buy_text'>play now</p>
                             </Button>
                         </Container>
                     </Card.Body>
                 </Card>
             </Col>
-            <Login show={show} handleShow={handleShow} handleClose={handleClose} />
+            <Login show={show} loginDet={userSignIn} handleShow={handleShow} handleClose={handleClose} />
         </>
     )
 }
