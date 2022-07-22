@@ -295,6 +295,30 @@ sup{
 }
 /*---------------------------   SINGLE BOOK       ---------------------------------------*/
 
+.AdIcon{
+    position: absolute;
+    right: 4% !important;
+    top: 3% !important;
+    background: rgba(255, 255, 255, 0) !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(15.5px) !important;
+    -webkit-backdrop-filter: blur(15.5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.videoLen{
+    color: #fdfffc !important;
+    background-color: #35c855 !important;
+    padding: 0.2rem 1rem !important;
+}
+.videoText{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/*----------------------------------------------------------------------------------------*/
+
 @media only screen and (min-width:350px) and (max-width:577px){
     .app_name{
         font-size: 2rem !important;

@@ -10,7 +10,7 @@ import {
 
 import Icon from './Icon';
 
-function Login({handleShow,handleClose,show,loginDet}) {
+function Login({handleShow,handleClose,show}) {
     const [key, setKey] = useState('Login');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -37,7 +37,6 @@ function Login({handleShow,handleClose,show,loginDet}) {
                 setErr('Please Enter Password')
             }else{
                 setErr(null)
-                loginDet(email,password)
             }
         }
         if (key === "Signup"){

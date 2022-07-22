@@ -17,7 +17,7 @@ import Login from '../Modals/Login'
 import { BookContext } from '../../Context/App.context'
 
 function Cards({k}) {
-    const { isLoggedIn,userSignIn,data } = useContext(BookContext)
+    const { isLoggedIn,data } = useContext(BookContext)
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -34,8 +34,27 @@ function Cards({k}) {
     return (
         <>
             <Col key={k} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3">
-                <Card className='w-100 border-0 card_parent text-center p-3 shadow'>
-                    <Container fluid className='card_img_container'>
+                <Card className='w-100 border-0 card_parent p-0 shadow'>
+                    <Container fluid className='videoTrailer p-0'>
+                        <Card.Img variant='top' className='videoContainer' src={im}/>
+                        <Button className='AdIcon shadow'>
+                            {/* <IconContext.Provider value = {{className:"ad_icon"}}>
+                                <IoHeartOutline />
+                            </IconContext.Provider> */}
+                            <Card.Title className='fw-normal p-0 m-0'>A</Card.Title>
+                        </Button>
+                    </Container>
+                    <Card.Body className='videoDesc d-flex justify-content-between align-items-baseline'>
+                        <Container fluid className="mainHeader p-0">
+                            <Card.Title className='p-0 m-0' >Movie Name - 2022</Card.Title>
+                            <Card.Text>Movie Director</Card.Text>
+                        </Container>
+                        <Card.Text className='p-0 m-0 border-0 rounded videoLen text-wrap'>180min</Card.Text>
+                    </Card.Body>
+                    <Card.Body className="videoMainDesc pt-0">
+                        <Card.Text className='p-0 m-0 videoText'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fuga iste nemo. Id, magnam illo qui dolore eaque cupiditate aperiam error amet ratione ad quis sequi eius laudantium? Beatae, error.</Card.Text>
+                    </Card.Body>
+                    {/* <Container fluid className='card_img_container'>
                         <Card.Img variant="top" className='card_img' src={im} />
                         <Button className='heart_btn shadow'>
                             <IconContext.Provider value = {{className:"heart_icon"}}>
@@ -47,7 +66,7 @@ function Cards({k}) {
                             {/* <IconContext.Provider value = {{className:"load_icon position-absolute"}}>
                                 <AiOutlineLoading3Quarters />
                             </IconContext.Provider> */}
-                        </Button>
+                        {/* </Button>
                     </Container>
                     <p>{data}</p>
                     <Card.Body className='shadow-sm mx-4 card_body'>
@@ -89,10 +108,10 @@ function Cards({k}) {
                                 <p className='mb-0 buy_text'>play now</p>
                             </Button>
                         </Container>
-                    </Card.Body>
+                    </Card.Body> */} 
                 </Card>
             </Col>
-            <Login show={show} loginDet={userSignIn} handleShow={handleShow} handleClose={handleClose} />
+            {/* <Login show={show} handleShow={handleShow} handleClose={handleClose} /> */}
         </>
     )
 }
