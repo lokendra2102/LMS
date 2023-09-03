@@ -20,6 +20,28 @@ const path = (pathname = "") => {
     return path;
 }
 
+const categoryContent = (path = "", isSub = false, categories) => {
+    var data;
+    if(path === ""){
+        data = Object.keys(categories).map(ele => {
+            return {
+                "id" : categories[ele].id, 
+                "name" : categories[ele].name, 
+                "desc" : categories[ele].desc,
+                "image" : categories[ele].image,
+                "isSub" : categories[ele].hasOwnProperty("sub"),
+                "isPremium" : categories[ele].Premium
+            };
+        })
+    }else if(isSub){
+        data = categories[`cat_${path}`].sub
+        data = data.map(ele => {
+            console.log(ele);
+        })
+    }
+    return data
+}
+
 module.exports = {
-    path
+    path, categoryContent
 }

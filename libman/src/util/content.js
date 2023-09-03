@@ -215,7 +215,7 @@ const categories = {
         "name": "Interview",
         "Premium": "true"
     },
-    "cat_Validations" : {
+    "cat_validations" : {
         "id": "004",
         "name": "Validations",
         "sub": [
@@ -309,7 +309,7 @@ const categories = {
             }
         ]
     },
-    "cat_UI" : {
+    "cat_ui" : {
         "id": "005",
         "name": "UI",
         "sub": [
@@ -333,4 +333,41 @@ const categories = {
             }
         ]
     }
+}
+
+const notes = {
+    "01" : {
+        "id" : "01",
+        "question" : "wedfgvhbjnkmsdf csadgjklzygfgvb aghjk",
+        "options" : [ "loki", "ghj", "hujk", "ghjk"],
+        "answer" : "loki",
+        "explanation" : "efgvhbjnko gfhjkl rfgyhujk"
+    },
+    "02" : {
+        "id" : "01",
+        "question" : "wedfgvhbjnkmsdf csadgjklzygfgvb aghjk",
+        "options" : [ "loki", "ghj", "hujk", "ghjk"],
+        "answer" : "loki",
+        "explanation" : "efgvhbjnko gfhjkl rfgyhujk"
+    },
+    "03" : {
+        "id" : "01",
+        "question" : "wedfgvhbjnkmsdf csadgjklzygfgvb aghjk",
+        "options" : [ "loki", "ghj", "hujk", "ghjk"],
+        "answer" : "loki",
+        "explanation" : "efgvhbjnko gfhjkl rfgyhujk"
+    }
+}
+
+const commonConcepts = [
+    "Application Definition", "Data Model", "Decision", "Integration-Connectors", "Integration-Mapping",
+	"Integration-Resources", "Integration-Services", "Organization", "Process", "Reports", "Security",
+    "Survey", "SysAdmin", "Technical", "User Interface"
+]
+
+const csaConcepts = [...commonConcepts, "ifsc implementation", "Deligation", "Retrive Data From datatype", "savables"]
+const cssaConcepts = [...commonConcepts, "Service connect-REST", "Service connect-SOAP"]
+
+module.exports = {
+    categories, notes, csaConcepts, cssaConcepts
 }

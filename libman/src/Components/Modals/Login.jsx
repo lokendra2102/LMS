@@ -74,7 +74,7 @@ function Login({handleClose,show}) {
                 keyboard={false}
             >
                 <Modal.Header closeButton className='px-5 shadow-none'>
-                    <Modal.Title className='fs-3 fw-bold'>eLib</Modal.Title>
+                    <Modal.Title className='fs-3 fw-bold'>PEGA#</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Container fluid className='pill_nav d-flex flex-column justify-content-center align-items-center'>

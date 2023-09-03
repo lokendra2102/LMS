@@ -27,7 +27,7 @@ function CheckoutModal({handleShow,handleClose,show}) {
             className="w-100"
         >
             <Modal.Header closeButton className='px-5 shadow-none'>
-                <Modal.Title className='fs-3 fw-bold'>eLib</Modal.Title>
+                <Modal.Title className='fs-3 fw-bold'>PEGA#</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Container fluid className=''>

@@ -16,53 +16,71 @@ import Login from '../Modals/Login'
 import { BookContext } from '../../Context/App.context'
 import { useNavigate } from 'react-router-dom'
 
-function Cards({k}) {
+function Cards({data, index}) {
     const navigate = useNavigate()
     const { user } = useContext(BookContext)
     const [show, setShow] = useState(false);
     
     const handleProject = (e) => {
-        if(document.querySelector('.cart_btn').contains(e.target) || document.querySelector('.buy_btn').contains(e.target)){
+        if(document.querySelector('.cart_btn').contains(e.target) || document.querySelector('.buy_btn').contains(e.target) || document.querySelector('.heart_btn').contains(e.target)){
             e.preventDefault()
         }else{
-            navigate(`/:id/project/:bookId`)
+            const category = e.currentTarget.querySelector(".book_name").getAttribute("data-name").toLowerCase();
+            if(data.isSub){
+                navigate(`/category?category=${category}`)
+            }else{
+                navigate(`/category/${category}`)
+            }
         }
     }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const validateUser = () => !user || (user && user === "null")
+
     const handleCart = () => {
-        if (!user || (user && user === "null")){
+        if(validateUser()){
+            handleShow()
+        }
+    }
+
+    const handleFavourite = () => {
+        if (validateUser()){
             handleShow()
         }
     }
 
     const handleBuyNow = () => {
-        if (!user || (user && user === "null")){
+        if (validateUser()){
             handleShow()
         }
     }
 
     return (
         <>
-            <Col key={k} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3" onClick={handleProject}>
+            <Col key={index} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3" onClick={handleProject}>
                 <Card className='w-100 border-0 card_parent p-0 shadow'>
                     <Container fluid className='card_img_container'>
-                        <Card.Img variant="top" className='card_img' src={im} />
-                        <Button className='heart_btn shadow'>
+                        <Card.Img variant="top" className='card_img' src={data.image ? data.image : im} />
+                        <Button className='heart_btn shadow btn-light' onClick={handleFavourite}>
                             <IconContext.Provider value = {{className:"heart_icon"}}>
                                 <IoHeartOutline />
                             </IconContext.Provider>
                         </Button>
                     </Container>
                     <Card.Body style={{backgroundColor : "#FDRFF6"}} className='shadow-sm mx-4 mb-3 card_body'>
-                        <Card.Title className='fs-5 book_name'>Book Name</Card.Title>
-                        <Card.Title className='fs-6 book_author'>Book Author</Card.Title>
-                        <Card.Text className='book_desc'>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
+                        {data.name && 
+                            <Card.Title className='fs-5 book_name' data-name={data.name}>{data.name}</Card.Title>
+                        }
+                        {data.author && 
+                            <Card.Title className='fs-6 book_author'>{data.author}</Card.Title>
+                        }
+                        {data.desc && 
+                            <Card.Text className='book_desc'>
+                                {data.desc}
+                            </Card.Text>
+                        }
                         <Container fluid className='rating_book my-1 d-flex flex-row justify-content-center align-items-center'>
                             { [1,2,3].map(e => {
                                 return(
@@ -80,7 +98,7 @@ function Cards({k}) {
                             </IconContext.Provider>
                         </Container>
                         <Card.Text className='book_release text-center'>
-                            Published on : 22-10-2002
+                            Updated on : 22-10-2002
                         </Card.Text>
                         <Container fluid className='d-flex gap-3 justify-content-center'>
                             <Button variant="danger" onClick={handleCart} className='cart_btn shadow-none'>

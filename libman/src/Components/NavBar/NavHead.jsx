@@ -28,7 +28,7 @@ function NavHead({width, user}) {
         <Container fluid className='px-5 mb-3 mt-4 header_container'>
             <Row className='py-2'>
                 <Col xs={6} sm={6} md={2} lg={3}>
-                    <h1 className='fs-1 fw-bold app_name mb-0'>eLib</h1>
+                    <h1 className='fs-1 fw-bold app_name mb-0'>PEGA#</h1>
                 </Col>
                 <Col xs={6} sm={6} md={8} lg={6} className="searchScreen d-flex justify-content-center align-items-center">
                     <InputGroup className="w-75 searchScreen_input">
@@ -47,7 +47,7 @@ function NavHead({width, user}) {
                     {user !== "null" ? 
                         <Container fluid  className='d-flex justify-content-end align-items-end'>
                             <Nav>
-                                <NavLink className='fs-4 nav-link nav-link-drop text-dark pe-3 pb-0' to='/:id/cart'>
+                                <NavLink className='fs-4 nav-link nav-link-drop text-dark pe-3 pb-0' to='/user/:id/cart'>
                                     <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
                                         <FiShoppingCart /> 
                                     </IconContext.Provider>
@@ -69,7 +69,7 @@ function NavHead({width, user}) {
                                             Edit Profile
                                         </Dropdown.Item>
                                         <Dropdown.Item className='d-flex justify-content-start align-items-center'>
-                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/:id/cart'>
+                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/user/:id/cart'>
                                                 <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
                                                     <FiShoppingCart /> 
                                                 </IconContext.Provider>
@@ -77,7 +77,7 @@ function NavHead({width, user}) {
                                             </NavLink>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='d-flex justify-content-start align-items-center'>
-                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to="/:id/favourite">
+                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to="/user/:id/favourite">
                                                 <IconContext.Provider value = {{className:"favourites_icon me-2 my-auto"}}>
                                                     <FiHeart /> 
                                                 </IconContext.Provider>

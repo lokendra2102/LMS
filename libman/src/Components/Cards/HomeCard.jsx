@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import {
     Container,
     Dropdown,
@@ -7,23 +7,14 @@ import {
 } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { BsArrowDown, BsArrowUp } from 'react-icons/bs'
-import { useLocation } from 'react-router-dom';
 
 import Cards from './Card'
 import Pagination from './Pagination'
-import { path } from '../../util/path';
+import { BookContext } from '../../Context/App.context'
 
 
 function HomeCard({width}) {
-    const location = useLocation();
-    const [ paths, setPath ] = useState("")
-    const [ categories, setCategories ] = useState('')
-    useEffect(() => {
-        setPath(path(location.pathname.split("/").pop()))
-        // if(paths === "Categories"){
-
-        // }
-    }, [location]);
+    const { paths, category } = useContext(BookContext)
 
     return (
         <Container fluid className='mt-5'>
@@ -64,8 +55,8 @@ function HomeCard({width}) {
             </Container>
             <Container fluid className='mt-3 px-4'>
                 <Row>
-                    {[1,2,3,4,5,6].map(e =>{
-                        return <Cards k={e}/>
+                    {category.map((category,index) =>{
+                        return <Cards data={category} key={index}/>
                     })}
                 </Row>
             </Container>

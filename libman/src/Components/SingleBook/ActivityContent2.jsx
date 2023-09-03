@@ -32,11 +32,11 @@ function ActivityContent2() {
                         </Container>
                         <Container fluid className='mt-4 d-flex flex-column justify-content-start align-items-start'>
                             <Container fluid className='p-0 d-flex justify-content-between'>
-                                <Container fluid className='p-0'>
+                                <Container fluid className='p-0 col-9'>
                                     <Card.Title className='fs-5'>Using the Activity to Validate Fields.</Card.Title>
                                     <Card.Title className='fs-6'>Activity</Card.Title>
                                 </Container>
-                                <Container fluid className='p-0'>
+                                <Container fluid className='p-0 text-end pt-2 pe-5 col-3'>
                                     <Card.Title className='fs-5 fw-bold'><sub>$</sub>57<sup>.00</sup></Card.Title>
                                 </Container>
                             </Container>

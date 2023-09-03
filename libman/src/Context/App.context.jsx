@@ -7,7 +7,9 @@ export const AppContext = ({children}) => {
 
   const [data,setData] = useState("")
   const [user, setUser] = useState(localStorage.getItem("user"));
-  const [location, setLocation] = useState();
+  // const [location, setLocation] = useState();
+  const [ paths, setPath ] = useState("")
+  const [ category, setCategories ] = useState([])
 
   useEffect(() => {
     localStorage.setItem("user", user)
@@ -105,7 +107,12 @@ export const AppContext = ({children}) => {
     <BookContext.Provider value={{
       data : data,
       user : user,
-      location : location,
+      // location : location,
+
+      paths : paths,
+      category : category,
+      setPath : setPath,
+      setCategories : setCategories,
 
       //Methods
       userSignup : userSignup,

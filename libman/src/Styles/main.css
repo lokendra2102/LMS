@@ -347,6 +347,23 @@ ul.list-group{
     border: none !important;
     padding: 0.5rem !important;
 }
+
+/* NOTES */
+.csa_dropdown > div[aria-labelledby="basic-nav-dropdown"]{
+    max-height: 50vh !important;
+    overflow-y: auto;
+    height: 50vh !important;
+}
+.csa_dropdown > div[aria-labelledby="basic-nav-dropdown"]::-webkit-scrollbar{
+    background-color: #d1d5db !important;
+    width: 10px !important;
+    border-radius: 1rem ;
+}
+.csa_dropdown > div[aria-labelledby="basic-nav-dropdown"]::-webkit-scrollbar-thumb{
+    background-color: #011627 !important;
+    border-radius: 1rem ;
+}
+
 /*----------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media only screen and (min-width:350px) and (max-width:577px){
