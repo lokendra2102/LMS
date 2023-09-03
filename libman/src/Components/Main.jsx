@@ -6,6 +6,7 @@ import CartHome from './Cart/CartHome'
 import Footer from './Footer/Footer'
 import Header from './NavBar/Header'
 import BookContent from './SingleBook/BookContent'
+import Activitycontent1 from './SingleBook/ActivityContent1'
 
 function Main() {
   const [width, setWidth] = useState('Lokendra')
@@ -45,7 +46,8 @@ function Main() {
             </Route>
             <Route path='/:id/favourite' element={<HomeCard width={width}/>} />
             <Route path='/:id/cart' element={<CartHome />} />
-            <Route path='/:id/project/:bookId' element={<BookContent/>} />
+            {/* <Route path='/:id/project/:bookId' element={<BookContent/>} /> */}
+            <Route path='/:id/project/activitycontent1' element={<Activitycontent1/>} />
           </Routes>
           <Footer/>
         </Router>
