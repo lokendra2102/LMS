@@ -6,10 +6,95 @@ export const BookContext = createContext()
 export const AppContext = ({children}) => {
 
   const [data,setData] = useState("")
+  const [user, setUser] = useState(localStorage.getItem("user"));
+  const [location, setLocation] = useState();
+
+  useEffect(() => {
+    localStorage.setItem("user", user)
+  },[user])
 
   //Login
+  const userSignIn = async(email, password) => {
+    await axios.post("/api/login",{
+      email : email,
+      password : password
+    },{
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      }
+    }).then(data => {
+      if (data.status.toString().startsWith === "20"){
+        setUser(data.data.user)
+      }
+    }).catch(e => {
+      if(e.response.status === 402){
+        alert(e.response.data.message)
+      }else if(e.response.status === 401){
+        alert(e.response.data.message)
+      }else if(e.response.status === 400){
+        alert(e.response.data.message)
+      }else{
+        alert(e.message)
+      }
+    })
+  }
+
   //Signup
+  const userSignup = async(username, email, password, university, cpassword, ispremium = null) => {
+    console.log(window.location.pathname);
+    await axios.post("/api/signup",{
+      username : username,
+      password : password,
+      email : email, 
+      university : university, 
+      ispremium : ispremium,
+      cpassword : cpassword
+    },{
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      }
+    }).then(data => {
+      if (data.status.toString().startsWith === "20"){
+        setUser(data.data.user)
+      }
+    }).catch(e => {
+      if(e.response.status === 402){
+        alert(e.response.data.message)
+      }else if(e.response.status === 401){
+        alert(e.response.data.message)
+      }else if(e.response.status === 400){
+        alert(e.response.data.message)
+      }else{
+        alert(e.message)
+      }
+    })
+  }
+
   //Signout
+  const userSignOut = async() => {
+    await axios.post("/api/signout",{
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      }
+    }).then(data => {
+      if (data.status === 200){
+        setUser(null)
+      }
+    }).catch(e => {
+      if(e.response.status === 400){
+        alert(e.response.data.message)
+      }else{
+        alert(e.message)
+      }
+    })
+  }
+  
   //Add-Membership
   //Remove-Membership
   //Cart
@@ -18,8 +103,14 @@ export const AppContext = ({children}) => {
 
   return (
     <BookContext.Provider value={{
-      isLoggedIn : true,
-      data : data
+      data : data,
+      user : user,
+      location : location,
+
+      //Methods
+      userSignup : userSignup,
+      userSignIn : userSignIn,
+      userSignOut : userSignOut
     }}>
         {children}
     </BookContext.Provider>

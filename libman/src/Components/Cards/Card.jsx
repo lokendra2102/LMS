@@ -6,35 +6,47 @@ import {
     Card,
 
 } from 'react-bootstrap'
-import { BsStarFill,BsStarHalf,BsStar } from 'react-icons/bs'
-import { RiVideoAddLine } from 'react-icons/ri'
+import { BsStarFill,BsStarHalf,BsStar,BsCartPlus } from 'react-icons/bs'
+import { TbCards } from 'react-icons/tb'
 import { IoHeartOutline } from 'react-icons/io5'
-import { MdOutlineVideoLibrary } from 'react-icons/md'
 import { IconContext } from 'react-icons'
-import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 
 import im from '../../Images/971.jpg'
 import Login from '../Modals/Login'
 import { BookContext } from '../../Context/App.context'
+import { useNavigate } from 'react-router-dom'
 
 function Cards({k}) {
-    const { isLoggedIn,data } = useContext(BookContext)
+    const navigate = useNavigate()
+    const { user } = useContext(BookContext)
     const [show, setShow] = useState(false);
+    
+    const handleProject = (e) => {
+        if(document.querySelector('.cart_btn').contains(e.target) || document.querySelector('.buy_btn').contains(e.target)){
+            e.preventDefault()
+        }else{
+            navigate(`/:id/project/:bookId`)
+        }
+    }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleClick = () => {
-        if (isLoggedIn){
+    const handleCart = () => {
+        if (!user || (user && user === "null")){
             handleShow()
-        }else{
-            console.log("YES")
+        }
+    }
+
+    const handleBuyNow = () => {
+        if (!user || (user && user === "null")){
+            handleShow()
         }
     }
 
     return (
         <>
-            <Col key={k} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3">
+            <Col key={k} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3" onClick={handleProject}>
                 <Card className='w-100 border-0 card_parent p-0 shadow'>
                     <Container fluid className='card_img_container'>
                         <Card.Img variant="top" className='card_img' src={im} />
@@ -43,14 +55,7 @@ function Cards({k}) {
                                 <IoHeartOutline />
                             </IconContext.Provider>
                         </Button>
-                        {/* <Button className='rating_btn shadow'>
-                            <p className='rating_text mb-0 fs-6'>8.7</p>
-                            <IconContext.Provider value = {{className:"load_icon position-absolute"}}>
-                                <AiOutlineLoading3Quarters />
-                            </IconContext.Provider>
-                        </Button> */}
                     </Container>
-                    <p>{data}</p>
                     <Card.Body style={{backgroundColor : "#FDRFF6"}} className='shadow-sm mx-4 mb-3 card_body'>
                         <Card.Title className='fs-5 book_name'>Book Name</Card.Title>
                         <Card.Title className='fs-6 book_author'>Book Author</Card.Title>
@@ -78,16 +83,16 @@ function Cards({k}) {
                             Published on : 22-10-2002
                         </Card.Text>
                         <Container fluid className='d-flex gap-3 justify-content-center'>
-                            <Button variant="danger" onClick={handleClick} className='cart_btn shadow-none'>
+                            <Button variant="danger" onClick={handleCart} className='cart_btn shadow-none'>
                                 <IconContext.Provider value = {{className:"card_icon"}}>
-                                    <RiVideoAddLine />
+                                    <BsCartPlus />
                                 </IconContext.Provider>
                             </Button>
-                            <Button variant="dark" onClick={handleClick} className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
+                            <Button variant="dark" onClick={handleBuyNow} className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
                                 <IconContext.Provider value = {{className:"card_icon1"}}>
-                                    <MdOutlineVideoLibrary/> 
+                                    <TbCards /> 
                                 </IconContext.Provider>
-                                <p className='mb-0 buy_text'>play now</p>
+                                <p className='mb-0 buy_text'>Buy Now</p>
                             </Button>
                         </Container>
                     </Card.Body> 

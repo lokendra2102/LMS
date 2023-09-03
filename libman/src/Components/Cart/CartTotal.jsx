@@ -11,12 +11,12 @@ import CheckoutModal from '../Checkout/CheckoutModal';
 import { BookContext } from '../../Context/App.context'
 
 function CartTotal({col_sm,col_md, col_lg, col_xl, col_xxl}) {
-  const { isLoggedIn } = useContext(BookContext)
+  const { user } = useContext(BookContext)
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleClick = () => {
-      if (isLoggedIn){
+      if (user){
           handleShow()
       }else{
           console.log("YES")

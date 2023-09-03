@@ -3,7 +3,7 @@ const { ref:aRef, get } = require("firebase/database")
 
 const sendDbname = (db) => {
     return (req, res, next) => {
-        const token = req.headers.token;
+        const token = req.cookies.jwt ? req.cookies.jwt : (req.headers.token ? req.headers.token : null);
         if (token) {
             jwt.verify(token, 'Pega Solutions', async (err, decodedToken) => {
                 if (err) {

@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React,{ useContext, useState } from 'react'
 import {
     Button,
     Container,
@@ -8,14 +8,17 @@ import {
     Tabs
 } from 'react-bootstrap'
 
-import Icon from './Icon';
+import { BookContext } from '../../Context/App.context';
 
-function Login({handleShow,handleClose,show}) {
+function Login({handleClose,show}) {
+    const { userSignup, userSignIn } = useContext(BookContext)
+    
     const [key, setKey] = useState('Login');
     const [email,setEmail] = useState('');
     const [username,setUsername] = useState('');
+    const [university,setUniversity] = useState('');
     const [password,setPassword] = useState('');
-    const [cPassword,setCpassword] = useState(null);
+    const [cPassword,setCpassword] = useState('');
     const [err,setErr] = useState()
 
     const changeLoginTab = () =>{
@@ -30,7 +33,7 @@ function Login({handleShow,handleClose,show}) {
     const Validator = () => {
         if (key==='Login'){
             if (!email && !password){
-                setErr('Please Enter Credentials')
+                setErr('Please Enter c Credentials')
             }
             else if (!email){
                 setErr('Please Enter Email')
@@ -38,14 +41,17 @@ function Login({handleShow,handleClose,show}) {
                 setErr('Please Enter Password')
             }else{
                 setErr(null)
+                userSignIn(email, password);
             }
         }
         if (key === "Signup"){
-            if (!email && !password && !cPassword && !username){
-                setErr('Please Enter Credentials')
+            if (!email && !password && !cPassword && !username && !university){
+                setErr('Please Enter Required Credentials')
             }
             else if (!email){
                 setErr('Please Enter Email')
+            }else if (!university){
+                setErr('Please Enter University')
             }else if (!username){
                 setErr('Please Enter Username')
             }else if(!password){
@@ -54,7 +60,7 @@ function Login({handleShow,handleClose,show}) {
                 setErr('Please Confirm Password')
             }else{
                 setErr(null)
-                console.log(email,password,cPassword)
+                userSignup(username, email, password, university, cPassword);
             }
         }
     }
@@ -90,7 +96,7 @@ function Login({handleShow,handleClose,show}) {
                                     }
                                 </Container>
                                 <Form className='w-100'>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control 
                                             type="text" 
@@ -102,7 +108,7 @@ function Login({handleShow,handleClose,show}) {
                                         />
                                     </Form.Group>
 
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control 
                                             type="password" 
@@ -113,7 +119,7 @@ function Login({handleShow,handleClose,show}) {
                                             onFocus={() => setErr(null)}
                                         />
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
                                         <Form.Check type="checkbox" onFocus={() => setErr(null)} className='shadow-none' label="Remember me" />
                                     </Form.Group>
                                     <Button
@@ -128,9 +134,6 @@ function Login({handleShow,handleClose,show}) {
                                         <b className='ms-2 text-primary text-decoration-underline signup_modal_btn' onClick={() => changeLoginTab()}>Signup Here</b>
                                     </p>
                                 </Form>
-                                {/* <hr/>
-                                <p className='mb-0 text-center'>Or Login Using</p>
-                                <Icon/> */}
                             </Tab>
                             <Tab eventKey="Signup" title="Signup">
                                 <Container fluid>
@@ -141,7 +144,7 @@ function Login({handleShow,handleClose,show}) {
                                     }
                                 </Container>
                                 <Form className='w-100'>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3">
                                         <Form.Label>Email address</Form.Label>
                                         <Form.Control 
                                             type="text" 
@@ -152,7 +155,7 @@ function Login({handleShow,handleClose,show}) {
                                             onFocus={() => setErr(null)}
                                         />
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
                                         <Form.Label>Username</Form.Label>
                                         <Form.Control 
                                             type="text" 
@@ -163,7 +166,18 @@ function Login({handleShow,handleClose,show}) {
                                             onFocus={() => setErr(null)}
                                         />
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
+                                        <Form.Label>University</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            className='shadow-none' 
+                                            placeholder="Enter university"
+                                            value={university}
+                                            onChange={(e)=>{setUniversity(e.target.value)}} 
+                                            onFocus={() => setErr(null)}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" >
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control
                                             type="password" 
@@ -174,7 +188,7 @@ function Login({handleShow,handleClose,show}) {
                                             onFocus={() => setErr(null)}
                                         />
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
                                         <Form.Label>Re-enter Password</Form.Label>
                                         <Form.Control
                                             type="password" 
@@ -185,7 +199,7 @@ function Login({handleShow,handleClose,show}) {
                                             onFocus={() => setErr(null)}
                                         />
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId="">
+                                    <Form.Group className="mb-3" >
                                         <Form.Check type="checkbox" onFocus={() => setErr(null)} className='shadow-none' label="Remember me" />
                                     </Form.Group>
                                     <Button 
@@ -200,9 +214,6 @@ function Login({handleShow,handleClose,show}) {
                                         <b className='ms-2 text-primary text-decoration-underline login_modal_btn' onClick={() => changeSignupTab()}>Login Here</b>
                                     </p>
                                 </Form>
-                                {/* <hr/>
-                                <p className='mb-0 text-center'>Or Signup Using</p>
-                                <Icon/> */}
                             </Tab>
                         </Tabs>
                     </Container>

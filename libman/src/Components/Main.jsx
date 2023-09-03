@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import HomeCard from './Cards/HomeCard'
@@ -6,30 +6,31 @@ import CartHome from './Cart/CartHome'
 import Footer from './Footer/Footer'
 import Header from './NavBar/Header'
 import BookContent from './SingleBook/BookContent'
+import { BookContext } from '../Context/App.context'
 
 function Main() {
-  const [width, setWidth] = useState('Lokendra')
+  const { user } = useContext(BookContext);
+  const usernmae = user && user !== "null" ? JSON.parse(user).usernmae : null
+  const [width, setWidth] = useState(usernmae)
   const [w,setW] = useState(window.innerWidth)
 
   useEffect(() => {
     function handleResize() {
       setW(window.innerWidth)
       if (w < 451){
-          setWidth(width[0])
+        setWidth(width[0])
       }else{
-          setWidth('Lokendra')
+        setWidth(usernmae)
       }
-      
-      console.log(window.location.href.split("/").slice(-2))
     }
       
     window.addEventListener("resize", handleResize)
     handleResize()
-    
     return () => { 
-        window.removeEventListener("resize", handleResize)
+      window.removeEventListener("resize", handleResize)
     }
   }, [w])
+
   return (
       <>
         <Router>

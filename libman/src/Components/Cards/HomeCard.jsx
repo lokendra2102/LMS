@@ -17,8 +17,12 @@ import { path } from '../../util/path';
 function HomeCard({width}) {
     const location = useLocation();
     const [ paths, setPath ] = useState("")
+    const [ categories, setCategories ] = useState('')
     useEffect(() => {
         setPath(path(location.pathname.split("/").pop()))
+        // if(paths === "Categories"){
+
+        // }
     }, [location]);
 
     return (

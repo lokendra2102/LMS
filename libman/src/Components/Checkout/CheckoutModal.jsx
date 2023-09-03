@@ -35,13 +35,8 @@ function CheckoutModal({handleShow,handleClose,show}) {
                         <Col className='address_check_container'>
                             <p className='ps-2 fs-5 mb-0 fw-bold'>Check out</p>
                             <p className='ps-2 fs-6 fw-normal mt-1 text-decoration-underline back_to_bag'>Back to my bag</p>
-                            <Accordion defaultActiveKey="1" flush alwaysOpen onClick={accordionOpen}
-                                className='shadow-none'
-                            >
-                                <Accordion.Item eventKey="1"
-                                >
-                                    <Accordion.Header>Payment Details</Accordion.Header>
-                                    <Accordion.Body>
+
+                            <Card className="border-0">
                                         <p className='payment_header fs-5 fw-bold'>Payment Information</p>
                                         <Container fluid className='p-0 ms-0 d-flex justify-content-start w-50 gap-3'>
                                             <Container fluid className='rounded p-2 d-flex justify-content-center align-items-center border border-dark'>
@@ -102,9 +97,7 @@ function CheckoutModal({handleShow,handleClose,show}) {
                                                 </Container>
                                             </Form>
                                         </Container>
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
+                            </Card>
                         </Col>
                         <Col>
                             <Row className='d-flex gapy-4 p-4 jusitfy-content-between align-items-center cart_summary_container'>
