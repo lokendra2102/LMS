@@ -3,6 +3,7 @@ import { Col, Container, Form, Row, Button,Nav } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { GrNext } from 'react-icons/gr'
 import { BsTwitter,BsFacebook,BsLinkedin,BsGithub } from 'react-icons/bs'
+import { NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -36,18 +37,15 @@ function Footer() {
         <Col xs={12} sm={12} md={12} lg={4} xl={4} xxl={4} className='copyright my-auto'>
           <p className='fs-6 fs-normal mb-0'>2022. All Rights Reserved @ Lokendra_S</p>
         </Col>
-        <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} className="botton_nav d-flex justify-content-center my-auto">
+        <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} className="botton_nav d-flex justify-content-evenly my-auto">
           <Nav.Item className='text-uppercase text-dark'>
-            <Nav.Link href="#home" className='text-dark'>home</Nav.Link>
+            <NavLink to="/" className='text-dark text-decoration-none'>home</NavLink>
           </Nav.Item>
           <Nav.Item className='text-uppercase text-dark'>
-            <Nav.Link eventKey="#wishlist" className='text-dark'>wishlist</Nav.Link>
+            <NavLink to="/:id/favourite" className='text-dark text-decoration-none'>favourites</NavLink>
           </Nav.Item>
           <Nav.Item className='text-uppercase text-dark'>
-            <Nav.Link eventKey="#f" className='text-dark'>favourites</Nav.Link>
-          </Nav.Item>
-          <Nav.Item className='text-uppercase text-dark'>
-            <Nav.Link eventKey="#c" className='text-dark'>Cart</Nav.Link>
+            <NavLink to="/:id/cart" className='text-dark text-decoration-none'>Cart</NavLink>
           </Nav.Item>
         </Col>
         <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} className="social_icon d-flex justify-content-center">

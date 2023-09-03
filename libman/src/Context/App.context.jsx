@@ -7,6 +7,14 @@ export const AppContext = ({children}) => {
 
   const [data,setData] = useState("")
 
+  //Login
+  //Signup
+  //Signout
+  //Add-Membership
+  //Remove-Membership
+  //Cart
+  //Buy-Course
+  //Get-Courses
 
   return (
     <BookContext.Provider value={{

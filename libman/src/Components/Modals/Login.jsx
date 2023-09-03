@@ -13,6 +13,7 @@ import Icon from './Icon';
 function Login({handleShow,handleClose,show}) {
     const [key, setKey] = useState('Login');
     const [email,setEmail] = useState('');
+    const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
     const [cPassword,setCpassword] = useState(null);
     const [err,setErr] = useState()
@@ -40,11 +41,13 @@ function Login({handleShow,handleClose,show}) {
             }
         }
         if (key === "Signup"){
-            if (!email && !password && !cPassword){
+            if (!email && !password && !cPassword && !username){
                 setErr('Please Enter Credentials')
             }
             else if (!email){
                 setErr('Please Enter Email')
+            }else if (!username){
+                setErr('Please Enter Username')
             }else if(!password){
                 setErr('Please Enter Password')
             }else if(!cPassword){
@@ -125,9 +128,9 @@ function Login({handleShow,handleClose,show}) {
                                         <b className='ms-2 text-primary text-decoration-underline signup_modal_btn' onClick={() => changeLoginTab()}>Signup Here</b>
                                     </p>
                                 </Form>
-                                <hr/>
+                                {/* <hr/>
                                 <p className='mb-0 text-center'>Or Login Using</p>
-                                <Icon/>
+                                <Icon/> */}
                             </Tab>
                             <Tab eventKey="Signup" title="Signup">
                                 <Container fluid>
@@ -146,6 +149,17 @@ function Login({handleShow,handleClose,show}) {
                                             placeholder="Enter email"
                                             value={email}
                                             onChange={(e)=>{setEmail(e.target.value)}} 
+                                            onFocus={() => setErr(null)}
+                                        />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" controlId="">
+                                        <Form.Label>Username</Form.Label>
+                                        <Form.Control 
+                                            type="text" 
+                                            className='shadow-none' 
+                                            placeholder="Enter username"
+                                            value={username}
+                                            onChange={(e)=>{setUsername(e.target.value)}} 
                                             onFocus={() => setErr(null)}
                                         />
                                     </Form.Group>
@@ -186,9 +200,9 @@ function Login({handleShow,handleClose,show}) {
                                         <b className='ms-2 text-primary text-decoration-underline login_modal_btn' onClick={() => changeSignupTab()}>Login Here</b>
                                     </p>
                                 </Form>
-                                <hr/>
+                                {/* <hr/>
                                 <p className='mb-0 text-center'>Or Signup Using</p>
-                                <Icon/>
+                                <Icon/> */}
                             </Tab>
                         </Tabs>
                     </Container>

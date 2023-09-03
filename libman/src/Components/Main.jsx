@@ -19,7 +19,8 @@ function Main() {
       }else{
           setWidth('Lokendra')
       }
-      console.log(w)
+      
+      console.log(window.location.href.split("/").slice(-2))
     }
       
     window.addEventListener("resize", handleResize)
@@ -35,11 +36,16 @@ function Main() {
           <Header width={width}/>
           <Routes>
             <Route index path='/' element={<HomeCard width={width}/>} />
-            <Route index path='/best-sellers' element={<HomeCard width={width}/>} />
-            <Route path='/:id/wishlist' element={<HomeCard width={width}/>} />
+            <Route path='/about' element={<HomeCard width={width}/>} />
+            <Route path='/contact' element={<HomeCard width={width}/>} />
+            <Route path='/mock-drives' element={<HomeCard width={width}/>} />
+            <Route path="notes">
+              <Route path="csa" element={<HomeCard width={width} />} />
+              <Route path="cssa" element={<HomeCard width={width} />} />
+            </Route>
             <Route path='/:id/favourite' element={<HomeCard width={width}/>} />
             <Route path='/:id/cart' element={<CartHome />} />
-            <Route path='/:id/book/:bookId' element={<BookContent/>} />
+            <Route path='/:id/project/:bookId' element={<BookContent/>} />
           </Routes>
           <Footer/>
         </Router>

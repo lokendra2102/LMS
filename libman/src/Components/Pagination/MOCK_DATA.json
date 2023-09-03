@@ -1,5 +1,5 @@
-[{"id":1,"first_name":"Cleopatra","last_name":"Pashbee","email":"cpashbee0@biglobe.ne.jp","gender":"Female"},
-    {"id":2,"first_name":"Orran","last_name":"Loudyan","email":"oloudyan1@nasa.gov","gender":"Male"},
+[{"id":1,"cat_tech":"Cleopatra","last_name":"Pashbee","email":"cpashbee0@biglobe.ne.jp","gender":"Female"},
+    {"id":2,"sub_cat_tech":"Orran","last_name":"Loudyan","email":"oloudyan1@nasa.gov","gender":"Male"},
     {"id":3,"first_name":"Myca","last_name":"Balmforth","email":"mbalmforth2@wikipedia.org","gender":"Female"},
     {"id":4,"first_name":"Merrile","last_name":"Ainger","email":"mainger3@clickbank.net","gender":"Male"},
     {"id":5,"first_name":"Corri","last_name":"Salan","email":"csalan4@ustream.tv","gender":"Male"},

@@ -11,16 +11,8 @@ import {
 import im from '../../Images/971.jpg'
 
 function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl}) {
-  const incValue =  (e) => {
-    if (e.target.nextElementSibling.value > 0){
-      e.target.nextElementSibling.value = (parseInt(e.target.nextElementSibling.value)+1)
-    }
-  }
-  const decValue =  (e) => {
-    if (e.target.previousSibling.value>1){
-      e.target.previousSibling.value = (parseInt(e.target.previousSibling.value)-1)
-    }
-  }
+  const projectPrice = 56;
+  const [price, setPrice]=  useState(projectPrice)
   return (
     <Col sm={col_sm} md={col_md} lg={col_lg} xl={col_xl} xxl={col_xxl} >
       <p className='fs-2 cart_header text-uppercase fw-bold'>bag</p>
@@ -35,12 +27,12 @@ function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl}) {
             <Col xs={8} sm={5} md={5} lg={6} xl={6} xxl={6} className="my-auto">
               <Card className='w-100 border-0'>
                 <Card.Body className='p-2'>
-                  <Card.Title className='fs-6 text-decoration-underline cart_isbn_number'>isbn number</Card.Title>
-                  <Card.Title className='fs-5 book_cart_author fw-bold'>Book Name</Card.Title>
+                  <Card.Title className='fs-6 text-decoration-underline cart_isbn_number'>project category</Card.Title>
+                  <Card.Title className='fs-5 book_cart_author fw-bold text-capitalize'>project name</Card.Title>
                   <Container fluid className='p-0 my-3'>
-                    <Card.Text className='mb-0 cart_body_desc fw-normal'>
+                    {/* <Card.Text className='mb-0 cart_body_desc fw-normal'>
                       <b>Pages</b> : 4564
-                    </Card.Text>
+                    </Card.Text> */}
                     <Card.Text className='mb-0 cart_body_desc'>
                       <b>Author</b> : Lokendra_S
                     </Card.Text>
@@ -60,13 +52,8 @@ function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl}) {
               </Card>
             </Col>
             <Col xs={4} sm={3} md={2} lg={2} xl={2} xxl={2} className="d-flex flex-column justify-content-between my-3">
-              <Card.Text className='mb-0 d-flex justify-content-center gap-2'>
-                <input type="button" className='rounded py-1 px-2 quan_btn inc_btn' onClick={incValue} value="+" />
-                <input type="button" className='rounded py-1 px-2 quan_btn ' value={1} />
-                <input type="button" className='rounded py-1 px-2 quan_btn dec_btn' onClick={decValue} value="-" />
-              </Card.Text>
               <Card.Text className='mb-0 fs-5 text-center fw-bolder'>
-                <sub className='fs-6 me-1'>$</sub>456<sup className='fs-6 ms-1'>.00</sup>
+                <sub className='fs-6 me-1'>$</sub>{price}<sup className='ms-1' style={{fontSize : '0.7rem'}}>.00</sup>
               </Card.Text>
             </Col>
           </Row>

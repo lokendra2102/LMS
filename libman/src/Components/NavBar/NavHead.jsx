@@ -13,7 +13,7 @@ import { FiSearch,FiBook,FiShoppingCart,FiHeart } from 'react-icons/fi'
 import { IconContext } from 'react-icons'
 import { MdLogout } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
-import { AiOutlineAppstoreAdd } from 'react-icons/ai'
+// import { AiOutlineAppstoreAdd } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
 
 
@@ -41,6 +41,13 @@ function NavHead({width}) {
             <Col  xs={6} sm={6} md={2} lg={3} className="d-flex justify-content-center align-items-center">
                 <Container fluid  className='d-flex justify-content-end align-items-end'>
                     <Nav>
+                        <NavLink className='fs-4 nav-link nav-link-drop text-dark pe-3 pb-0' to='/:id/cart'>
+                            <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
+                                <FiShoppingCart /> 
+                            </IconContext.Provider>
+                        </NavLink>
+                    </Nav>
+                    <Nav>
                         <Dropdown
                             drop='bottom'
                         >
@@ -56,25 +63,11 @@ function NavHead({width}) {
                                     Edit Profile
                                 </Dropdown.Item>
                                 <Dropdown.Item className='d-flex justify-content-start align-items-center'>
-                                    <IconContext.Provider value = {{className:"book_icon me-2 my-auto"}}>
-                                        <FiBook /> 
-                                    </IconContext.Provider>
-                                    Become Author
-                                </Dropdown.Item>
-                                <Dropdown.Item className='d-flex justify-content-start align-items-center'>
                                     <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/:id/cart'>
                                         <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
                                             <FiShoppingCart /> 
                                         </IconContext.Provider>
                                         Cart
-                                    </NavLink>
-                                </Dropdown.Item>
-                                <Dropdown.Item className='d-flex justify-content-start align-items-center'>
-                                    <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/:id/wishlist'>
-                                        <IconContext.Provider value = {{className:"wishlist_icon me-2 my-auto"}}>
-                                            <AiOutlineAppstoreAdd /> 
-                                        </IconContext.Provider>
-                                        Wishlist
                                     </NavLink>
                                 </Dropdown.Item>
                                 <Dropdown.Item className='d-flex justify-content-start align-items-center'>

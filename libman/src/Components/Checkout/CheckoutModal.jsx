@@ -15,6 +15,7 @@ import {RiMastercardFill} from 'react-icons/ri'
 import {SiPaytm} from 'react-icons/si'
 
 function CheckoutModal({handleShow,handleClose,show}) {
+    const accordionOpen = (e) => e.preventDefault();
   return (
     <>
         <Modal show={show} onHide={handleClose} 
@@ -34,84 +35,9 @@ function CheckoutModal({handleShow,handleClose,show}) {
                         <Col className='address_check_container'>
                             <p className='ps-2 fs-5 mb-0 fw-bold'>Check out</p>
                             <p className='ps-2 fs-6 fw-normal mt-1 text-decoration-underline back_to_bag'>Back to my bag</p>
-                            <Accordion defaultActiveKey="0" flush alwaysOpen
+                            <Accordion defaultActiveKey="1" flush alwaysOpen onClick={accordionOpen}
                                 className='shadow-none'
                             >
-                                <Accordion.Item eventKey="0"
-                                >
-                                    <Accordion.Header>Delivery Address</Accordion.Header>
-                                    <Accordion.Body>
-                                        <Form className='w-100'>
-                                            <Form.Group className="mb-3" controlId="">
-                                                <Form.Label>Enter Address</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    placeholder="Leave a comment here"
-                                                    style={{ height: '8rem' }}
-                                                />
-                                            </Form.Group>
-
-                                            <div className="mb-3">
-                                                <Form.Check
-                                                    inline
-                                                    label="Home"
-                                                    name="group1"
-                                                    type={'radio'}
-                                                    id={`inline-radio-1`}
-                                                    checked
-                                                />
-                                                <Form.Check
-                                                    inline
-                                                    label="Office"
-                                                    name="group1"
-                                                    type={'radio'}
-                                                    id={`inline-radio-2`}
-                                                />
-                                            </div>
-                                            <Form.Group className="mb-3" controlId="">
-                                                <Form.Check type="checkbox"className='shadow-none' label="Add to My Addresses" />
-                                            </Form.Group>
-                                            <Form.Check
-                                                inline
-                                                label="Pay on Delivery"
-                                                name="group1"
-                                                type={'radio'}
-                                                id={`inline-radio-1`}
-                                            />
-                                        </Form>
-                                        <Container fluid className='p-0'>
-                                            <Accordion flush>
-                                                <Accordion.Item eventKey="0">
-                                                    <Accordion.Header>Select Address</Accordion.Header>
-                                                    <Accordion.Body>
-                                                        <Row className="gap-2">
-                                                            <Col xs={12} sm={12} md={6} lg={12} xl={12} xxl={12} className='p-3 address_container'>
-                                                                <Form.Check
-                                                                    inline
-                                                                    label="076 Morar Mountain, Apt. 753, 52617, North Raven, New Jersey, United States"
-                                                                    name="group1"
-                                                                    type={'radio'}
-                                                                    id={`inline-radio-1`}
-                                                                    checked
-                                                                />
-                                                            </Col>
-                                                            <Col xs={12} sm={12} md={6} lg={12} xl={12} xxl={12} className='p-3 address_container'>
-                                                                <Form.Check
-                                                                    inline
-                                                                    label="076 Morar Mountain, Apt. 753, 52617, North Raven, New Jersey, United States"
-                                                                    name="group1"
-                                                                    type={'radio'}
-                                                                    id={`inline-radio-2`}
-                                                                    checked
-                                                                />
-                                                            </Col>
-                                                        </Row>
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                            </Accordion>
-                                        </Container>
-                                    </Accordion.Body>
-                                </Accordion.Item>
                                 <Accordion.Item eventKey="1"
                                 >
                                     <Accordion.Header>Payment Details</Accordion.Header>
@@ -160,7 +86,7 @@ function CheckoutModal({handleShow,handleClose,show}) {
                                                         <Form.Control 
                                                             type="number" 
                                                             className='shadow-none' 
-                                                            placeholder="exp. date" 
+                                                            placeholder="mm/yy" 
                                                             value={''}
                                                         />
                                                     </Form.Group>
@@ -195,7 +121,7 @@ function CheckoutModal({handleShow,handleClose,show}) {
                                         </Container>
                                         <Container fluid className='p-0 pb-1 d-flex justify-content-between'>
                                             <Card.Text className='mb-0'>
-                                                Total Items
+                                                Total Price
                                             </Card.Text>
                                             <Card.Text className='mb-0'>
                                                 $ 540.00
@@ -203,7 +129,7 @@ function CheckoutModal({handleShow,handleClose,show}) {
                                         </Container>
                                         <Container fluid className='p-0 pb-1 d-flex justify-content-between'>
                                             <Card.Text className='mb-0'>
-                                                Shipping Charges
+                                                GST
                                             </Card.Text>
                                             <Card.Text className='mb-0'>
                                                 $ 40.00

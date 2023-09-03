@@ -57,8 +57,8 @@ body{
 }
 .card_img_container .heart_btn{
     position: absolute;
-    top: 7%;
-    right: 7%;
+    top: 4%;
+    right: 5%;
     border-radius: 10%;
     background-color: #fdfffc;
 }
@@ -100,7 +100,7 @@ body{
     -webkit-box-orient: vertical;
 }
 .card_body .book_desc, .card_body .book_release{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 .card_body .book_release{
     opacity: 0.7;
@@ -262,8 +262,18 @@ sup{
     aspect-ratio: 3/2 !important;
 }
 .card-body .actors,.movies{
-    overflow-x: scroll;
+    overflow-x: auto;
     justify-content: start;
+}
+.movies::-webkit-scrollbar{
+    display: block;
+    padding: 2rem !important; 
+}
+.movies::-webkit-scrollbar-thumb {
+    background: #d1dfdb;
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 1rem;
 }
 .actor_image,.review_user{
     max-height: 100px !important;
@@ -295,6 +305,9 @@ sup{
 }
 /*---------------------------   SINGLE BOOK       ---------------------------------------*/
 
+.single_book_container{
+    max-width: 90% !important;
+}
 .AdIcon{
     position: absolute;
     right: 4% !important;
@@ -317,8 +330,25 @@ sup{
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.stepsImage{
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio: 5/4 !important; */
+}
+/* Accordion Active Color */
+.accordion-button:not(.collapsed){
+    color: #011627 !important;
+}
+ul.list-group{
+    list-style: circle !important;
+    list-style-type: disc !important;
+}
+.list-group-numbered > .list-group-item{
+    border: none !important;
+    padding: 0.5rem !important;
+}
 /*----------------------------------------------------------------------------------------*/
-
+/* MEDIA QUERIES */
 @media only screen and (min-width:350px) and (max-width:577px){
     .app_name{
         font-size: 2rem !important;
@@ -403,9 +433,9 @@ sup{
     .card_body .book_desc{
         -webkit-line-clamp: 2;
     }
-    .card_img_container .heart_btn{
+    /* .card_img_container .heart_btn{
         top: 7%;
-    }
+    } */
     .card_img_container .rating_btn{
         right: 26%;
     }
@@ -421,7 +451,7 @@ sup{
         height: 1.2rem;
     }
     .card_img_container .heart_btn{
-        top: 7%;
+        top: 5%;
     }
     .card_img_container .rating_btn{
         right: 20%;
@@ -468,9 +498,9 @@ sup{
     .card_body .book_desc{
         -webkit-line-clamp: 2;
     }   
-    .card_img_container .heart_btn{
+    /* .card_img_container .heart_btn{
         right: 10%;
-    }
+    } */
     .card_img_container .rating_btn{
         right: 30%;
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import AlphaNavLinks from './AlphaNavLinks'
+// import AlphaNavLinks from './AlphaNavLinks'
 import NavHead from './NavHead'
 import NavLinks from './NavLinks'
 
@@ -8,7 +8,7 @@ function Header({width}) {
     <>
         <NavHead width={width}/>
         <NavLinks/>
-        <AlphaNavLinks/>
+        {/* <AlphaNavLinks/> */}
     </>
   )
 }
