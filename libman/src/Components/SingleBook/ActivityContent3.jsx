@@ -17,10 +17,11 @@ import { BsStarFill,BsCartPlus,BsStarHalf,BsStar } from 'react-icons/bs'
 import { IoWalletOutline,IoHeartOutline } from 'react-icons/io5'
 
 import im from '../../Images/971.jpg'
-import t1p1 from '../../Images/act_ts1_p1.png'
-import t1p2 from '../../Images/act_ts1_p2.png'
+import t3p1 from '../../Images/act_ts3_p1.png'
+import t3p2 from '../../Images/act_ts3_p2.png'
+import t3p3 from '../../Images/act_ts3_p3.png'
 
-function ActivityContent1() {
+function ActivityContent3() {
   return (
     <Container className='single_book_container my-4 p-0'>
         <Row className='gap-3 d-flex justify-content-center align-items-center'>
@@ -33,7 +34,7 @@ function ActivityContent1() {
                         <Container fluid className='mt-4 d-flex flex-column justify-content-start align-items-start'>
                             <Container fluid className='p-0 d-flex justify-content-between'>
                                 <Container fluid className='p-0'>
-                                    <Card.Title className='fs-5'>Using the Activity to Store the records</Card.Title>
+                                    <Card.Title className='fs-5'>Using the Activity to Update Details</Card.Title>
                                     <Card.Title className='fs-6'>Activity</Card.Title>
                                 </Container>
                                 <Container fluid className='p-0'>
@@ -41,8 +42,7 @@ function ActivityContent1() {
                                 </Container>
                             </Container>
                             <Card.Text className='single_book_text'>
-                                In this Concept we are storing the data or the records by using the Actvity.
-                                Generally we are using the Savable to store the records. Even though some time we need to store the multiple records or single record to store by using the Activity.
+                                In this Concept we are going to Update Details by using the Activity.
                             </Card.Text>
                             <Container fluid className='rating_book text-start p-0 my-1'>
                                 { [1,2,3].map(e => {
@@ -61,7 +61,7 @@ function ActivityContent1() {
                                 </IconContext.Provider>
                             </Container>
                             <Card.Text className=''>
-                                Published on : 03-09-2023
+                                Updated on : 03-09-2023
                             </Card.Text>
                             <Container fluid className='d-flex gap-3 justify-content-start p-0'>
                                 <Button variant="danger" className='cart_btn shadow-none'>
@@ -73,99 +73,77 @@ function ActivityContent1() {
                                     <IconContext.Provider value = {{className:"cart_icon1 fs-4 me-2"}}>
                                         <IoWalletOutline/> 
                                     </IconContext.Provider>
-                                    <p className='mb-0 buy_text'>buy now</p>
+                                    <p className='mb-0 buy_text'>Buy now</p>
                                 </Button>
                             </Container>
                         </Container>
                     </Card.Body>
                     <hr />
                     <Card.Body>
-                        <Card.Text className='fs-4'>Steps to store <b>Records</b> using Activity</Card.Text>
+                        <Card.Text className='fs-4'>Using the Activity to <b>Update Details</b></Card.Text>
                         <Accordion defaultActiveKey={['0']} alwaysOpen>
                             <Accordion.Item eventKey="0">
-                                <Accordion.Header><span className='fw-bold'>Step 1 :</span>&nbsp;<span>Setting Up the Datatype.</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 1 :</span>&nbsp;<span>New Fields </span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">Create a Data Type with your choice of fields</ListGroup.Item>
-                                        <ListGroup.Item as="li">Name the Data Type as Student ---Here we have taken as Student</ListGroup.Item>
-                                        <ListGroup.Item as="li">Configure the fields and make the data type to be set</ListGroup.Item>
-                                        <ListGroup.Item as="li">Create Another Data type for to store Records.in my Scenario i am collecting student Details from student data type and storing the Data in transcation Datatype.
+                                        <ListGroup.Item as="li">Create a new step with new fields.Like As the below.</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={t3p1} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
                                         </ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
-                                <Accordion.Header><span className='fw-bold'>Step 2 :</span>&nbsp;<span>Create a Case Type</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 2 :</span>&nbsp;<span>Create a new Activity</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">Create a Case type and create a stages and steps -- By your own Fields</ListGroup.Item>
-                                        <ListGroup.Item as="li">In the first step of collect student details here in my example I am collecting the student details.--Create an embedded data type and call the data type which we created previous .</ListGroup.Item>
+                                        <ListGroup.Item as="li">Create the Activity with work class.</ListGroup.Item>
+                                        <ListGroup.Item as="li">congifure the page and class tab with apporite class.</ListGroup.Item>
+                                        <ListGroup.Item as="li">Make sure to create a DB that to update details in the DB</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={t3p2} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
                                         
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="2">
-                                <Accordion.Header><span className='fw-bold'>Step 3 :</span>&nbsp;<span>Create an Activity</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 3 :</span>&nbsp;<span>Follow th pic</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">Create a activity by calling the work class </ListGroup.Item>
+                                        <ListGroup.Item as="li">In the Activity Page configure as like as. </ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={t3p3} thumbnail className='stepsImage'/>
+                                                    
+                                                </Col>
+                                            </Container>
+
+                                        </ListGroup.Item>
+                                        
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="3">
-                                <Accordion.Header><span className='fw-bold'>Step 4 :</span>&nbsp;<span>Follow the image for Reference</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 4 :</span>&nbsp;<span>Call the Flow</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">In the Activity first create a Pages and classes tab enter page name and class here DB represents as a Datatype where to store our records. </ListGroup.Item>
-                                        <ListGroup.Item as="li">In this Task we are storing the Student fees Data </ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            Details regarding the image.
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={t1p1} thumbnail className='stepsImage'/>
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
+                                        <ListGroup.Item as="li">Call this activity in the Flow Rule and the flow action and the process. </ListGroup.Item> 
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
-                            <Accordion.Item eventKey="4">
-                                <Accordion.Header><span className='fw-bold'>Step 5 :</span>&nbsp;<span>Steps Tab</span></Accordion.Header>
-                                <Accordion.Body>
-                                    <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">Enter method as property-set and step is not mandatory.But best practice gives as DB</ListGroup.Item>
-                                        <ListGroup.Item as="li">In the method parameters tab of properties Name and the properties values. as below like</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            Details regarding the image.
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={t1p2} thumbnail className='stepsImage'/>
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Similarly, as in next step as method call the obj-save and step page as DB and make the write now column has to enabled</ListGroup.Item>
-                                        <ListGroup.Item as="li">And to next method column as commit it.</ListGroup.Item>
-                                    </ListGroup>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="5">
-                                <Accordion.Header><span className='fw-bold'>Step 6 :</span>&nbsp;<span>Flow Action </span></Accordion.Header>
-                                <Accordion.Body>
-                                    <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">Call the activity in your flow action </ListGroup.Item>
-                                        <ListGroup.Item as="li">Open the process and click on the open process link. then double click on the connecter. then click on the cross-hair icon then in the Action Tab in post processing column call the activity in the run activity column. </ListGroup.Item>
-                                    </ListGroup>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="6">
-                                <Accordion.Header><span className='fw-bold'>Step 7 :</span>&nbsp;<span>Saving rules </span></Accordion.Header>
-                                <Accordion.Body>
-                                    <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li">Now save in all the tabs opened and run the case. </ListGroup.Item>
-                                    </ListGroup>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            
                         </Accordion>
                     </Card.Body>
                     <hr />
@@ -182,7 +160,7 @@ function ActivityContent1() {
                                     {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
                                         return(
                                             <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={im} className={`poster  media `} />
+                                                <Card.Img src={t3p1} className={`poster  media `} />
                                             </Container>
                                         )
                                     })}
@@ -193,7 +171,7 @@ function ActivityContent1() {
                                     {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
                                         return(
                                             <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={im} className={`poster media `} />
+                                                <Card.Img src={t3p2} className={`poster media `} />
                                             </Container>
                                         )
                                     })}
@@ -287,4 +265,4 @@ function ActivityContent1() {
   )
 }
 
-export default ActivityContent1
+export default ActivityContent3
