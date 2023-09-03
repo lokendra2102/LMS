@@ -7,6 +7,9 @@ import Footer from './Footer/Footer'
 import Header from './NavBar/Header'
 import BookContent from './SingleBook/BookContent'
 import { BookContext } from '../Context/App.context'
+import Activitycontent1 from './SingleBook/ActivityContent1'
+import Activitycontent2 from './SingleBook/ActivityContent2'
+import Activitycontent3 from './SingleBook/ActivityContent3'
 
 function Main() {
   const { user } = useContext(BookContext);
@@ -46,7 +49,10 @@ function Main() {
             </Route>
             <Route path='/:id/favourite' element={<HomeCard width={width}/>} />
             <Route path='/:id/cart' element={<CartHome />} />
-            <Route path='/:id/project/:bookId' element={<BookContent/>} />
+            {/* <Route path='/:id/project/:bookId' element={<BookContent/>} /> */}
+            <Route path='/:id/project/activitycontent1' element={<Activitycontent1/>} />
+            <Route path='/:id/project/activitycontent2' element={<Activitycontent2/>} />
+            <Route path='/:id/project/activitycontent3' element={<Activitycontent3/>} />
           </Routes>
           <Footer/>
         </Router>
