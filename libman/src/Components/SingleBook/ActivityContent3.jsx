@@ -14,7 +14,7 @@ import Tabs from 'react-bootstrap/Tabs';
 
 import { IconContext } from 'react-icons'
 import { BsStarFill,BsCartPlus,BsStarHalf,BsStar } from 'react-icons/bs'
-import { IoWalletOutline,IoHeartOutline } from 'react-icons/io5'
+import { IoWalletOutline } from 'react-icons/io5'
 
 import im from '../../Images/971.jpg'
 import t3p1 from '../../Images/act_ts3_p1.png'

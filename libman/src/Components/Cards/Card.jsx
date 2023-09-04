@@ -16,7 +16,7 @@ import Login from '../Modals/Login'
 import { BookContext } from '../../Context/App.context'
 import { useNavigate } from 'react-router-dom'
 
-function Cards({data, index}) {
+function Cards({data, index, path}) {
     const navigate = useNavigate()
     const { user } = useContext(BookContext)
     const [show, setShow] = useState(false);
@@ -25,7 +25,10 @@ function Cards({data, index}) {
         if(document.querySelector('.cart_btn').contains(e.target) || document.querySelector('.buy_btn').contains(e.target) || document.querySelector('.heart_btn').contains(e.target)){
             e.preventDefault()
         }else{
-            const category = e.currentTarget.querySelector(".book_name").getAttribute("data-name").toLowerCase();
+            let category = e.currentTarget.querySelector(".book_name").getAttribute("data-name").toLowerCase();
+            if(category.includes(" ")){
+                category = category.replaceAll(" ","_")
+            }
             if(data.isSub){
                 navigate(`/category?category=${category}`)
             }else{

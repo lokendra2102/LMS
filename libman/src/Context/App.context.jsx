@@ -9,7 +9,7 @@ export const AppContext = ({children}) => {
   const [user, setUser] = useState(localStorage.getItem("user"));
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
-  const [ category, setCategories ] = useState([])
+  const [ category, setCategories ] = useState({})
 
   useEffect(() => {
     localStorage.setItem("user", user)

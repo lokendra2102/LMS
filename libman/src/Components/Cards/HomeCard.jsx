@@ -55,8 +55,8 @@ function HomeCard({width}) {
             </Container>
             <Container fluid className='mt-3 px-4'>
                 <Row>
-                    {category.map((category,index) =>{
-                        return <Cards data={category} key={index}/>
+                    {Object.keys(category).map((ele,index) =>{
+                        return <Cards data={category[ele]} cat={category} key={index} path={paths} />
                     })}
                 </Row>
             </Container>

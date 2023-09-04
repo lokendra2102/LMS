@@ -44,7 +44,7 @@ function NavHead({width, user}) {
                     </InputGroup>
                 </Col>
                 <Col  xs={6} sm={6} md={2} lg={3} className="d-flex justify-content-center align-items-center">
-                    {user !== "null" ? 
+                    {(user && user !== "null") ? 
                         <Container fluid  className='d-flex justify-content-end align-items-end'>
                             <Nav>
                                 <NavLink className='fs-4 nav-link nav-link-drop text-dark pe-3 pb-0' to='/user/:id/cart'>

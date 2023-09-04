@@ -18,7 +18,7 @@ import Mcq from './Mcq/Mcq'
 
 function Main() {
   const location = useLocation();
-  const { user, setPath, setCategories } = useContext(BookContext);
+  const { user, paths, setPath, category, setCategories } = useContext(BookContext);
   
   const username = user && user !== "null" ? JSON.parse(user).username : null
   const [width, setWidth] = useState(username)
@@ -47,14 +47,15 @@ function Main() {
     if(loc.includes("notes")){
       setPath(loc.splice(-2))
     }else{
-      setPath(path(loc.pop()))
+      const ls = loc.pop();
+      setPath(path(ls))
       const searchParams = new URLSearchParams(location.search)
-      if(loc.pop() === ''){
+      if(ls === ''){
           const cont = categoryContent('', false, categories)
           setCategories(cont)
-      }else if(searchParams.size > 0){
+      }else if(searchParams.size !== 0){
           const cont = categoryContent(searchParams.get("category"), true, categories)
-          // console.log(cont, searchParams.size);
+          setCategories(cont)
       }
     }
   }, [location]);
