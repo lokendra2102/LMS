@@ -349,6 +349,23 @@ ul.list-group{
 }
 
 /* NOTES */
+.csa_dropdown .dropdown-toggle, .cssa_dropdown .dropdown-toggle, 
+.csa_dropdown .dropdown-toggle[aria-expanded="true"], .cssa_dropdown .dropdown-toggle[aria-expanded="true"],
+.notes_dropdown .dropdown-toggle, .notes_dropdown .dropdown-toggle[aria-expanded="true"]{
+    background-color: transparent !important;
+    color: #011627 !important;
+    border: none !important;
+}
+
+.notes_dropdown .dropdown-toggle{
+    color: rgba(0, 0, 0, 0.65) !important;
+    text-transform: uppercase !important;
+}
+
+.notes_dropdown .dropdown-item:active{
+    background-color: #d1d5db !important;
+}
+
 .csa_dropdown > div[aria-labelledby="basic-nav-dropdown"]{
     max-height: 50vh !important;
     overflow-y: auto;
