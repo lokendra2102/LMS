@@ -18,6 +18,7 @@ import Activitycontent6 from './SingleBook/ActivityContent6'
 import { categories } from '../util/content'
 import { categoryContent, path } from '../util/path'
 import Mcq from './Mcq/Mcq'
+import DemoNote from './Notes/Pages/DemoNote'
 
 function Main() {
   const location = useLocation();
@@ -79,6 +80,7 @@ function Main() {
             <Route path='/user/:id/favourite' element={<HomeCard width={width}/>} />
             <Route path='/notes/mcq' element={<Mcq user={user}/>} />
             <Route path='/user/:id/cart' element={<CartHome />} />
+            <Route path='/notes/demo' element={<DemoNote />} />
             <Route path='/category' element={<HomeCard user={user} width={width}/>} />
             {/* <Route path='/category/:projectId' element={<BookContent/>} /> */}
             <Route path='/category/mobile-otp' element={<BookContent/>} />

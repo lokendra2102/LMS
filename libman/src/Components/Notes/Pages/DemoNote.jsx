@@ -24,8 +24,8 @@ deleting a record from the database.
 writing information to the log files 
 
 How to create activity?
-	Technical -> Activity
-	right click on the case type class -> create -> Activity
+	Technical - Activity
+	right click on the case type class - create - Activity
 	name : Storemultiplerecords activity
 in the activity steps tab:
 	1. Step number - indicate the step to be performed
@@ -62,7 +62,7 @@ Demo :
 	configured the source and studentid as the key
 	create the case type : Student Request
 		Step :  collect student details
-		added a field-> StudentInfo , Embedded data
+		added a field- StudentInfo , Embedded data
 			single record
 			data object name : Student
 Task :
@@ -72,7 +72,7 @@ Task :
 4. store multiple records into the database.
 
 1. Add a single record into the database
-	to create activity: rightclick on the case type clas -> Create -> Technical -> Activity 
+	to create activity: rightclick on the case type clas - Create - Technical - Activity 
 	name: Store Single record activity
 in the activity , under steps tab:
 	we can find the below information
