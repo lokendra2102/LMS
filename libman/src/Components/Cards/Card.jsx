@@ -7,7 +7,7 @@ import {
 
 } from 'react-bootstrap'
 import { BsStarFill,BsStarHalf,BsStar,BsCartPlus } from 'react-icons/bs'
-import { TbCards } from 'react-icons/tb'
+// import { TbCards } from 'react-icons/tb'
 import { IoHeartOutline } from 'react-icons/io5'
 import { IconContext } from 'react-icons'
 
@@ -110,9 +110,9 @@ function Cards({data, index, path}) {
                                 </IconContext.Provider>
                             </Button>
                             <Button variant="dark" onClick={handleBuyNow} className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
-                                <IconContext.Provider value = {{className:"card_icon1"}}>
+                                {/* <IconContext.Provider value = {{className:"card_icon1"}}>
                                     <TbCards /> 
-                                </IconContext.Provider>
+                                </IconContext.Provider> */}
                                 <p className='mb-0 buy_text'>Buy Now</p>
                             </Button>
                         </Container>
