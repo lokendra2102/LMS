@@ -11,6 +11,9 @@ import { BookContext } from '../Context/App.context'
 import Activitycontent1 from './SingleBook/ActivityContent1'
 import Activitycontent2 from './SingleBook/ActivityContent2'
 import Activitycontent3 from './SingleBook/ActivityContent3'
+import Activitycontent4 from './SingleBook/ActivityContent4'
+import Activitycontent5 from './SingleBook/ActivityContent5'
+import Activitycontent6 from './SingleBook/ActivityContent6'
 
 import { categories } from '../util/content'
 import { categoryContent, path } from '../util/path'
@@ -81,6 +84,9 @@ function Main() {
             <Route path='/:id/project/activitycontent1' element={<Activitycontent1/>} />
             <Route path='/:id/project/activitycontent2' element={<Activitycontent2/>} />
             <Route path='/:id/project/activitycontent3' element={<Activitycontent3/>} />
+            <Route path='/:id/project/activitycontent4' element={<Activitycontent4/>} />
+            <Route path='/:id/project/activitycontent5' element={<Activitycontent5/>} />
+            <Route path='/:id/project/activitycontent6' element={<Activitycontent6/>} />
           </Routes>
           <Footer/>
         {/* </Router> */}
