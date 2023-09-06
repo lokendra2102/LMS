@@ -2,7 +2,7 @@ import React from 'react'
 import Notes from '../Notes'
 import { Container } from 'react-bootstrap'
 
-function valiadtion1({user, path}) {
+function Valiadtion1({user, path}) {
   return (
     <>
         <Notes user={user} path={path} />
@@ -20,4 +20,4 @@ function valiadtion1({user, path}) {
   )
 }
 
-export default valiadtion1
+export default Valiadtion1
