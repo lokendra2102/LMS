@@ -226,8 +226,37 @@ const categories = {
         "cat_activity":{
             "id": "04.111",
             "name": "Activity",
-            "Premium": "true"
+            "Premium": "true",
+            "sub":"true"
         }
+    },
+    "sub_activity":{
+        "cat_Store":{
+            "id":"04.123",
+            "name":"Using the Activity to Store the records"
+        },
+        "cat_Validation":{
+            "id":"04.512",
+            "name":"Activity Validation"
+        },
+        "cat_Update_Details":{
+            "id":"04.513",
+            "name":"Update Details"
+        },
+        "cat_Another_Activity":{
+            "id":"04.514",
+            "name":"Call the Activity by the Another Activity"
+        },
+        "cat_Copy_the_data ":{
+            "id":"04.515",
+            "name":"Copy the data from one data page to another data page"
+        },
+        "cat_Update_the_stock ":{
+            "id":"04.516",
+            "name":"Update the stock details in the same table by using the Activity"
+        },
+
+
     },
     "sub_validations" : {
         "cat_random":{
