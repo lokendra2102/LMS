@@ -4,11 +4,11 @@ const path = (pathname = "") => {
         case "mock-drives":
             path = "Mock Drives";
             break;
-        case "cssa":
-            path = "CSSA Notes";
+        case "about":
+            path = "About";
             break;
-        case "csa":
-            path = "CSA Notes";
+        case "contact":
+            path = "Contact";
             break;
         case "favourite":
             path = "Favourite";

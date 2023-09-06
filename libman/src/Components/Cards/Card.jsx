@@ -74,7 +74,7 @@ function Cards({data, index, path}) {
                     </Container>
                     <Card.Body style={{backgroundColor : "#FDRFF6"}} className='shadow-sm mx-4 mb-3 card_body'>
                         {data.name && 
-                            <Card.Title className='fs-5 book_name' data-name={data.name}>{data.name}</Card.Title>
+                            <Card.Title className='fs-5 book_name text-capitalize' data-name={data.name}>{data.name}</Card.Title>
                         }
                         {data.author && 
                             <Card.Title className='fs-6 book_author'>{data.author}</Card.Title>

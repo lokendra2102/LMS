@@ -5,6 +5,7 @@ import {
     Container,
 } from 'react-bootstrap'
 import { notes } from '../../util/content'
+import Pagination from '../Cards/Pagination';
 
 function Mcq({user}) {
     const [active, setActive] = useState(2);
@@ -50,6 +51,7 @@ function Mcq({user}) {
                     </Container>
                 )
             })}
+            <Pagination/>
         </Container>
     )
 }

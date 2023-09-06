@@ -34,7 +34,7 @@ function NavHead({width, user}) {
                     <InputGroup className="w-75 searchScreen_input">
                         <InputGroup.Text id="search_icon bg-transparent"><FiSearch/></InputGroup.Text>
                         <FormControl
-                            placeholder={`Enter Book Name`}
+                            placeholder={`Enter Search Query`}
                             aria-label=""
                             aria-describedby="book_name"
                             type='search'

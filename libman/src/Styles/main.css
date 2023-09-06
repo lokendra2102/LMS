@@ -357,7 +357,13 @@ ul.list-group{
     border: none !important;
 }
 
+.notes_dropdown .dropdown-toggle[aria-expanded="true"] > .csa_dropdown .dropdown-toggle{
+    padding-left: 2rem !important;
+}
+
 .notes_dropdown .dropdown-toggle{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     color: rgba(0, 0, 0, 0.65) !important;
     text-transform: uppercase !important;
 }

@@ -9,7 +9,6 @@ import { IconContext } from 'react-icons'
 import { BsArrowDown, BsArrowUp } from 'react-icons/bs'
 
 import Cards from './Card'
-import Pagination from './Pagination'
 import { BookContext } from '../../Context/App.context'
 
 
@@ -60,7 +59,6 @@ function HomeCard({width}) {
                     })}
                 </Row>
             </Container>
-            <Pagination/>
         </Container>
     )
 }
