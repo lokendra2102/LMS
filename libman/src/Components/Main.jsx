@@ -15,10 +15,12 @@ import Activitycontent4 from './SingleBook/ActivityContent4'
 import Activitycontent5 from './SingleBook/ActivityContent5'
 import Activitycontent6 from './SingleBook/ActivityContent6'
 
+
 import { categories } from '../util/content'
 import { categoryContent, path } from '../util/path'
 import Mcq from './Mcq/Mcq'
 import DemoNote from './Notes/Pages/DemoNote'
+import valiadtion1 from './Notes/Pages/valiadtion1'
 
 function Main() {
   const location = useLocation();
@@ -80,13 +82,16 @@ function Main() {
             <Route path='/user/:id/favourite' element={<HomeCard width={width}/>} />
             <Route path='/notes/mcq' element={<Mcq user={user}/>} />
             <Route path='/user/:id/cart' element={<CartHome />} />
+            
             <Route path='/notes/demo' element={<DemoNote />} />
+            <Route path='/notes/valiadtion1' element={< valiadtion1/>} />
             <Route path='/category' element={<HomeCard user={user} width={width}/>} />
             {/* <Route path='/category/:projectId' element={<BookContent/>} /> */}
             <Route path='/category/mobile-otp' element={<BookContent/>} />
             <Route path='/category/using_the_activity_to_store_the_records' element={<Activitycontent1/>} />
             <Route path='/category/activity_validation' element={<Activitycontent2/>} />
             <Route path='/category/update_details' element={<Activitycontent3/>} />
+            
             <Route path='/category/call_the_activity_by_the_another_activity' element={<Activitycontent4/>} />
             <Route path='/category/copy_the_data_from_one_data_page_to_another_data_page' element={<Activitycontent5/>} />
             <Route path='/category/update_the_stock_details_in_the_same_table_by_using_the_activity' element={<Activitycontent6/>} />
