@@ -21,6 +21,7 @@ import { categoryContent, path } from '../util/path'
 import Mcq from './Mcq/Mcq'
 import DemoNote from './Notes/Pages/DemoNote'
 import Valiadtion1 from './Notes/Pages/Valiadtion1'
+import Validation2 from './Notes/Pages/Validation2'
 
 function Main() {
   const location = useLocation();
@@ -78,7 +79,7 @@ function Main() {
             <Route path="notes">
               {/* <Route path="csa/:id" element={<Notes user={user} />} /> */}
               <Route path='csa/demo' element={<DemoNote user={user} path={paths}/>} />
-              <Route path='csa/valiadtion1' element={<Valiadtion1 user={user} path={paths} />} />
+              
               <Route path="cssa/:id" element={<Notes user={user} />} />
             </Route>
             <Route path='/user/:id/favourite' element={<HomeCard width={width}/>} />
@@ -91,7 +92,8 @@ function Main() {
             <Route path='/category/using_the_activity_to_store_the_records' element={<Activitycontent1/>} />
             <Route path='/category/activity_validation' element={<Activitycontent2/>} />
             <Route path='/category/update_details' element={<Activitycontent3/>} />
-            
+            <Route path='category/random_10_number_generation_code.' element={<Valiadtion1/>} />
+            <Route path='category/visible_conditions:_by_access_groups' element={<Validation2/>} />
             <Route path='/category/call_the_activity_by_the_another_activity' element={<Activitycontent4/>} />
             <Route path='/category/copy_the_data_from_one_data_page_to_another_data_page' element={<Activitycontent5/>} />
             <Route path='/category/update_the_stock_details_in_the_same_table_by_using_the_activity' element={<Activitycontent6/>} />

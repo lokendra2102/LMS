@@ -2,16 +2,16 @@ import React from 'react'
 import Notes from '../Notes'
 import { Container } from 'react-bootstrap'
 
-function Valiadtion1({user, path}) {
+function Valiadtion1() {
   return (
     <>
-        <Notes user={user} path={path} />
+        {/* <Notes user={user} path={path} /> */}
+        
         <Container fluid className='px-5 mt-4'>
-            <p className='fs-5 text-uppercase text-decoration-underline' style={{fontWeight : '500'}}>Activity:</p>
+            <p className='fs-5 text-uppercase text-decoration-underline' style={{fontWeight : '500', color : "red"}}>Random 10 Number Generation Code</p>
 
-            <p className='mb-1'>1. Declare expression = use for calculations</p>
-            <p className='mb-1'>2. Data pages - used to cache data on demand and store them into the clipboard.</p>
-            <p className='mb-1'>3. Data transform  - used to manipulate data ( copy data, transfer data, set values/ propagate data)</p>
+            <p className='mb-1'><b>replaceAll(generateSystemNodeRandomNumber(tools,@String.length(pxProcess.pxSystemNodeID)+10),pxProcess.pxSystemNodeID,"")</b></p>
+            
      
       
 
