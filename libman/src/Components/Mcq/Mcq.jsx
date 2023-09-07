@@ -40,9 +40,9 @@ function Mcq({user}) {
                                     <Accordion className='w-100' activeKey={active} onSelect={handleSelect}>
                                         <Accordion.Item eventKey={`${ele}_0`}>
                                             <Accordion.Header onClick={(e) => handleClick(e, notes[ele].answer, notes[ele].options.indexOf(notes[ele].answer))}>Show Answer</Accordion.Header>
-                                            <Accordion.Body className='ps-3'>
+                                            {/* <Accordion.Body className='ps-3'>
                                                 <strong style={{fontWeight : 500}} className='fs-5'>Explanation</strong> : {notes[ele].explanation}
-                                            </Accordion.Body>
+                                            </Accordion.Body> */}
                                         </Accordion.Item>
                                     </Accordion>
                                 </Container>
