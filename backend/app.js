@@ -109,8 +109,7 @@ app.post("/api/login", sendDbname(db), (req,res) => {
                 const passwordmatch = await bcrypt.compare(password, fr_pass);
                 delete userObj["password"]
                 if(passwordmatch){
-                    const uuid = crypto.randomUUID();
-                    const token = createToken(uuid)
+                    const token = createToken(req.user["id"])
                     res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
                     res.status(201).json({
                         "status" : "success",

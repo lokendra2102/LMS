@@ -44,19 +44,21 @@ import Validation19 from './Notes/Pages/Validation19'
 function Main() {
   const location = useLocation();
   const { user, paths, setPath, category, setCategories } = useContext(BookContext);
-  
-  const username = user && user !== "null" ? JSON.parse(user).username : null
-  const [width, setWidth] = useState(username)
-  const [w,setW] = useState(window.innerWidth)
+  const [ username, setUsername ] = useState(user && user !== "null" ? typeof user === "string" ? JSON.parse(user).username : user.username : null)
 
+  useEffect(() => {
+    setUsername(user && user !== "null" ? typeof user === "string" ? JSON.parse(user).username : user.username : null)
+  },[user])
+
+  const [w,setW] = useState(window.innerWidth)
 
   useEffect(() => {
     function handleResize() {
       setW(window.innerWidth)
       if (w < 451){
-        setWidth(width[0])
+        setUsername(username[0])
       }else{
-        setWidth(username)
+        setUsername(username)
       }
     }
       
@@ -88,23 +90,23 @@ function Main() {
   return (
       <>
         {/* <Router> */}
-          <Header width={width}/>
+          <Header width={username}/>
           <Routes>
-            <Route index path='/' element={<HomeCard width={width}/>} />
-            <Route path='/about' element={<HomeCard width={width}/>} />
-            <Route path='/contact' element={<HomeCard width={width}/>} />
-            <Route path='/mock-drives' element={<HomeCard width={width}/>} />
+            <Route index path='/' element={<HomeCard width={username}/>} />
+            <Route path='/about' element={<HomeCard width={username}/>} />
+            <Route path='/contact' element={<HomeCard width={username}/>} />
+            <Route path='/mock-drives' element={<HomeCard width={username}/>} />
             <Route path="notes">
               {/* <Route path="csa/:id" element={<Notes user={user} />} /> */}
               <Route path='csa/demo' element={<DemoNote user={user} path={paths}/>} />
               
               <Route path="cssa/:id" element={<Notes user={user} />} />
             </Route>
-            <Route path='/user/:id/favourite' element={<HomeCard width={width}/>} />
+            <Route path='/user/:id/favourite' element={<HomeCard width={username}/>} />
             <Route path='/notes/mcq' element={<Mcq user={user}/>} />
             <Route path='/user/:id/cart' element={<CartHome />} />
             
-            <Route path='/category' element={<HomeCard user={user} width={width}/>} />
+            <Route path='/category' element={<HomeCard user={user} width={username}/>} />
             {/* <Route path='/category/:projectId' element={<BookContent/>} /> */}
             <Route path='/category/mobile-otp' element={<BookContent/>} />
             <Route path='/category/using_the_activity_to_store_the_records' element={<Activitycontent1/>} />

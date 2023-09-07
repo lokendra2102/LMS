@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React,{ useState,useEffect,createContext } from 'react'
+import React,{ useState,useEffect,createContext, useRef } from 'react'
 
 export const BookContext = createContext()
 
@@ -10,10 +10,6 @@ export const AppContext = ({children}) => {
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
   const [ category, setCategories ] = useState({})
-
-  useEffect(() => {
-    localStorage.setItem("user", user)
-  },[user])
 
   //Login
   const userSignIn = async(email, password) => {
@@ -27,8 +23,9 @@ export const AppContext = ({children}) => {
         "Access-Control-Allow-Credentials" : true
       }
     }).then(data => {
-      if (data.status.toString().startsWith === "20"){
+      if (data.status.toString().startsWith("20")){
         setUser(data.data.user)
+        localStorage.setItem("user", JSON.stringify(data.data.user))
       }
     }).catch(e => {
       if(e.response.status === 402){
@@ -45,7 +42,6 @@ export const AppContext = ({children}) => {
 
   //Signup
   const userSignup = async(username, email, password, university, cpassword, ispremium = null) => {
-    console.log(window.location.pathname);
     await axios.post("/api/signup",{
       username : username,
       password : password,
@@ -60,8 +56,9 @@ export const AppContext = ({children}) => {
         "Access-Control-Allow-Credentials" : true
       }
     }).then(data => {
-      if (data.status.toString().startsWith === "20"){
+      if (data.status.toString().startsWith("20")){
         setUser(data.data.user)
+        localStorage.setItem("user", JSON.stringify(data.data.user))
       }
     }).catch(e => {
       if(e.response.status === 402){
@@ -86,6 +83,7 @@ export const AppContext = ({children}) => {
       }
     }).then(data => {
       if (data.status === 200){
+        localStorage.setItem("user", null)
         setUser(null)
       }
     }).catch(e => {
@@ -117,7 +115,8 @@ export const AppContext = ({children}) => {
       //Methods
       userSignup : userSignup,
       userSignIn : userSignIn,
-      userSignOut : userSignOut
+      userSignOut : userSignOut,
+
     }}>
         {children}
     </BookContext.Provider>

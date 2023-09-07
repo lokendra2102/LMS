@@ -360,12 +360,12 @@ const categories = {
         "cat_repaeting_dynamic_layout":{
             "id": "05.03",
             "name": "Repeating Dynamic Layout",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_rating":{
             "id": "05.04",
             "name": "Rating",
-            "Premium": "true"
+            "Premium": true
         }
     }
 };

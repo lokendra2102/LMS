@@ -37,7 +37,6 @@ const categoryContent = (path = "", isSub = false, categories) => {
             }
         })
     }else if(isSub){
-        console.log("sd");
         data = categories[`sub_${path}`]
         data = Object.keys(data).map(ele => {
             return {

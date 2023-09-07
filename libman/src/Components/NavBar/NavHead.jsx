@@ -68,7 +68,7 @@ function NavHead({width, user}) {
                                             </IconContext.Provider>
                                             Edit Profile
                                         </Dropdown.Item>
-                                        <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                        <Dropdown.Item as={'p'} className='mb-0 d-flex justify-content-start align-items-center'>
                                             <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/user/:id/cart'>
                                                 <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
                                                     <FiShoppingCart /> 
@@ -76,7 +76,7 @@ function NavHead({width, user}) {
                                                 Cart
                                             </NavLink>
                                         </Dropdown.Item>
-                                        <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                        <Dropdown.Item as={'p'} className='mb-0 d-flex justify-content-start align-items-center'>
                                             <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to="/user/:id/favourite">
                                                 <IconContext.Provider value = {{className:"favourites_icon me-2 my-auto"}}>
                                                     <FiHeart /> 
@@ -84,7 +84,7 @@ function NavHead({width, user}) {
                                                 Favourites
                                             </NavLink>
                                         </Dropdown.Item>
-                                        <Dropdown.Item className='mt-2 px-3 d-flex justify-content-start align-items-center text-center text-uppercase w-100 logout_btn'>
+                                        <Dropdown.Item as={'p'} className='mb-0 mt-2 px-3 d-flex justify-content-start align-items-center text-center text-uppercase w-100 logout_btn'>
                                             <IconContext.Provider value = {{className:"log_out_icon me-2 my-auto"}}>
                                                 <MdLogout /> 
                                             </IconContext.Provider>

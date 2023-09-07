@@ -25,7 +25,7 @@ body{
 .userName_p{
     position: relative;
 }
-.userName_p::before{
+/* .userName_p::before{
     content: "";
     top: 65%;
     right: -50%;
@@ -34,7 +34,7 @@ body{
     height: 1.5rem;
     background-color: rgba(16, 185, 129, 1);
     border-radius: 50%;
-}
+} */
 .navbar-nav .active{
     background-color: black;
     text-align: center;
@@ -60,11 +60,13 @@ body{
     top: 4%;
     right: 5%;
     border-radius: 10%;
+    padding: 0 0.5rem !important;
+    font-size: 1.5rem !important;
     background-color: #fdfffc;
 }
 .card_img_container .rating_btn{
     position: absolute;
-    top: 7%;
+    top: 4%;
     right: 23%;
     border-radius: 10%;
     border: 1px solid #577399 !important;
@@ -74,6 +76,9 @@ body{
 .heart_btn .heart_icon{
     font-size: 1.3rem !important;
     color: #fe5f55;
+}
+.premium_icon{
+    color: #ffd100 !important;
 }
 .card_img{
     aspect-ratio: 3/2 !important;
@@ -108,6 +113,12 @@ body{
 .card_body .card_icon,.card_body .card_icon1{
     font-size: 1.2rem !important;
     font-weight: bolder !important;
+}
+.card-body .heart_btn1, .card_body1 .heart_btn1{
+    color: #fe5f55;
+}
+.card-body .heart_btn1:active, .card_body1 .heart_btn1:active{
+    border: transparent !important;
 }
 .card_body .card_icon1{
     margin-right: 0.4rem !important;
@@ -357,15 +368,15 @@ ul.list-group{
     border: none !important;
 }
 
-.notes_dropdown .dropdown-toggle[aria-expanded="true"] > .csa_dropdown .dropdown-toggle{
-    padding-left: 2rem !important;
-}
-
 .notes_dropdown .dropdown-toggle{
     padding-left: 0px !important;
     padding-right: 0px !important;
     color: rgba(0, 0, 0, 0.65) !important;
     text-transform: uppercase !important;
+}
+
+.notes_dropdown .dropdown-menu .csa_dropdown > button, .notes_dropdown .dropdown-menu .cssa_dropdown > button{
+    padding-left: 0.7rem !important;
 }
 
 .notes_dropdown .dropdown-item:active{
@@ -418,10 +429,10 @@ ul.list-group{
         margin: 1rem auto !important;
         width: 100% !important;
     }
-    .userName_p::before{
+    /* .userName_p::before{
         width: 1.2rem;
         height: 1.2rem;
-    }
+    } */
     .alphabet_container{
         display: flex !important;
         flex-wrap: wrap !important;
@@ -466,9 +477,9 @@ ul.list-group{
     .nav-pills .nav-item .nav-link {
         padding: 0.5rem 1.5rem !important;
     }
-    .userName_p::before{
+    /* .userName_p::before{
         right: -450%;
-    }
+    } */
     .card_body .buy_btn{
         min-width: 90%;
         font-size: 0.8rem !important;
@@ -479,9 +490,9 @@ ul.list-group{
     .card_body .book_desc{
         -webkit-line-clamp: 2;
     }
-    /* .card_img_container .heart_btn{
+    .card_img_container .heart_btn{
         top: 7%;
-    } */
+    }
     .card_img_container .rating_btn{
         right: 26%;
     }
@@ -492,10 +503,10 @@ ul.list-group{
     
 }
 @media only screen and (min-width:450px) and (max-width:577px){
-    .userName_p::before{
+    /* .userName_p::before{
         width: 1.2rem;
         height: 1.2rem;
-    }
+    } */
     .card_img_container .heart_btn{
         top: 5%;
     }
@@ -544,9 +555,9 @@ ul.list-group{
     .card_body .book_desc{
         -webkit-line-clamp: 2;
     }   
-    /* .card_img_container .heart_btn{
+    .card_img_container .heart_btn{
         right: 10%;
-    } */
+    }
     .card_img_container .rating_btn{
         right: 30%;
     }
