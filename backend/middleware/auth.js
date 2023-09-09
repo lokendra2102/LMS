@@ -47,6 +47,17 @@ const createToken = (id) =>
     expiresIn: maxAge,
 });
 
+const getDbEnumForProductEntry = (param) => {
+    switch(param){
+        case "buy":
+            return 2
+        case "cart":
+            return 1
+        case "fav":
+            return 0
+    }
+}
+
 module.exports = {
-    createToken, sendDbname, maxAge
+    createToken, sendDbname, maxAge, getDbEnumForProductEntry
 }

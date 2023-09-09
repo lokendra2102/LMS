@@ -13,7 +13,7 @@ import { BookContext } from '../../Context/App.context'
 
 
 function HomeCard({width}) {
-    const { paths, category } = useContext(BookContext)
+    const { paths, category, user, buyCourse } = useContext(BookContext)
 
     return (
         <Container fluid className='mt-5'>
@@ -55,7 +55,7 @@ function HomeCard({width}) {
             <Container fluid className='mt-3 px-4'>
                 <Row>
                     {Object.keys(category).map((ele,index) =>{
-                        return <Cards data={category[ele]} cat={category} key={index} path={paths} />
+                        return <Cards data={category[ele]} cat={category} key={index} path={paths} user={user} buyCourse={buyCourse} />
                     })}
                 </Row>
             </Container>

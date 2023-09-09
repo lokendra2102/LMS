@@ -16,13 +16,22 @@ import im from '../../Images/971.jpg'
 import Login from '../Modals/Login'
 import { BookContext } from '../../Context/App.context'
 import { useNavigate } from 'react-router-dom'
+import CheckoutModal from '../Checkout/CheckoutModal'
 
-function Cards({data, index, path}) {
+function Cards({data, index, path, user, buyCourse}) {
     const navigate = useNavigate()
-    const { user } = useContext(BookContext)
+    //Login Modal
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    //CheckoutModal
+    const [check, setCheck] = useState(false);
+    const [checkOutData, setCheckOutData] = useState([]);
+    const handleCloseCheck = () => setCheck(false);
+    const handleShowCheck = () => setCheck(true);
+
+    const cardRef = useRef(0);
 
     useEffect(() => {
         if(show){
@@ -45,7 +54,11 @@ function Cards({data, index, path}) {
             if(data.isSub){
                 navigate(`/category?category=${category}`)
             }else{
-                navigate(`/category/${category}`)
+                if(data.isPremium){
+                    handleBuyNow(e);
+                }else{
+                    navigate(`/category/${category}`)
+                }
             }
         }
     }
@@ -56,30 +69,38 @@ function Cards({data, index, path}) {
         if(validateUser()){
             handleShow()
         }else{
+            e.preventDefault();
             console.log(e.target);
         }
     }
 
-    const handleFavourite = () => {
+    const handleFavourite = (e) => {
         if (validateUser()){
             handleShow()
+        }else{
+            e.preventDefault();
+            console.log(e.target);
         }
     }
 
-    const handleBuyNow = () => {
+    const handleBuyNow = (e) => {
         if (validateUser()){
             handleShow()
+        }else{
+            e.preventDefault();
+            setCheck(true)
+            setCheckOutData(data);
         }
     }
 
     return (
         <>
-            <Col key={index} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3" onClick={handleProject}>
+            <Col ref={cardRef} key={index} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className="mb-3" onClick={handleProject}>
                 <Card className='w-100 border-0 card_parent p-0 shadow'>
                     <Container fluid className='card_img_container'>
                         <Card.Img variant="top" className='card_img' src={data.image ? data.image : im} />
                         {
-                            data.premium && 
+                            data.isPremium && 
                             <Button className='heart_btn shadow btn-light' onClick={handleFavourite}>
                                 <IconContext.Provider value = {{className:"premium_icon"}}>
                                     <FaCrown />
@@ -90,7 +111,7 @@ function Cards({data, index, path}) {
                     <Card.Body style={{backgroundColor : "#FDRFF6"}} className='shadow-sm mx-4 mb-3 card_body'>
                         {data.name && 
                             <Container fluid className='d-flex justify-content-between align-items-center'>
-                                <Card.Title className='col-9 fs-5 book_name text-capitalize' data-name={data.name}>{data.Premium ? "true" : "false"} {data.name}</Card.Title>
+                                <Card.Title className='col-9 fs-5 book_name text-capitalize' data-name={data.name}>{data.name}</Card.Title>
                                 <Container fluid className='col-3 d-flex justify-content-end align-items-end heart_btn_cont'>
                                     <Button variant="none" onClick={handleCart} className='p-0 fs-5 heart_btn1 shadow-none'>
                                         <IconContext.Provider value = {{className:"heart_icon"}}>
@@ -144,6 +165,7 @@ function Cards({data, index, path}) {
                 </Card>
             </Col>
             <Login show={show} handleShow={handleShow} handleClose={handleClose}/>
+            <CheckoutModal show={check} handleShow={handleShowCheck} handleClose={handleCloseCheck} data={[checkOutData]} buyCourse={buyCourse}/>
         </>
     )
 }

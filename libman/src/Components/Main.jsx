@@ -39,6 +39,7 @@ import Validation16 from './Notes/Pages/Validation16'
 import Validation17 from './Notes/Pages/Validation17'
 import Validation18 from './Notes/Pages/Validation18'
 import Validation19 from './Notes/Pages/Validation19'
+import Pagination from './Cards/Pagination'
 
 
 function Main() {
@@ -103,7 +104,7 @@ function Main() {
               <Route path="cssa/:id" element={<Notes user={user} />} />
             </Route>
             <Route path='/user/:id/favourite' element={<HomeCard width={username}/>} />
-            <Route path='/notes/mcq' element={<Mcq user={user}/>} />
+            <Route path='/notes/mcq' element={<Pagination user={user}/>} />
             <Route path='/user/:id/cart' element={<CartHome />} />
             
             <Route path='/category' element={<HomeCard user={user} width={username}/>} />

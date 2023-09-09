@@ -10,7 +10,8 @@ const cookieParser = require("cookie-parser")
 require("dotenv").config();
 
 const { createToken, sendDbname, maxAge } = require("./middleware/auth")
-const { userConstructor } = require("./schema/DTO")
+const { userConstructor } = require("./schema/DTO");
+const { buyProduct } = require("./REST/restapi");
 
 const firebaseConfig = {
     apiKey: "AIzaSyDjd89yRQxOdvd8MWedBiF8emG4vQBOpxU",
@@ -175,9 +176,7 @@ app.put("/api/update-memebership", sendDbname(db), (req,res) => {
     })
 })
 
-// app.post("/add-course", sendDbname(db), (req,res) => {
-
-// })
+app.post("/api/add-course", sendDbname(db), (req,res) => buyProduct(req,res))
 
 // app.get("/get-course", sendDbname(db), (req,res) => {
 

@@ -98,7 +98,32 @@ export const AppContext = ({children}) => {
   //Add-Membership
   //Remove-Membership
   //Cart
+
   //Buy-Course
+  const buyCourse = async(id, type) => {
+    let body = {};
+    body[`${id}`] = type
+    await axios.post("/api/add-course",body,{
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      }
+    }).then(data => {
+      console.log(data.data);
+    }).catch(e => {
+      if(e.response.status === 402){
+        alert(e.response.data.message)
+      }else if(e.response.status === 401){
+        alert(e.response.data.message)
+      }else if(e.response.status === 400){
+        alert(e.response.data.message)
+      }else{
+        alert(e.message)
+      }
+    })
+  }
+
   //Get-Courses
 
   return (
@@ -116,6 +141,7 @@ export const AppContext = ({children}) => {
       userSignup : userSignup,
       userSignIn : userSignIn,
       userSignOut : userSignOut,
+      buyCourse : buyCourse
 
     }}>
         {children}

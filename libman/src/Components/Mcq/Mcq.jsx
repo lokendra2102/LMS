@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
     Accordion,
     Card,
     Container,
 } from 'react-bootstrap'
 import { notes } from '../../util/content'
-import Pagination from '../Cards/Pagination';
 
-function Mcq({user}) {
+function Mcq({user, mcq}) {
     const [active, setActive] = useState(2);
     const handleClick = (e,ans,ind) => {
         if(!active || active === 2){
@@ -25,13 +24,13 @@ function Mcq({user}) {
             <Container fluid className='mb-4 px-5 ps-4 d-flex align-items-center justify-content-between book_head'>
                 <h1 className='fs-3 fw-bold text-center text-uppercase text-decoration-underline notes_headline'>mcq</h1>
             </Container>
-            {Object.keys(notes).map((ele,index) => {
+            {mcq.map((ele,index) => {
                 return(
                     <Container fluid key={index}>
                         <Card className="mx-4 mb-3">
                             <Card.Body>
-                                <Card.Title>{index+1}. {notes[ele].question}</Card.Title>
-                                <Container fluid className='d-flex flex-wrap my-2 mb-4 accordion_mcq'>
+                                <Card.Title>{notes[ele].id}. {notes[ele].question}</Card.Title>
+                                <Container fluid className='d-flex flex-wrap my-2 mb-4 mt-3 accordion_mcq'>
                                     {notes[ele].options.map((option,ind) => {
                                         return (
                                             <Card.Text key={ind} className='col-6'><b style={{fontWeight : 500}}>{((ind+1) + 9).toString(36).toUpperCase()}.</b> {option}</Card.Text>
@@ -51,7 +50,6 @@ function Mcq({user}) {
                     </Container>
                 )
             })}
-            <Pagination/>
         </Container>
     )
 }

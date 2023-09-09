@@ -12,7 +12,7 @@ const categories = {
     "cat_interview": {
         "id": "003",
         "name": "Interview",
-        "Premium": "true"
+        "Premium": true
     },
     "cat_validations": {
         "id": "004",
@@ -25,23 +25,20 @@ const categories = {
         "sub": true
     },
     "sub_enhancement": {
-
         "cat_otp":
         {
-            
             "id": "011",
             "name": "otp",
             "sub" : true
         },
         "cat_realtime_email":{
-        
             "id": "012",
             "name": "realtime email"
         },
         "cat_qr":{
             "id": "013",
             "name": "QR-code Generation",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_chatbot":{
             "id": "014",
@@ -50,7 +47,7 @@ const categories = {
         "cat_multiple_mail_sender":{
             "id": "015",
             "name": "multiple mail sender",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_android_app_development":{
             "id": "016",
@@ -63,27 +60,27 @@ const categories = {
         "cat_file_transfer":{
             "id": "018",
             "name": "file listener",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_email_listner":{
             "id": "019",
             "name": "email listener",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_add_to_cart":{
             "id": "020",
             "name": "add to cart",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_toast_message":{
             "id": "021",
             "name": "toast-Message",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_send_whatsapp_msg":{
             "id": "022",
             "name": "send WhatsApp msg",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_send_sms":{
             "id": "023",
@@ -92,7 +89,7 @@ const categories = {
         "cat_dynamic_login":{
             "id": "024",
             "name": "Dynamic login",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_multi_select":{
             "id": "025",
@@ -101,12 +98,12 @@ const categories = {
         "cat_restrict_permission":{
             "id": "026",
             "name": "Restrict permission to other operators",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_track_status":{
             "id": "027",
             "name": "Track Status",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_update_portal":{
             "id": "028",
@@ -115,7 +112,7 @@ const categories = {
         "cat_export_data":{
             "id": "029",
             "name": "Export data from Pega Application to Excel File",
-            "Premium": "true"
+            "Premium": true
         }
     },
     "sub_otp": {
@@ -126,7 +123,7 @@ const categories = {
         "cat_email_otp":{
             "id": "011.2",
             "name": "Email-OTP",
-            "Premium": "true"
+            "Premium": true
         }   
     },
     "sub_concepts": {
@@ -142,7 +139,7 @@ const categories = {
         "cat_decision":{
             "id": "030.3",
             "name": "Decision",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_integration":{
             "id": "030.4",
@@ -152,7 +149,7 @@ const categories = {
         "cat_orgranization":{
             "id": "030.5",
             "name": "Organization",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_process":{
             "id": "030.6",
@@ -166,7 +163,7 @@ const categories = {
         "cat_security":{
             "id": "030.8",
             "name": "Security",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_survey":{
             "id": "030.9",
@@ -184,14 +181,14 @@ const categories = {
         "cat_userinterface":{
             "id": "040.2",
             "name": "User Interface",
-            "Premium": "true"
+            "Premium": true
         }
     },
     "sub_data_model": {
         "cat_retrive_data":{
             "id": "030.2.1",
             "name": "Retrieve data from Datatypes",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_savables":{
             "id": "030.2.2",
@@ -202,32 +199,32 @@ const categories = {
         "cat_IFSC_CODE":{
             "id": "030.4.1",
             "name": "IFSC code Impl",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_service_connect_rest":{
             "id": "030.4.2",
             "name": "Service-Connect REST",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_service_connect_soap":{
             "id": "030.4.3",
             "name": "Service-Connect SOAP",
-            "Premium": "true"
+            "Premium": true
         }
     },
     "sub_reports": {
         "cat_deligation":{
             "id": "030.7.1",
             "name": "Delegation",
-            "Premium": "true"
+            "Premium": true
         }
     },
     "sub_technical": {
         "cat_activity":{
             "id": "04.111",
             "name": "Activity",
-            "Premium": "true",
-            "sub":"true"
+            "Premium": true,
+            "sub":true
         }
     },
     "sub_activity":{
@@ -266,7 +263,7 @@ const categories = {
         "cat_visible":{
             "id": "04.02",
             "name": "VISIBLE CONDITIONS: BY Access Groups",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_dob":{
             "id": "04.03",
@@ -279,12 +276,12 @@ const categories = {
         "cat_emailid_code":{
             "id": "04.05",
             "name": "Email ID Code",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_phone_number":{
             "id": "04.06",
             "name": "Phone Number Validation",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_name_validation":{
             "id": "04.07",
@@ -293,12 +290,12 @@ const categories = {
         "cat_card_number":{
             "id": "04.08",
             "name": "Card Number Validation",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_cvv":{
             "id": "04.09",
             "name": "CVV validation",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_pincode":{
             "id": "04.10",
@@ -307,7 +304,7 @@ const categories = {
         "cat_toget_future":{
             "id": "04.11",
             "name": "To get a future date from today",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_to_get_current":{
             "id": "04.12",
@@ -320,32 +317,32 @@ const categories = {
         "cat_mobile_number_thatstarts":{
             "id": "04.14",
             "name": "Mobile Number that starts with 6 or 7 or 8 or 9",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_age_calucations":{
             "id": "04.15",
             "name": "Age Calculations",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_notice_peroid":{
             "id": "04.16",
             "name": "Notice Period in Pega",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_split_date":{
             "id": "04.17",
             "name": "Split date from current System date",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_validating_age":{
             "id": "04.18",
             "name": "Validating the Age with Date of Birth",
-            "Premium": "true"
+            "Premium": true
         },
         "cat_registrating_number_code":{
             "id": "04.19",
             "name": "Registration number Code",
-            "Premium": "true"
+            "Premium": true
         }
     },
     "sub_ui" : {
@@ -371,62 +368,63 @@ const categories = {
 };
 
 const notes = {
-    "01" : {
+    "1" : {
         "id" : "01",
         "question" : "An international online car parts business wants customers to find parts for any vehicle easily. You are asked to implement the following requirement: Customers muse select a make, model, and year to initiate a vehicle-specific search.How do you configure the data storage in the application to implement the requirement?",
         "options" : [ "Configure a data page to store the make, model, and year vehicle data.", "Configure a connection to an external system of record that contains the make, model, and year vehicle data", "Configure a static list of the make, model, and year vehicle data.", "Configure a local data storage of the make, model, and year vehicle data."],
         "answer" : ".Configure a connection to an external system of record that contains the make, model, and year vehicle data",
         "explanation" : "coming soon"
     },
-    "02" : {
+    "2" : {
         "id" : "02",
         "question" : "You are implementing a data entry screen to include an asset ID field to track company equipment. All asset IDs are eight characters in length. The first three characters are letters followed by a five-digit number.Which validation approach restricts entries for the asset ID field to the required format?",
         "options" : [ "Validate rule", "Min/Max characters", "Text data type", "Edit Validate rule"],
         "answer" : "Edit Validate rule",
         "explanation" : "Coming Soon"
     },
-    "03" : {
+    "3" : {
         "id" : "03",
         "question" : "In which three situations can you use a data transform? (Choose Three)",
         "options" : [ "To set the destination location as the arrival location", "To create a new property after case creation", "To set the default arrival date to five days in the future", "To copy the first and last name properties into a single property value","To perform an action that allows the user to update a reservation"],
         "answer" : "A,C&D",
         "explanation" : "coming Soon"
-    }, "04" : {
+    }, 
+    "4" : {
         "id" : "04",
         "question" : "Which two of the following use cases do you implement by using one or more calculated fields? (Choose Two)",
         "options" : [ "A sales representative wants to quote the cost of an insurance policy based on selected coverage options", "An accountant wants to list the largest order for the last month for each customer account.","A project manager wants to estimate the cost of painting a banquet hall based on labor and materials required", "A certification manager wants to determine the number of exams conducted at each testing facility in the current quarter.", ],
         "answer" : "A & C",
         "explanation" : "coming Soon"
     },
-    "05" : {
+    "5" : {
         "id" : "05",
         "question" : "A requirement states: The date of birth submitted for first grade students must be at least five years before September 1 of the current year. Which three validation methods, when applied in combination, satisfy the requirement? (Choose Three)",
         "options" : [ "When rule", "Calendar control", "Date data type", "Validation rule","Edit validate rule"],
         "answer" : "B&C&D",
         "explanation" : "coming Soon"
     },
-    "06" : {
+    "6" : {
         "id" : "06",
         "question" : "A data page holds product information. The data page's Reload if older Than field is set to 15 minutes.The data page is created at 06:12.At 06:20 the user requests product information. At 06:42 the user requests product information. When is the data page reloaded?",
         "options" : [ "06:35", "06:20", "06:27", "06:42",],
         "answer" : "06:42",
         "explanation" : "coming Soon"
     },
-    "07" : {
+    "7" : {
         "id" : "07",
         "question" : " In a Human Resources (HR) application, a business architect has developed a new process for the Onboarding case type. You want to test the process and the fields to verify the UI elements collect expected results.When applied in combination, which two configurations allow you to record a set of interactions and save the test results to verify the process functionality? (Choose Two)",
         "options" : [ ".Add explicit assertions on the UI elements", "Create a unit test for the Onboarding case type", "Create a scenario test for the Onboarding case type", "Add validations on the UI elements"],
         "answer" : "A&C",
         "explanation" : "coming Soon"
     },
-    "08" : {
+    "8" : {
         "id" : "08",
         "question" : "Which two conditions do you test with a unit test? (Choose Two)",
         "options" : [ "A data page populates without any errors", "A property value is set correctly by a data transform", "An application displays user views for 20 users within three seconds.", "An application is successfully migrated to a test system."],
         "answer" : "A & B",
         "explanation" : "coming Soon"
     },
-    "09" : {
+    "9" : {
         "id" : "09",
         "question" : " Which two configuration steps do you perform, in combination, to record a unit test for automated testing? (Choose Two)",
         "options" : [ "Select a ruleset configured to store automated test cases ", "Add a test case to the Automated Testing landing page.", "Add an assertion to define an expected result", "Select a ruleset that is configured to store the results of the test."],
