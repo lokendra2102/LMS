@@ -14,6 +14,11 @@ import Activitycontent3 from './SingleBook/ActivityContent3'
 import Activitycontent4 from './SingleBook/ActivityContent4'
 import Activitycontent5 from './SingleBook/ActivityContent5'
 import Activitycontent6 from './SingleBook/ActivityContent6'
+import UIcontent1 from './SingleBook/UIcontent1'
+import UIcontent2 from './SingleBook/UIcontent2'
+import UIcontent3 from './SingleBook/UIcontent3'
+
+
 
 
 import { categories } from '../util/content'
@@ -135,6 +140,9 @@ function Main() {
             <Route path='/category/call_the_activity_by_the_another_activity' element={<Activitycontent4/>} />
             <Route path='/category/copy_the_data_from_one_data_page_to_another_data_page' element={<Activitycontent5/>} />
             <Route path='/category/update_the_stock_details_in_the_same_table_by_using_the_activity' element={<Activitycontent6/>} />
+            <Route path='/category/background_color' element={<UIcontent1/>} />
+            <Route path='/category/login_screen' element={<UIcontent2/>} />
+            <Route path='/category/repeating_dynamic_layout' element={<UIcontent3/>} />
           </Routes>
           <Footer/>
         {/* </Router> */}
