@@ -50,10 +50,10 @@ import Pagination from './Cards/Pagination'
 function Main() {
   const location = useLocation();
   const { user, paths, setPath, category, setCategories } = useContext(BookContext);
-  const [ username, setUsername ] = useState(user && user !== "null" ? typeof user === "string" ? JSON.parse(user).username : user.username : null)
+  const [ username, setUsername ] = useState((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
 
   useEffect(() => {
-    setUsername(user && user !== "null" ? typeof user === "string" ? JSON.parse(user).username : user.username : null)
+    setUsername((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
   },[user])
 
   const [w,setW] = useState(window.innerWidth)
@@ -108,7 +108,7 @@ function Main() {
               
               <Route path="cssa/:id" element={<Notes user={user} />} />
             </Route>
-            <Route path='/user/:id/favourite' element={<HomeCard width={username}/>} />
+            <Route path='/user/:id/favourite' element={<HomeCard user={user} width={username} location={location.pathname.split("/").slice(-1)}/>} />
             <Route path='/notes/mcq' element={<Pagination user={user}/>} />
             <Route path='/user/:id/cart' element={<CartHome />} />
             

@@ -25,6 +25,7 @@ const sendDbname = (db) => {
                             })
                         }
                     }).catch((e) => {
+                        console.log(e);
                         res.status(400).json({
                             "status" : "failure",
                             "error" : "Something went wrong. Kindly try again after some time"
@@ -33,10 +34,14 @@ const sendDbname = (db) => {
                 }
             });
         } else {
-            res.status(400).json({
-                "status" : "failure",
-                "error" : "Invalid auth"
-            })
+            if(req.url === "/api/login"){
+                next()
+            }else{
+                res.status(400).json({
+                    "status" : "failure",
+                    "error" : "Invalid auth"
+                })
+            }
         }
     };
 };
@@ -55,6 +60,8 @@ const getDbEnumForProductEntry = (param) => {
             return 1
         case "fav":
             return 0
+        default:
+            return 9
     }
 }
 

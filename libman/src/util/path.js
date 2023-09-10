@@ -34,19 +34,25 @@ const categoryContent = (path = "", isSub = false, categories) => {
                     "isSub" : categories[ele].hasOwnProperty("sub"),
                     "isPremium" : categories[ele].Premium
                 };
+                if(categories[ele].hasOwnProperty("Premium")){
+                    data[ele].price = 45
+                }
             }
         })
     }else if(isSub){
-        data = categories[`sub_${path}`]
-        data = Object.keys(data).map(ele => {
-            return {
-                "id" : data[ele].id, 
-                "name" : data[ele].name, 
-                "desc" : data[ele].desc,
-                "image" : data[ele].image,
-                "isSub" : data[ele].hasOwnProperty("sub"),
-                "isPremium" : data[ele].Premium
+        data = {}
+        Object.keys(categories[`sub_${path}`]).map(ele => {
+            data[ele] = {
+                "id" : categories[`sub_${path}`][ele].id, 
+                "name" : categories[`sub_${path}`][ele].name, 
+                "desc" : categories[`sub_${path}`][ele].desc,
+                "image" : categories[`sub_${path}`][ele].image,
+                "isSub" : categories[`sub_${path}`][ele].hasOwnProperty("sub"),
+                "isPremium" : categories[`sub_${path}`][ele].Premium
             };
+            if(categories[`sub_${path}`][ele].hasOwnProperty("Premium")){
+                data[ele].price = 45
+            }
         })
     }
     return data

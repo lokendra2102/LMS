@@ -392,6 +392,7 @@ ul.list-group{
     background-color: #d1d5db !important;
     width: 10px !important;
     border-radius: 1rem ;
+    height: 10px !important;
 }
 .csa_dropdown > div[aria-labelledby="basic-nav-dropdown"]::-webkit-scrollbar-thumb{
     background-color: #011627 !important;
@@ -413,6 +414,9 @@ ul.list-group{
     .navbar-collapse{
         box-shadow: none !important;
     }
+    #responsive-navbar-nav{
+        overflow: hidden;
+    }
     .header_container{
         padding: 1rem !important;
         margin: 0 !important;
@@ -420,6 +424,10 @@ ul.list-group{
     }
     .home_nav{
         width: 50%;
+    }
+    .notes_dropdown{
+        max-width: 95% !important;
+        width: 95% !important;
     }
     .searchScreen{
         display: none !important;
@@ -480,6 +488,10 @@ ul.list-group{
     /* .userName_p::before{
         right: -450%;
     } */
+    .notes_dropdown{
+        max-width: 95% !important;
+        width: 95% !important;
+    }
     .card_body .buy_btn{
         min-width: 90%;
         font-size: 0.8rem !important;
@@ -544,6 +556,10 @@ ul.list-group{
 /* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:576px) and (max-width:768px){
+    .home_nav{
+        width: 50%;
+    }
+    /* NAV END */
     .searchScreen{
         display: none !important;
     }
@@ -595,6 +611,10 @@ ul.list-group{
     /* -----------------------   CART       ------------------------------- */
 }
 @media only screen and (min-width:768px) and (max-width:992px){
+    .home_nav{
+        width: 50%;
+    }
+    /* NAV END */
     .footer_1{
         flex-direction: column;
     }

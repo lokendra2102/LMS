@@ -1,15 +1,44 @@
 import axios from 'axios'
-import React,{ useState,useEffect,createContext, useRef } from 'react'
+import React,{ useState,useEffect,createContext } from 'react'
 
 export const BookContext = createContext()
 
 export const AppContext = ({children}) => {
 
   const [data,setData] = useState("")
-  const [user, setUser] = useState(localStorage.getItem("user"));
+  var [user, setUser] = useState(localStorage.getItem("user"));
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
   const [ category, setCategories ] = useState({})
+
+  const [ boughtCourses, setBoughtCourses ] = useState(new Set())
+  const [ cartCourses, setCartCourses ] = useState(new Set())
+  const [ favCourses, setFavCourses ] = useState(new Set())
+
+  useEffect(() => {
+    if(user){
+      user = typeof user === "string" ? JSON.parse(user) : user
+      if(user.hasOwnProperty("courses")){
+        Object.keys(user.courses).map((ele) => {
+          if(user.courses[ele] === 2){
+            setBoughtCourses(course => new Set(course).add(ele.trim()));
+          }
+          else if(user.courses[ele] === 1){
+            setCartCourses(course => new Set(course).add(ele.trim()));
+          }
+          else if(user.courses[ele] === 0){
+            setFavCourses(course => new Set(course).add(ele.trim()));
+          }
+          else if(user.courses[ele] === 9){
+            if(favCourses.has(ele)){
+              favCourses.delete(ele)
+              setFavCourses(new Set(favCourses));
+            }
+          }
+        })
+      }
+    }
+  },[user])
 
   //Login
   const userSignIn = async(email, password) => {
@@ -97,12 +126,14 @@ export const AppContext = ({children}) => {
   
   //Add-Membership
   //Remove-Membership
+  
   //Cart
-
   //Buy-Course
-  const buyCourse = async(id, type) => {
+  //Get-Courses
+  //Add Favourites
+  const buyCourse = async(id=[], type="buy") => {
     let body = {};
-    body[`${id}`] = type
+    id.map((ele) => body[`${ele}`] = type)
     await axios.post("/api/add-course",body,{
       headers: {
         "Content-Type": "application/json",
@@ -110,7 +141,10 @@ export const AppContext = ({children}) => {
         "Access-Control-Allow-Credentials" : true
       }
     }).then(data => {
-      console.log(data.data);
+      if(data.status === 200){
+        setUser(data.data.user)
+        localStorage.setItem("user", JSON.stringify(data.data.user))
+      }
     }).catch(e => {
       if(e.response.status === 402){
         alert(e.response.data.message)
@@ -124,13 +158,44 @@ export const AppContext = ({children}) => {
     })
   }
 
-  //Get-Courses
+  //remove cart
+  const removeCartCourse = async(id) => {
+    let body = {
+      "key" : id
+    };
+    await axios.post("/api/remove-cart",body,{
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      }
+    }).then(data => {
+      if(data.status === 200){
+        setUser(data.data.user)
+        localStorage.setItem("user", JSON.stringify(data.data.user))
+      }
+    }).catch(e => {
+      if(e.response.status === 402){
+        alert(e.response.data.message)
+      }else if(e.response.status === 401){
+        alert(e.response.data.message)
+      }else if(e.response.status === 400){
+        alert(e.response.data.message)
+      }else{
+        alert(e.message)
+      }
+    })
+  }
 
   return (
     <BookContext.Provider value={{
       data : data,
       user : user,
       // location : location,
+
+      bought : boughtCourses,
+      fav : favCourses,
+      cart : cartCourses,
 
       paths : paths,
       category : category,
@@ -141,7 +206,8 @@ export const AppContext = ({children}) => {
       userSignup : userSignup,
       userSignIn : userSignIn,
       userSignOut : userSignOut,
-      buyCourse : buyCourse
+      buyCourse : buyCourse,
+      removeCartCourse : removeCartCourse
 
     }}>
         {children}

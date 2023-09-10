@@ -1,4 +1,4 @@
-const categories = {
+var categories = {
     "cat_enhancement": {
         "id": "001",
         "name": "Enhancement",
@@ -120,7 +120,7 @@ const categories = {
             "id": "011.1",
             "name": "Mobile-OTP"
         },
-        "cat_email_otp":{
+        "cat_otp":{
             "id": "011.2",
             "name": "Email-OTP",
             "Premium": true
@@ -137,7 +137,7 @@ const categories = {
             "sub" : true
         },
         "cat_decision":{
-            "id": "030.3",
+            "id": "030_3",
             "name": "Decision",
             "Premium": true
         },
@@ -1260,6 +1260,12 @@ const cssaSpecificConcepts = ["Service connect-REST", "Service connect-SOAP"]
 const csaConcepts = [...commonConcepts, ...csaSpecificConcepts]
 const cssaConcepts = [...commonConcepts, ...cssaSpecificConcepts]
 
+const categoryMapping = {
+    "1" : "cat_enhancement",
+    "011" : "sub_otp",
+    "011_2" : "cat_otp"
+}
+
 module.exports = {
-    categories, notes, csaConcepts, cssaConcepts
+    categories, notes, csaConcepts, cssaConcepts, categoryMapping
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Button,
     Container,
@@ -13,15 +13,15 @@ import {IoLogoPaypal} from  'react-icons/io5'
 import {RiMastercardFill} from 'react-icons/ri'
 import {SiPaytm} from 'react-icons/si'
 
-function CheckoutModal({handleShow,handleClose, show, data, buyCourse}) {
+function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, user, isFromCart, totalPrice, convFee}) {
     const [ cardName, setCardName ] = useState('');
     const [ cardNumber, setCardNumber ] = useState('');
     const [ cardExpiry, setCardExpiry ] = useState('');
     const [ cardCvv, setCardCvv ] = useState('');
 
     const handleCheckout = () => {
-        
-        // buyCourse(id, option)
+        let idArr = data.map(ele => ele.id )
+        buyCourse(idArr)
     }
 
     return (
@@ -129,7 +129,7 @@ function CheckoutModal({handleShow,handleClose, show, data, buyCourse}) {
                                                     Total Price
                                                 </Card.Text>
                                                 <Card.Text className='mb-0'>
-                                                    $ 540.00
+                                                    {"\u20B9"} {totalPrice}
                                                 </Card.Text>
                                             </Container>
                                             <Container fluid className='p-0 pb-1 d-flex justify-content-between text-decoration-line-through'>
@@ -137,7 +137,7 @@ function CheckoutModal({handleShow,handleClose, show, data, buyCourse}) {
                                                     GST
                                                 </Card.Text>
                                                 <Card.Text className='mb-0'>
-                                                    $ 40.00
+                                                    {"\u20B9"} {convFee}
                                                 </Card.Text>
                                             </Container>
                                             <Container fluid className='p-0 pb-1 d-flex justify-content-between'>
@@ -145,7 +145,7 @@ function CheckoutModal({handleShow,handleClose, show, data, buyCourse}) {
                                                     Sub Total
                                                 </Card.Text>
                                                 <Card.Text className='mb-0'>
-                                                    $ 580.00
+                                                    {"\u20B9"} {parseFloat(totalPrice) + parseFloat(convFee)}
                                                 </Card.Text>
                                             </Container>
                                         </Card.Body>
@@ -159,7 +159,7 @@ function CheckoutModal({handleShow,handleClose, show, data, buyCourse}) {
                                                 Estimated Total
                                             </Card.Text>
                                             <Card.Text className='mb-0'>
-                                                $ 580.00
+                                                {"\u20B9"} {parseFloat(totalPrice) + parseFloat(convFee)}
                                             </Card.Text>
                                             </Container>
                                             <Button

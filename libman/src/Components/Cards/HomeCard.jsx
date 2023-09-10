@@ -12,8 +12,8 @@ import Cards from './Card'
 import { BookContext } from '../../Context/App.context'
 
 
-function HomeCard({width}) {
-    const { paths, category, user, buyCourse } = useContext(BookContext)
+function HomeCard({width, location}) {
+    const { paths, category, user, buyCourse, bought, cart, fav, removeCartCourse } = useContext(BookContext)
 
     return (
         <Container fluid className='mt-5'>
@@ -55,8 +55,16 @@ function HomeCard({width}) {
             <Container fluid className='mt-3 px-4'>
                 <Row>
                     {Object.keys(category).map((ele,index) =>{
-                        return <Cards data={category[ele]} cat={category} key={index} path={paths} user={user} buyCourse={buyCourse} />
-                    })}
+                        return(<>
+                            <Cards data={category[ele]} 
+                                cat={category} path={paths} 
+                                user={user} buyCourse={buyCourse}
+                                bought = {bought} cart = {cart}
+                                fav = {fav} removeCartCourse = {removeCartCourse}
+                            /> 
+                        </>)
+                    }
+                    )}
                 </Row>
             </Container>
         </Container>
