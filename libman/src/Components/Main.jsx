@@ -45,11 +45,12 @@ import Validation17 from './Notes/Pages/Validation17'
 import Validation18 from './Notes/Pages/Validation18'
 import Validation19 from './Notes/Pages/Validation19'
 import Pagination from './Cards/Pagination'
+import ToastComponent from './Modals/Toast'
 
 
 function Main() {
   const location = useLocation();
-  const { user, paths, setPath, category, setCategories } = useContext(BookContext);
+  const { user, paths, setPath, category, setCategories, toast, setToast, message } = useContext(BookContext);
   const [ username, setUsername ] = useState((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
 
   useEffect(() => {
@@ -145,6 +146,7 @@ function Main() {
             <Route path='/category/repeating_dynamic_layout' element={<UIcontent3/>} />
           </Routes>
           <Footer/>
+          <ToastComponent toast={toast} setToast={setToast} message={message} />
         {/* </Router> */}
       </>
   )

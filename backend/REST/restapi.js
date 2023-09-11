@@ -43,7 +43,7 @@ const buyProduct = (req,res) => {
 const removeCartItem = (req,res) => {
     var body = req.body
     var ref = aRef(db,'/users/' + req.user.id + '/courses/' + body.key)
-    let courses = Object.keys(req.user.courses)
+    let courses = req.user.courses && Object.keys(req.user.courses)
     if(courses && courses.includes(body.key) && req.user.courses[body.key] === 1){
         remove(ref).then((data) => {
             delete req.user.courses[data.key]
@@ -111,19 +111,20 @@ const login = (req,res) => {
                     res.status(201).json({
                         "status" : "success",
                         "token" : token,
-                        "user" : userObj
+                        "user" : userObj,
+                        "message" : "User logged-in successfully."
                     })
                 }else{
                     res.status(401).json({
                         "status" : "failure",
-                        "token" : "Password mismatch. Kindly check your credentials."
+                        "message" : "Password mismatch. Kindly check your credentials."
                     })
                 }
             } catch (error) {
                 console.log(error);
                 res.status(400).json({
                     "status" : "failure",
-                    "error" : "Something went wrong. Kindly try again after some time"
+                    "message" : "Something went wrong. Kindly try again after some time"
                 })
             }
         }
@@ -157,10 +158,10 @@ const signup = (req,res) => {
                         res.status(200).json({
                             "status" : "success",
                             "token" : token,
-                            "user" : new userConstructor(username, email, null, university, ispremium, null)
+                            "user" : new userConstructor(username, email, null, university, ispremium, null),
+                            "message" : "User signed-up successfully"
                         })
                     }).catch((e) => {
-                        console.log(e);
                         res.status(400).json({
                             "status" : "failed",
                             "message" : "Unknown error occured. Kindly try again after sometime",
@@ -176,7 +177,7 @@ const signup = (req,res) => {
             } catch (error) {
                 res.status(400).json({
                     "status" : "failure",
-                    "error" : "Something went wrong. Kindly try again after some time",
+                    "message" : "Something went wrong. Kindly try again after some time",
                     "stacktrace" : error
                 })
             }

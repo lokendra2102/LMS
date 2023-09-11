@@ -40,11 +40,11 @@ const firebaseapp = initializeApp(firebaseConfig);
 const PORT = 4000
 const db = getDatabase(firebaseapp)
 
-app.use(express.static(path.join(__dirname, '../libman/build')));
+// app.use(express.static(path.join(__dirname, '../libman/build')));
 
-app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+// app.get("/*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "index.html"));
+// });
 
 app.post("/api/signup", async(req,res) => signup(req,res))
 

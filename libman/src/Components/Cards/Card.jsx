@@ -17,7 +17,7 @@ import Login from '../Modals/Login'
 import { useNavigate } from 'react-router-dom'
 import CheckoutModal from '../Checkout/CheckoutModal'
 
-function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse}) {
+function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse, loginModal}) {
     const navigate = useNavigate()
     //Login Modal
     const [show, setShow] = useState(false);
@@ -41,14 +41,7 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
         }
     }, [data])
 
-    const cardRef = useRef(0);
-
-    useEffect(() => {
-        if(show){
-            setShow(false)
-            setCheck(false)
-        }
-    },[user])
+    const cardRef = React.createRef(0);
 
     const handleProject = (e) => {
         e.preventDefault()
@@ -90,6 +83,7 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
     }
 
     const handleFavourite = (e, category) => {
+        console.log(category);
         if (validateUser()){
             handleShow()
         }else{
@@ -118,14 +112,14 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
 
     return (
         <>
-            <Col ref={cardRef} key={data.id} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className={`mb-3 card-index-${data.id}`} onClick={handleProject}>
+            <Col key={data.id} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className={`mb-3 card-index-${data.id}`} onClick={handleProject}>
                 <Card className='w-100 h-100 border-0 card_parent p-0 shadow'>
                     <Container fluid className='card_img_container'>
                         <Card.Img variant="top" className='card_img' src={data.image ? data.image : im} />
                         {
                             !bought.has(`${data.id}`) ?
                                 (data.isPremium && !data.isSub) && 
-                                <Button className='heart_btn shadow btn-light' onClick={handleFavourite}>
+                                <Button className='heart_btn shadow btn-light'>
                                     <IconContext.Provider value = {{className:"premium_icon"}}>
                                         <FaCrown />
                                     </IconContext.Provider>
@@ -138,7 +132,7 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                             <Container fluid className='d-flex justify-content-between align-items-center favourite_cont'>
                                 <Card.Title className='col-9 fs-5 book_name text-capitalize' data-name={data.name}>{data.name}</Card.Title>
                                 <Container fluid className='col-3 d-flex justify-content-end align-items-end heart_btn_cont'>
-                                    <Button variant="none" onClick={handleProject} className='p-0 fs-5 heart_btn1 shadow-none'>
+                                    <Button variant="none" className='p-0 fs-5 heart_btn1 shadow-none'>
                                         <IconContext.Provider value = {{className:`heart_icon`}}>
                                             {
                                                 fav.has(data.id.toString()) ? 
@@ -183,12 +177,12 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                                     !bought.has(`${data.id}`) ?
                                         (data.isPremium && !data.isSub) && 
                                         <>
-                                            <Button variant="light" onClick={handleProject} className='cart_btn shadow-none'>
+                                            <Button variant="light" className='cart_btn shadow-none'>
                                                 <IconContext.Provider value = {{className:"card_icon"}}>
                                                     <BsCartPlus />
                                                 </IconContext.Provider>
                                             </Button>
-                                            <Button variant="dark" onClick={handleProject} className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
+                                            <Button variant="dark" className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
                                                 {/* <IconContext.Provider value = {{className:"card_icon1"}}>
                                                     <TbCards /> 
                                                 </IconContext.Provider> */}
@@ -202,7 +196,9 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                     </Card.Body> 
                 </Card>
             </Col>
-            <Login show={show} handleShow={handleShow} handleClose={handleClose}/>
+            <Login show={show} handleShow={handleShow} handleClose={handleClose}
+                loginModal={loginModal} setShow={setShow}
+            />
             <CheckoutModal show={check} setShow={setCheck} handleShow={handleShowCheck} 
                 handleClose={handleCloseCheck} data={[checkOutData]} 
                 buyCourse={buyCourse} user={user}

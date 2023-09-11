@@ -1,4 +1,4 @@
-import React,{ useContext, useState, useRef } from 'react'
+import React,{ useContext, useState, useRef, useEffect } from 'react'
 import {
     Button,
     Container,
@@ -10,7 +10,7 @@ import {
 
 import { BookContext } from '../../Context/App.context';
 
-function Login({handleClose, show}) {
+function Login({handleClose, show, loginModal, setShow}) {
     const { userSignup, userSignIn } = useContext(BookContext)
 
     const [key, setKey] = useState('Login');
@@ -64,6 +64,12 @@ function Login({handleClose, show}) {
             }
         }
     }
+
+    useEffect(() => {
+        if(loginModal){
+            setShow(false)
+        }
+    },[loginModal])
 
     return (
         <>

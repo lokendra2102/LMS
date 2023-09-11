@@ -18,7 +18,7 @@ import { NavLink } from 'react-router-dom'
 import Login from '../Modals/Login'
 
 
-function NavHead({width, user}) {
+function NavHead({width, user, userSignOut}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -84,7 +84,8 @@ function NavHead({width, user}) {
                                                 Favourites
                                             </NavLink>
                                         </Dropdown.Item>
-                                        <Dropdown.Item as={'p'} className='mb-0 mt-2 px-3 d-flex justify-content-start align-items-center text-center text-uppercase w-100 logout_btn'>
+                                        <Dropdown.Item as={'p'} onClick={userSignOut}
+                                            className='mb-0 mt-2 px-3 d-flex justify-content-start align-items-center text-center text-uppercase w-100 logout_btn'>
                                             <IconContext.Provider value = {{className:"log_out_icon me-2 my-auto"}}>
                                                 <MdLogout /> 
                                             </IconContext.Provider>

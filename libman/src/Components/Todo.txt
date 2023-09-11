@@ -8,8 +8,9 @@ TO-DO:
 		-> Add pricing to all the courses with premium true
 
 		-> Integrate payment/UPI number for application. ************
-		-> Hosting. *****************
 
 	Completed:
 		-> Add Favourites, Cart, Bought Features in backend ***** {fav:0, cart:1, bought:2, !fav:9}
 		-> Add MCQ Pagination ***
+		-> Hosting. ------ (Backend Pending)
+		-> Added Toasts for Error & Req events for API requests.
