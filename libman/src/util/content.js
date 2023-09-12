@@ -38,7 +38,7 @@ var categories = {
         "cat_qr":{
             "id": "013",
             "name": "QR-code Generation",
-            "Premium": true
+            
         },
         "cat_chatbot":{
             "id": "014",
@@ -1263,8 +1263,10 @@ const cssaConcepts = [...commonConcepts, ...cssaSpecificConcepts]
 const categoryMapping = {
     "1" : "cat_enhancement",
     "011" : "sub_otp",
-    "011_2" : "cat_otp"
+    "011_2" : "cat_otp",
+    
 }
+
 
 module.exports = {
     categories, notes, csaConcepts, cssaConcepts, categoryMapping

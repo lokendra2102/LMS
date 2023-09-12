@@ -17,6 +17,10 @@ import Activitycontent6 from './SingleBook/ActivityContent6'
 import UIcontent1 from './SingleBook/UIcontent1'
 import UIcontent2 from './SingleBook/UIcontent2'
 import UIcontent3 from './SingleBook/UIcontent3'
+import Chatbot from './SingleBook/Chatbot'
+import Otp from './SingleBook/Otp'
+import QRcode from './SingleBook/QRcode'
+import Realtimemail from './SingleBook/Realtimemail'
 
 
 
@@ -144,6 +148,10 @@ function Main() {
             <Route path='/category/background_color' element={<UIcontent1/>} />
             <Route path='/category/login_screen' element={<UIcontent2/>} />
             <Route path='/category/repeating_dynamic_layout' element={<UIcontent3/>} />
+            <Route path='/category/realtime_email' element={<Realtimemail/>} />
+            <Route path='/category/qr-code_generation' element={<QRcode/>} />
+            <Route path='/category/chatbot' element={<Chatbot/>} />
+            
           </Routes>
           <Footer/>
           <ToastComponent toast={toast} setToast={setToast} message={message} />
