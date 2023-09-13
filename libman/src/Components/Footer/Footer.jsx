@@ -5,10 +5,10 @@ import { GrNext } from 'react-icons/gr'
 import { BsTwitter,BsFacebook,BsLinkedin,BsGithub } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
 
-function Footer() {
+function Footer({path}) {
   return (
     <Container fluid className='footer_container py-3'>
-      <Row className='px-5 mt-3 footer_1'>
+      <Row className={path.includes("about") ? "d-none" : 'px-5 mt-3 footer_1' }>
         <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} className='product_updates py-5 px-4 rounded-2'>
           <p className='fs-4 fw-normal product_header'>Sign Up to Receive Product Updates and More</p>
           <Form>

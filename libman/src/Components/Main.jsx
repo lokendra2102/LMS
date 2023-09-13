@@ -50,6 +50,7 @@ import Validation18 from './Notes/Pages/Validation18'
 import Validation19 from './Notes/Pages/Validation19'
 import Pagination from './Cards/Pagination'
 import ToastComponent from './Modals/Toast'
+import About from './About/About'
 
 
 function Main() {
@@ -104,8 +105,8 @@ function Main() {
           <Header width={username}/>
           <Routes>
             <Route index path='/' element={<HomeCard width={username}/>} />
-            <Route path='/about' element={<HomeCard width={username}/>} />
             <Route path='/contact' element={<HomeCard width={username}/>} />
+            <Route path='/about' element={<About paths={paths}/>} />
             <Route path='/mock-drives' element={<HomeCard width={username}/>} />
             <Route path="notes">
               {/* <Route path="csa/:id" element={<Notes user={user} />} /> */}
@@ -153,7 +154,7 @@ function Main() {
             <Route path='/category/chatbot' element={<Chatbot/>} />
             
           </Routes>
-          <Footer/>
+          <Footer path={location.pathname}/>
           <ToastComponent toast={toast} setToast={setToast} message={message} />
         {/* </Router> */}
       </>

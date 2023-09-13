@@ -5,7 +5,7 @@ const path = (pathname = "") => {
             path = "Mock Drives";
             break;
         case "about":
-            path = "About";
+            path = "Who we are";
             break;
         case "contact":
             path = "Contact";

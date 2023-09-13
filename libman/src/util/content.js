@@ -1267,7 +1267,45 @@ const categoryMapping = {
     
 }
 
+const devDetails = {
+    "rajeev" : {
+        "name" : "Sami Venkata Sai Rajeev",
+        "tag" : "Certified senior system architect",
+        "desc" : "Sami venkata Sai Rajeev is an(Certified senior system architect ) and an graduate from chennai institute of technology .He worked on all the advanced concepts to provide the information in this website,and  worked on many pega usecases  to configure real time implementations. Rajeev has been part of winners in pega community hackathon 2022."
+    },
+    "aslam" : {
+        "name" : "Dadela Shaik Aslam",
+        "tag" : "Certified senior system architect",
+        "desc" : "Dadela Shaik Aslam is an (Certified senior system architect ) and a graduate from Chennai institute of technology.He involved in collecting  and analyzing  all the materials regarding entire concepts  of CSA and CSSA and  also prepared a mocktests and quiz’s  to the people  to gain more knowledge and up skill themselves."
+    },
+    "loki" : {
+        "name" : "Lokendra S",
+        "tag" : "Full Stack Web & Cross-Platform App Developer - Cloud Practitioner",
+        "desc" : "Lokendra S. -> Will fill later",
+        "footerTag" : "Will add later"
+    }
+}
+
+const suppDetails = {
+    "navya" : {
+        "name" : "Sarvepalli Navya",
+        "tag" : "Certified senior system architect",
+        "desc" : "Sarvepalli Navya  is an CSSA and a graduate from Chennai  institute of Technology. She has been part of winners in pega community hackathon 2022."
+    },
+    "sireesha" : {
+        "name" : "Chappidi Shireesha",
+        "tag" : "Certified senior system architect",
+        "desc" : "Chappidi Shireesha is an CSSA and a graduate from Chennai  institute of Technology. She has been part of winners in pega community hackathon 2022."
+    },
+    "dhana" : {
+        "name" : "Eragamreddy Dhanasekhar Reddy",
+        "tag" : "Certified senior system architect",
+        "desc" : "Eragamreddy Dhanasekhar Reddy is an CSSA and a graduate from Chennai  institute of Technology. He has been part of winners in pega community hackathon 2022."
+    },
+}
 
 module.exports = {
-    categories, notes, csaConcepts, cssaConcepts, categoryMapping
+    categories, notes, 
+    csaConcepts, cssaConcepts, 
+    categoryMapping, devDetails, suppDetails
 }

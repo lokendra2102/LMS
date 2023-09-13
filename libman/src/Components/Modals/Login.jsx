@@ -65,12 +65,6 @@ function Login({handleClose, show, loginModal, setShow}) {
         }
     }
 
-    useEffect(() => {
-        if(loginModal){
-            setShow(false)
-        }
-    },[loginModal])
-
     return (
         <>
             <Modal show={show} onHide={handleClose} 

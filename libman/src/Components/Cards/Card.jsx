@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Container,
     Button,
@@ -23,6 +23,12 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
+    // useEffect(() => {
+    //     if(loginModal){
+    //         handleClose();
+    //     }
+    // },[loginModal])
 
     //CheckoutModal
     const [check, setCheck] = useState(false);

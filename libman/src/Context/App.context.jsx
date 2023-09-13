@@ -9,7 +9,7 @@ export const AppContext = ({children}) => {
   const proxyUrl = '/';
 
   const [data,setData] = useState("")
-  var [user, setUser] = useState(localStorage.getItem("user"));
+  var [user, setUser] = useState(localStorage.getItem("user") ? localStorage.getItem("user") : null);
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
   const [ category, setCategories ] = useState({})
@@ -54,6 +54,7 @@ export const AppContext = ({children}) => {
 
   //Login
   const userSignIn = async(email, password) => {
+    setLoginModal(false)
     const body = {
       email : email,
       password : password
@@ -83,7 +84,7 @@ export const AppContext = ({children}) => {
         setToast(true)
         setLoginModal(true)
         setUser(data.user)
-        localStorage.setItem("user", data.user)
+        localStorage.setItem("user", JSON.stringify(data.user))
       }
     }).catch(e => {
       setMessage({
@@ -128,7 +129,7 @@ export const AppContext = ({children}) => {
         })
         setToast(true)
         setUser(data.user)
-        localStorage.setItem("user", data.user)
+        localStorage.setItem("user", JSON.stringify(data.user))
       }
     }).catch(e => {
       setMessage({
@@ -248,7 +249,11 @@ export const AppContext = ({children}) => {
         localStorage.setItem("user", JSON.stringify(data.data.user))
       }
     }).catch(e => {
-      console.log(e.status);
+      setMessage({
+        "variant" : "danger",
+        "message" : "Internal server error. Kindly try again after some time."
+      })
+      setToast(true)
     })
   }
 

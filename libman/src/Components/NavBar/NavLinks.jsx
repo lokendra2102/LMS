@@ -5,11 +5,14 @@ import {
     Container,
     NavDropdown,
     Dropdown,
-    DropdownButton
+    DropdownButton,
+    Button
 } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 
 import { csaConcepts, cssaConcepts } from '../../util/content'
+import { FaCrown } from 'react-icons/fa'
+import { IconContext } from 'react-icons'
 
 function NavLinks() {
 
@@ -55,6 +58,16 @@ function NavLinks() {
                         <NavLink className='text-uppercase home_nav px-3 nav-link' to="/user/:id/favourite">favourites</NavLink>
                         <NavLink className='text-uppercase home_nav px-3 nav-link' to="/notes/mcq">MCQ</NavLink>
                         {/* <NavLink className='text-uppercase home_nav px-3 nav-link' to="/user/:id/cart">cart</NavLink> */}
+
+                    </Nav>
+                    <Nav className=''>
+                        <NavLink className='me-5 pb-0 border-0 rounded-2 text-decoration-none' to='/user/:id/cart'>
+                            <Button className='btn-warning d-flex justify-content-center align-items-center text-light'>
+                                <IconContext.Provider value = {{className:"me-2"}}>
+                                    <FaCrown />
+                                </IconContext.Provider> Buy Premium
+                            </Button>
+                        </NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
