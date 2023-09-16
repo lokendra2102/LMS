@@ -16,9 +16,10 @@ import { MdLogout } from 'react-icons/md'
 import { BiEditAlt } from 'react-icons/bi'
 import { NavLink } from 'react-router-dom'
 import Login from '../Modals/Login'
+import { FaCrown } from 'react-icons/fa'
 
 
-function NavHead({width, user, userSignOut}) {
+function NavHead({width, user, userSignOut, winWidth}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -30,7 +31,7 @@ function NavHead({width, user, userSignOut}) {
                 <Col xs={6} sm={6} md={2} lg={3}>
                     <h1 className='fs-1 fw-bold app_name mb-0'>PEGA#</h1>
                 </Col>
-                <Col xs={6} sm={6} md={8} lg={6} className="searchScreen d-flex justify-content-center align-items-center">
+                <Col xs={6} sm={6} md={7} lg={6} className="searchScreen d-flex justify-content-center align-items-center">
                     <InputGroup className="w-75 searchScreen_input">
                         <InputGroup.Text id="search_icon bg-transparent"><FiSearch/></InputGroup.Text>
                         <FormControl
@@ -43,16 +44,20 @@ function NavHead({width, user, userSignOut}) {
                         <InputGroup.Text id="book_name">Search</InputGroup.Text>
                     </InputGroup>
                 </Col>
-                <Col  xs={6} sm={6} md={2} lg={3} className="d-flex justify-content-center align-items-center">
+                <Col  xs={6} sm={6} md={3} lg={3} className="d-flex justify-content-center align-items-center">
                     {(user && user !== "null") ? 
                         <Container fluid  className='d-flex justify-content-end align-items-end'>
-                            <Nav>
-                                <NavLink className='fs-4 nav-link nav-link-drop text-dark pe-3 pb-0' to='/user/:id/cart'>
-                                    <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
-                                        <FiShoppingCart /> 
-                                    </IconContext.Provider>
-                                </NavLink>
-                            </Nav>
+                            {user.ispremium ? 
+                                <Nav className=''>
+                                    <NavLink className='me-2 pb-0 border-0 rounded-2 text-decoration-none' to='/user/:id/cart'>
+                                        <Button className='btn-warning d-flex justify-content-center align-items-center text-light'>
+                                            <IconContext.Provider value = {{className:winWidth > "1350" ? "fs-4" : "fs-4"}}>
+                                                <FaCrown />
+                                            </IconContext.Provider> 
+                                        </Button>
+                                    </NavLink>
+                                </Nav>
+                            : ''}
                             <Nav>
                                 <Dropdown
                                     drop='bottom'

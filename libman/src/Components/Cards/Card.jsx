@@ -54,18 +54,22 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
         var cardIndex = document.querySelector(`.card-index-${data.id}`);
         var category = (data.name.toLowerCase());
         category = category.includes(" ") ? category.replaceAll(" ","_") : category;
-        if(cardIndex.querySelector('.cart_btn') && cardIndex.querySelector('.cart_btn').contains(e.target)){
-            handleCart(e, category)
-        }else if((cardIndex.querySelector('.buy_btn') && cardIndex.querySelector('.buy_btn').contains(e.target)) || (cardIndex.querySelector('.heart_btn') && cardIndex.querySelector('.heart_btn').contains(e.target))){
-            handleBuyNow(e, category)
-        }else if(cardIndex.querySelector('.heart_btn_cont') && cardIndex.querySelector('.heart_btn_cont').contains(e.target)){
-            handleFavourite(e, category)
+        if(user && user.ispremium === false){
+            if(cardIndex.querySelector('.cart_btn') && cardIndex.querySelector('.cart_btn').contains(e.target)){
+                handleCart(e, category)
+            }else if((cardIndex.querySelector('.buy_btn') && cardIndex.querySelector('.buy_btn').contains(e.target)) || (cardIndex.querySelector('.heart_btn') && cardIndex.querySelector('.heart_btn').contains(e.target))){
+                handleBuyNow(e, category)
+            }else if(cardIndex.querySelector('.heart_btn_cont') && cardIndex.querySelector('.heart_btn_cont').contains(e.target)){
+                handleFavourite(e, category)
+            }
         }else{
             if(data.isSub){
                 navigate(`/category?category=${category}`)
             }else{
-                if(data.isPremium){
-                    handleBuyNow(e, category);
+                if(user && user.ispremium === false){
+                    if(data.isPremium){
+                        handleBuyNow(e, category);
+                    }
                 }else{
                     navigate(`/category/${category}`)
                 }
@@ -179,7 +183,7 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                         </Card.Text>
                         {
                             <Container fluid className='d-flex gap-3 justify-content-center align-items-stretch'>
-                                {
+                                {   user && user.ispremium ? <></> :
                                     !bought.has(`${data.id}`) ?
                                         (data.isPremium && !data.isSub) && 
                                         <>
@@ -196,6 +200,7 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                                             </Button>
                                         </>
                                     : <></>
+                                    
                                 }
                             </Container>
                         }

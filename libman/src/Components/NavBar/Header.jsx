@@ -4,12 +4,12 @@ import NavHead from './NavHead'
 import NavLinks from './NavLinks'
 import { BookContext } from '../../Context/App.context'
 
-function Header({width}) {
+function Header({width, winWidth, updateMembership}) {
   const { user, userSignOut } = useContext(BookContext)
   return (
     <>
-        <NavHead width={width} user={user} userSignOut={userSignOut}/>
-        <NavLinks user={user}/>
+        <NavHead width={width} user={user} userSignOut={userSignOut} winWidth={winWidth} updateMembership={updateMembership} />
+        <NavLinks user={user} updateMembership={updateMembership}/>
         {/* <AlphaNavLinks/> */}
     </>
   )

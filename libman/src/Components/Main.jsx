@@ -55,7 +55,7 @@ import About from './About/About'
 
 function Main() {
   const location = useLocation();
-  const { user, paths, setPath, category, setCategories, toast, setToast, message } = useContext(BookContext);
+  const { user, paths, setPath, category, setCategories, toast, setToast, message, updateMembership } = useContext(BookContext);
   const [ username, setUsername ] = useState((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
 
   useEffect(() => {
@@ -102,10 +102,10 @@ function Main() {
   return (
       <>
         {/* <Router> */}
-          <Header width={username}/>
+          <Header width={username} winWidth={w} updateMembership={updateMembership}/>
           <Routes>
             <Route index path='/' element={<HomeCard width={username}/>} />
-            <Route path='/contact' element={<HomeCard width={username}/>} />
+            {/* <Route path='/contact' element={<HomeCard width={username}/>} /> */}
             <Route path='/about' element={<About paths={paths}/>} />
             <Route path='/mock-drives' element={<HomeCard width={username}/>} />
             <Route path="notes">

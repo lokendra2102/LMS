@@ -1,15 +1,19 @@
-import axios from 'axios'
 import React,{ useState,useEffect,createContext } from 'react'
+import CryptoJS from 'crypto-js';
 
 export const BookContext = createContext()
 
 export const AppContext = ({children}) => {
 
+  const SECRET_KEY = 'mysecretkey'; 
+  const encryptData = (data) => CryptoJS.AES.encrypt(data, SECRET_KEY).toString();
+  const decryptData = (data) => CryptoJS.AES.decrypt(data, SECRET_KEY).toString(CryptoJS.enc.Utf8);
+  
   const abortController = new AbortController();
   const proxyUrl = '/';
 
   const [data,setData] = useState("")
-  var [user, setUser] = useState(localStorage.getItem("user") ? localStorage.getItem("user") : null);
+  var [user, setUser] = useState(localStorage.getItem("user") && decryptData(localStorage.getItem("user").toString()) !== "null" && localStorage.getItem("user") !== "null" ? JSON.parse(decryptData(localStorage.getItem("user").toString())) : null);
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
   const [ category, setCategories ] = useState({})
@@ -28,7 +32,7 @@ export const AppContext = ({children}) => {
 
   useEffect(() => {
     if(user){
-      user = typeof user === "string" ? JSON.parse(user) : user
+      user = typeof user === "string" ? JSON.parse(decryptData(user)) : user
       if(user.hasOwnProperty("courses")){
         Object.keys(user.courses).map((ele) => {
           if(user.courses[ele] === 2){
@@ -84,9 +88,10 @@ export const AppContext = ({children}) => {
         setToast(true)
         setLoginModal(true)
         setUser(data.user)
-        localStorage.setItem("user", JSON.stringify(data.user))
+        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
+      console.log(e);
       setMessage({
         "variant" : "danger",
         "message" : "Internal server error. Kindly try again after some time."
@@ -129,7 +134,7 @@ export const AppContext = ({children}) => {
         })
         setToast(true)
         setUser(data.user)
-        localStorage.setItem("user", JSON.stringify(data.user))
+        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
       setMessage({
@@ -178,6 +183,45 @@ export const AppContext = ({children}) => {
   }
   
   //Add-Membership
+  const updateMembership = async(ispremium = false) => {
+    const body = {
+      "ispremium" : ispremium
+    }
+    await fetch(`${proxyUrl}api/update-memebership`,{
+      method : "PUT",
+      body : JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      },
+      signal : abortController.signal
+    }).then(res => res.json())
+    .then(data => {
+      if(data.status.toString().startsWith("40")){
+        setMessage({
+          "variant" : "danger",
+          "message" : data.message
+        })
+        setToast(true)
+      }else{
+        setMessage({
+          "variant" : "dark",
+          "message" : data.message
+        })
+        setToast(true)
+        setUser(data.user)
+        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
+      }
+    }).catch(e => {
+      setMessage({
+        "variant" : "danger",
+        "message" : "Internal server error. Kindly try again after some time."
+      })
+      setToast(true)
+    })
+  }
+
   //Remove-Membership
   
   //Cart
@@ -206,7 +250,7 @@ export const AppContext = ({children}) => {
         setToast(true)
       }else{
         setUser(data.user)
-        localStorage.setItem("user", JSON.stringify(data.user))
+        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
         setMessage({
           "variant" : "dark",
           "message" : data.message
@@ -246,7 +290,7 @@ export const AppContext = ({children}) => {
         setToast(true)
       }else{
         setUser(data.user)
-        localStorage.setItem("user", JSON.stringify(data.data.user))
+        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
       setMessage({
@@ -288,7 +332,8 @@ export const AppContext = ({children}) => {
       userSignIn : userSignIn,
       userSignOut : userSignOut,
       buyCourse : buyCourse,
-      removeCartCourse : removeCartCourse
+      removeCartCourse : removeCartCourse,
+      updateMembership : updateMembership
 
     }}>
         {children}

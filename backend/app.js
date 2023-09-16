@@ -68,7 +68,8 @@ app.put("/api/update-memebership", sendDbname(db), (req,res) => {
             update(ref, {"ispremium" : ispremium}).then((data) => {
                 res.status(200).json({
                     "status" : "success",
-                    "message" : "Premium membership added"
+                    "message" : "Premium membership added",
+                    "user" : {...user,  "ispremium" : ispremium }
                 })
             }).catch(e => {
                 res.status(400).json({
