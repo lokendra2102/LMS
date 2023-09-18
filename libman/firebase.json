@@ -3,6 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
+    "site" : "pegahash",
     "public": "public",
     "ignore": [
       "firebase.json",

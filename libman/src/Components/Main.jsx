@@ -67,7 +67,7 @@ function Main() {
   useEffect(() => {
     function handleResize() {
       setW(window.innerWidth)
-      if (w < 451){
+      if (w < 451 && username && username !== "null"){
         setUsername(username[0])
       }else{
         setUsername(username)

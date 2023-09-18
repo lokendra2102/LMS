@@ -1,44 +1,35 @@
 import React from 'react'
 import HomeCardHeader from '../Modals/HomeCardHeader'
 import CarouselUtil from './Carousel'
-import { Col, Container, Form, Row, Button,Nav } from 'react-bootstrap'
+import { Col, Container, Form, Row, Button } from 'react-bootstrap'
 import { IconContext } from 'react-icons'
 import { GrNext } from 'react-icons/gr'
-import { BsTwitter,BsFacebook,BsLinkedin,BsGithub } from 'react-icons/bs'
-import { NavLink } from 'react-router-dom'
 
 function About({paths}) {
   return (
     <>
-        <Container fluid className='mt-5'>
+        <Container fluid className='mt-5 aboutCheck'>
             <HomeCardHeader paths={paths} isAbout={true} />
-            <Container fluid className="py-4 px-3">
-                <p className='mb-0 fs-5'>
-                    <strong className='text-uppercase'>pega#</strong> is a one-stop destination for pega learners.This website includes all the pega basics , 
-                    advanced and enchanced concepts the people will get all the relevant information regarding pega.
-                    It is very helpful for the beginners to learn and  work on pega.
-                    In this website creation the people involved who are  working in a top mnc companies as a pega developers 
-                    and also has been part of <strong className='text-uppercase'>winners</strong> in <strong className='text-capitalize'>pega community hackathon 2022</strong>.
-                </p>
-                <Container fluid className='px-5 mt-5 mb-3 py-4 carouselAbout'>
+            <Container fluid className="carouselContainer">
+                <Container fluid className='px-5 py-4 carouselAbout'>
                     <p className='mb-3 text-capitalize text-center fs-3 fw-bold text-decoration-underline'>our team</p>
                     <CarouselUtil />
                 </Container>
             </Container>
-            <Container fluid className='py-4 px-3 mb-4'>
-                <Container fluid className='px-5 py-4 carouselAbout'>
+            <Container fluid className='carouselContact px-3'>
+                <Container fluid className='px-5 py-4 text-light'>
                     <p className='mb-0 fs-3 fw-bold text-center text-decoration-underline'>Contact Us</p>
                     <Row className='px-5 mt-3'>
                         <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} className='product_updates py-5 px-4 rounded-2'>
-                        <p className='fs-4 fw-normal product_header'>Sign Up to Receive Product Updates and More</p>
+                        <p className='fs-4 fw-normal product_header'>Mail Us to Contact and Receive Product Updates</p>
                         <Form>
-                            <Form.Group className="d-flex justify-content-center align-items-center" controlId="formBasicEmail">
-                            <Form.Control type="email" className='input_email shadow-none rounded-0 w-10' placeholder="youremail@email.com" />
-                            <Button className="input_submit shadow-none rounded-0 w-0">
-                                <IconContext.Provider value = {{className:"submit_icon"}}>
-                                <GrNext  />
-                                </IconContext.Provider>
-                            </Button>
+                            <Form.Group className="d-flex justify-content-start align-items-center" controlId="formBasicEmail">
+                                <a className="text-center bg-light text-dark shadow-none rounded-2 w-0 text-decoration-none px-3 py-2"
+                                style={{fontWeight : 500}} href='mailto:slokendra2102@gmail.com' target='_blank'
+                                // onClick="mailto:slokendra2102@gmail.com;event.preventDefault()"
+                                >
+                                Click to write us a mail.
+                                </a>
                             </Form.Group>
                         </Form>
                         </Col>

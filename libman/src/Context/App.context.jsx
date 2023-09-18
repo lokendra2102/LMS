@@ -1,19 +1,24 @@
-import React,{ useState,useEffect,createContext } from 'react'
+import React,{ useState, useEffect, createContext } from 'react'
 import CryptoJS from 'crypto-js';
 
 export const BookContext = createContext()
 
 export const AppContext = ({children}) => {
-
+  
   const SECRET_KEY = 'mysecretkey'; 
   const encryptData = (data) => CryptoJS.AES.encrypt(data, SECRET_KEY).toString();
   const decryptData = (data) => CryptoJS.AES.decrypt(data, SECRET_KEY).toString(CryptoJS.enc.Utf8);
+  const proxyUrl = 'https://project-rainfall-828851007.development.catalystserverless.com/server/pega/';
+  // const proxyUrl = "http://localhost:3000/server/pega/"
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin" : "*",
+    "Access-Control-Allow-Credentials" : true
+  }
   
   const abortController = new AbortController();
-  const proxyUrl = '/';
-
   const [data,setData] = useState("")
-  var [user, setUser] = useState(localStorage.getItem("user") && decryptData(localStorage.getItem("user").toString()) !== "null" && localStorage.getItem("user") !== "null" ? JSON.parse(decryptData(localStorage.getItem("user").toString())) : null);
+  var [user, setUser] = useState(localStorage.getItem("google-user") && decryptData(localStorage.getItem("google-user").toString()) !== "null" && localStorage.getItem("google-user") !== "null" ? JSON.parse(decryptData(localStorage.getItem("google-user").toString())) : null);
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
   const [ category, setCategories ] = useState({})
@@ -66,15 +71,11 @@ export const AppContext = ({children}) => {
     await fetch(`${proxyUrl}api/login`,{
       method : "POST",
       body : JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
-      signal : abortController.signal
+      headers: headers,
+      "credentials": 'include'
     }).then(res => res.json())
     .then(data => {
-      if(data.status.toString().startsWith("40")){
+      if(data.status !== "success"){
         setMessage({
           "variant" : "danger",
           "message" : data.message
@@ -88,7 +89,7 @@ export const AppContext = ({children}) => {
         setToast(true)
         setLoginModal(true)
         setUser(data.user)
-        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
+        localStorage.setItem("google-user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
       console.log(e);
@@ -113,12 +114,9 @@ export const AppContext = ({children}) => {
     await fetch(`${proxyUrl}api/signup`,{
       method : "POST",
       body : JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
-      signal : abortController.signal
+      headers: headers,
+      "credentials": 'include'
+      // signal : abortController.signal
     }).then(res => res.json())
     .then(data => {
       if(data.status.toString().startsWith("40")){
@@ -134,7 +132,7 @@ export const AppContext = ({children}) => {
         })
         setToast(true)
         setUser(data.user)
-        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
+        localStorage.setItem("google-user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
       setMessage({
@@ -150,12 +148,9 @@ export const AppContext = ({children}) => {
     await fetch(`${proxyUrl}api/signout`,{
       method : "POST",
       body : JSON.stringify({}),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
-      signal : abortController.signal
+      headers: headers,
+      "credentials": 'include'
+      // signal : abortController.signal
     }).then(res => res.json())
     .then(data => {
       if(data.status.toString().startsWith("40")){
@@ -171,7 +166,7 @@ export const AppContext = ({children}) => {
         })
         setToast(true)
         setUser(null)
-        localStorage.removeItem("user")
+        localStorage.removeItem("google-user")
       }
     }).catch(e => {
       setMessage({
@@ -183,6 +178,7 @@ export const AppContext = ({children}) => {
   }
   
   //Add-Membership
+  //Remove-Membership
   const updateMembership = async(ispremium = false) => {
     const body = {
       "ispremium" : ispremium
@@ -190,12 +186,9 @@ export const AppContext = ({children}) => {
     await fetch(`${proxyUrl}api/update-memebership`,{
       method : "PUT",
       body : JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
-      signal : abortController.signal
+      headers: headers,
+      "credentials": 'include'
+      // signal : abortController.signal
     }).then(res => res.json())
     .then(data => {
       if(data.status.toString().startsWith("40")){
@@ -211,7 +204,7 @@ export const AppContext = ({children}) => {
         })
         setToast(true)
         setUser(data.user)
-        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
+        localStorage.setItem("google-user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
       setMessage({
@@ -221,8 +214,6 @@ export const AppContext = ({children}) => {
       setToast(true)
     })
   }
-
-  //Remove-Membership
   
   //Cart
   //Buy-Course
@@ -234,12 +225,9 @@ export const AppContext = ({children}) => {
     await fetch(`${proxyUrl}api/add-course`,{
       method : "POST",
       body : JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
-      signal : abortController.signal
+      headers: headers,
+      "credentials": 'include'
+      // signal : abortController.signal
     }).then(res => res.json())
     .then(data => {
       if(data.status.toString().startsWith("40")){
@@ -250,7 +238,7 @@ export const AppContext = ({children}) => {
         setToast(true)
       }else{
         setUser(data.user)
-        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
+        localStorage.setItem("google-user", encryptData(JSON.stringify(data.user)))
         setMessage({
           "variant" : "dark",
           "message" : data.message
@@ -274,12 +262,9 @@ export const AppContext = ({children}) => {
     await fetch(`${proxyUrl}api/remove-cart`,{
       method : "POST",
       body : JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Credentials" : true
-      },
-      signal : abortController.signal
+      headers: headers,
+      "credentials": 'include'
+      // signal : abortController.signal
     }).then(res => res.json())
     .then(data => {
       if(data.status.toString().startsWith("40")){
@@ -290,7 +275,7 @@ export const AppContext = ({children}) => {
         setToast(true)
       }else{
         setUser(data.user)
-        localStorage.setItem("user", encryptData(JSON.stringify(data.user)))
+        localStorage.setItem("google-user", encryptData(JSON.stringify(data.user)))
       }
     }).catch(e => {
       setMessage({

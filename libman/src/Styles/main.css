@@ -407,15 +407,27 @@ ul.list-group{
 }
 
 /* ABOUT PAGE */
+.aboutCheck:has(.aboutHead):has(.carouselContainer),  .carouselContainer, .carouselContact{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.aboutHead > *{
+    letter-spacing: 0.15rem !important;
+}
 .carousel-image{
-    width: 100% !important;
-    aspect-ratio: 3/2 !important;
+    max-width: 9vw !important;
+}
+.aboutHead, .carouselContact{
+    background-color: #1b263b !important;
 }
 .carousel-indicators{
     display: none !important;
 }
 .carouselAbout{
     background-color: #eff6ff !important;
+}
+.supportingTeam{
+    background-color: #e0e1dd !important;
 }
 
 /*----------------------------------------------------------------------------------------*/
@@ -489,7 +501,15 @@ ul.list-group{
     }
     /* -----------------------   CART       ------------------------------- */
 
-    
+    .flexSupport{
+        flex-direction: column !important;
+    }
+    .aboutHead > *{
+        letter-spacing: 0.05rem !important;
+    }
+    .carousel-image{
+        max-width: 19vw !important;
+    }
 }
 @media only screen and (min-width:350px) and (max-width:451px){
     .book_head{
@@ -622,6 +642,9 @@ ul.list-group{
         margin-top: 1rem !important;
     }
     /* -----------------------   CART       ------------------------------- */
+    .carousel-image{
+        max-width: 15vw !important;
+    }
 }
 @media only screen and (min-width:768px) and (max-width:992px){
     .home_nav{
@@ -652,6 +675,10 @@ ul.list-group{
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
+    }
+
+    .carousel-image{
+        max-width: 12vw !important;
     }
 }
 @media only screen and (min-width:992px) and (max-width:1140px){
