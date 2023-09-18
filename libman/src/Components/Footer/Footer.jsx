@@ -15,7 +15,7 @@ function Footer({path}) {
             <Form>
               <Form.Group className="d-flex justify-content-start align-items-center" controlId="formBasicEmail">
                 <a className="text-center bg-light text-dark shadow-none rounded-2 w-0 text-decoration-none px-3 py-2"
-                  style={{fontWeight : 500}} href='mailto:slokendra2102@gmail.com' target='_blank'
+                  style={{fontWeight : 500}} href='mailto:slokendra2102@gmail.com'
                   // onClick="mailto:slokendra2102@gmail.com;event.preventDefault()"
                 >
                   Click to write us a mail.
