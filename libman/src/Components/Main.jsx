@@ -124,25 +124,25 @@ function Main() {
             <Route path='/category/using_the_activity_to_store_the_records' element={<Activitycontent1/>} />
             <Route path='/category/activity_validation' element={<Activitycontent2/>} />
             <Route path='/category/update_details' element={<Activitycontent3/>} />
-            <Route path='category/random_10_number_generation_code.' element={<Valiadtion1/>} />
-            <Route path='category/visible_conditions:_by_access_groups' element={<Validation2/>} />
-            <Route path='category/dob_by_age' element={<Validation3/>} />
-            <Route path='category/user_id' element={<Validation4/>} />
-            <Route path='category/email_id_code' element={<Validation5/>} />
-            <Route path='category/phone_number_validation' element={<Validation6/>} />
-            <Route path='category/name_validation' element={<Validation7/>} />
-            <Route path='category/card_number_validation' element={<Validation8/>} />
-            <Route path='category/cvv_validation' element={<Validation9/>} />
-            <Route path='category/pin_code' element={<Validation10/>} />
-            <Route path='category/to_get_a_future_date_from_today' element={<Validation11/>} />
-            <Route path='category/to_get_current_date' element={<Validation12/>} />
-            <Route path='category/date_of_birth:_(must_be_in_past)' element={<Validation13/>} />
-            <Route path='category/mobile_number_that_starts_with_6_or_7_or_8_or_9' element={<Validation14/>} />
-            <Route path='category/age_calculations' element={<Validation15/>} />
-            <Route path='category/notice_period_in_pega' element={<Validation16/>} />
-            <Route path='category/split_date_from_current_system_date' element={<Validation17/>} />
-            <Route path='category/validating_the_age_with_date_of_birth' element={<Validation18/>} />
-            <Route path='category/registration_number_code' element={<Validation19/>} />
+            <Route path='/category/random_10_number_generation_code-' element={<Valiadtion1/>} />
+            <Route path='/category/visible_conditions:_by_access_groups' element={<Validation2/>} />
+            <Route path='/category/dob_by_age' element={<Validation3/>} />
+            <Route path='/category/user_id' element={<Validation4/>} />
+            <Route path='/category/email_id_code' element={<Validation5/>} />
+            <Route path='/category/phone_number_validation' element={<Validation6/>} />
+            <Route path='/category/name_validation' element={<Validation7/>} />
+            <Route path='/category/card_number_validation' element={<Validation8/>} />
+            <Route path='/category/cvv_validation' element={<Validation9/>} />
+            <Route path='/category/pin_code' element={<Validation10/>} />
+            <Route path='/category/to_get_a_future_date_from_today' element={<Validation11/>} />
+            <Route path='/category/to_get_current_date' element={<Validation12/>} />
+            <Route path='/category/date_of_birth:_(must_be_in_past)' element={<Validation13/>} />
+            <Route path='/category/mobile_number_that_starts_with_6_or_7_or_8_or_9' element={<Validation14/>} />
+            <Route path='/category/age_calculations' element={<Validation15/>} />
+            <Route path='/category/notice_period_in_pega' element={<Validation16/>} />
+            <Route path='/category/split_date_from_current_system_date' element={<Validation17/>} />
+            <Route path='/category/validating_the_age_with_date_of_birth' element={<Validation18/>} />
+            <Route path='/category/registration_number_code' element={<Validation19/>} />
             <Route path='/category/call_the_activity_by_the_another_activity' element={<Activitycontent4/>} />
             <Route path='/category/copy_the_data_from_one_data_page_to_another_data_page' element={<Activitycontent5/>} />
             <Route path='/category/update_the_stock_details_in_the_same_table_by_using_the_activity' element={<Activitycontent6/>} />
