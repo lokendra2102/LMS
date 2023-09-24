@@ -17,16 +17,21 @@ import { BsStarFill,BsCartPlus,BsStarHalf,BsStar } from 'react-icons/bs'
 import { IoWalletOutline } from 'react-icons/io5'
 
 import im from '../../Images/971.jpg'
-import e1p1 from '../../Images/en_t1_p1.png'
-import e1p2 from '../../Images/en_t1_p2.png'
-import e1p3 from '../../Images/en_t1_p3.png'
-import e1p4 from '../../Images/en_t1_p4.png'
-import e1p5 from '../../Images/en_t1_p5.png'
-import e1p6 from '../../Images/en_t1_p6.png'
-import e1p7 from '../../Images/en_t1_p7.png'
-import e1p8 from '../../Images/en_t1_p8.png'
-
-
+import qrp1 from '../../Images/qr_p1.png'
+import qrp2 from '../../Images/qr_p2.png'
+import qrp3 from '../../Images/qr_p3.png'
+import qrp4 from '../../Images/qr_p4.png'
+import qrp5 from '../../Images/qr_p5.png'
+import qrp6 from '../../Images/qr_p6.png'
+import qrp7 from '../../Images/qr_p7.png'
+import qrp8 from '../../Images/qr_p8.png'
+import qrp9 from '../../Images/qr_p9.png'
+import qrp10 from '../../Images/qr_p10.png'
+import qrp11 from '../../Images/qr_p11.png'
+import qrp12 from '../../Images/qr_p12.png'
+import qrp13 from '../../Images/qr_p13.png'
+import qrp14 from '../../Images/qr_p14.png'
+import qrp15 from '../../Images/qr_p15.png'
 
 function Chatbot() {
   return (
@@ -41,7 +46,7 @@ function Chatbot() {
                         <Container fluid className='mt-4 d-flex flex-column justify-content-start align-items-start'>
                             <Container fluid className='p-0 d-flex justify-content-between'>
                                 <Container fluid className='p-0 col-9'>
-                                    <Card.Title className='fs-5'>Pega Chatbot</Card.Title>
+                                    <Card.Title className='fs-5'>Building QRCode Control for PEGA</Card.Title>
                                     <Card.Title className='fs-6'>Enhancements</Card.Title>
                                 </Container>
                                 <Container fluid className='p-0 text-end pt-2 pe-5 col-3'>
@@ -49,7 +54,7 @@ function Chatbot() {
                                 </Container>
                             </Container>
                             <Card.Text className='single_book_text'>
-                                Here we are going to make a chatbot to create a case automatic.
+                            Building QRCode Control for PEGA
                             </Card.Text>
                             <Container fluid className='rating_book text-start p-0 my-1'>
                                 { [1,2,3].map(e => {
@@ -87,38 +92,33 @@ function Chatbot() {
                     </Card.Body>
                     <hr />
                     <Card.Body>
-                        <Card.Text className='fs-4'>Pega Chatbot</Card.Text>
+                        <Card.Text className='fs-4'>Pega QR Code Control</Card.Text>
                         <Accordion defaultActiveKey={['0']} alwaysOpen>
                             <Accordion.Item eventKey="0">
-                                <Accordion.Header><span className='fw-bold'>Step 1 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 1 :</span>&nbsp;<span>The steps were applied on PEGA 8.7.0 personal edition</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> In Developer Studio , Create a Casetype and add three properties (name,age and dob) in the data model.</ListGroup.Item>
-                                        <ListGroup.Item as="li">Click on Configure - Channels and Interfaces. </ListGroup.Item>
-                                        <ListGroup.Item as="li">Select Web chatbot to open the channel interface section. </ListGroup.Item>
-                                        <ListGroup.Item as="li">Enter the Channel interface name and description </ListGroup.Item>
-                                        <ListGroup.Item as="li">Under content, click on Add casetype and in the modal dialog under Response tab, select the case type and enter the create case command (eg: hey - to instantiate the case). </ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            Details regarding the image.
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p1} thumbnail className='stepsImage'/>
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
+                                        <ListGroup.Item as="li"> Import Zxing JAR library</ListGroup.Item>
+                                        <ListGroup.Item as="li">Create QRCode Generation function rule</ListGroup.Item>
+                                        <ListGroup.Item as="li">Create Control rule.</ListGroup.Item>
+                                        
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="1">
-                                <Accordion.Header><span className='fw-bold'>Step 2 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 2 :</span>&nbsp;<span>Import Zxing JAR library.</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> Under entries extraction tab, select the case property and its type from entity.</ListGroup.Item>
+                                        <ListGroup.Item as="li"> Zebra crossing (Zxing) is a famous Bar Code java library to generate and scan barcodes. Download files below:</ListGroup.Item>
+                                        <ListGroup.Item as="li">zxing core-3.3.0.jar </ListGroup.Item>
+                                        <ListGroup.Item as="li">zxing javase-3.3.0.jar</ListGroup.Item>
+                                        <ListGroup.Item as="li">then import both files to PEGA using the default import wizard</ListGroup.Item>
+                                        <ListGroup.Item as="li">Configure → Application → Distribution → Import</ListGroup.Item>
                                         <ListGroup.Item as="li">
                                             Details regarding the image.
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p2} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp1} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
@@ -126,16 +126,16 @@ function Chatbot() {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="2">
-                                <Accordion.Header><span className='fw-bold'>Step 3 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 3 :</span>&nbsp;<span>Don’t forget to restart the server after importing the JAR files</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> Navigate to the casetype, create a stage and click on save.</ListGroup.Item>
-                                        <ListGroup.Item as="li">  Again click on the stage and select the checkbox in right pane to enable web chatbot.</ListGroup.Item>
+                                        <ListGroup.Item as="li"> To verify that the JAR files are imported correctly do the following steps:</ListGroup.Item>
+                                        <ListGroup.Item as="li"> 1.	Search for “System-Runtime-Code” class</ListGroup.Item>
                                         <ListGroup.Item as="li">
                                             Details regarding the image.
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p3} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp2} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
@@ -146,13 +146,12 @@ function Chatbot() {
                                 <Accordion.Header><span className='fw-bold'>Step 4 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> Open the process flow and double click on WebChatbot-New step.</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Click on the crosshair to open the flowaction.</ListGroup.Item>
+                                        <ListGroup.Item as="li">View class instances and Search for “ZXing”</ListGroup.Item>
                                         <ListGroup.Item as="li">
                                             Details regarding the image.
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p4} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp3} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
@@ -160,19 +159,16 @@ function Chatbot() {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="4">
-                                <Accordion.Header><span className='fw-bold'>Step 5 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 5 :</span>&nbsp;<span>Create QRCode Generation function rule </span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> In the opening screen, add three Question smart shapes.</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Double click on the shape, enter the name of the Question rule and open it.</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Under Questions tab enter the quetsion.</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Go to Advanced tab and select the property propety to map.</ListGroup.Item>
+                                        <ListGroup.Item as="li"> Create a library rule (Create → Technical → Library) to hold the custom function</ListGroup.Item>        
                                         <ListGroup.Item as="li">
                                             Details regarding the image.
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p5} thumbnail className='stepsImage'/>
-                                                    <Image src={e1p6} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp4} thumbnail className='stepsImage'/>
+
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
@@ -183,13 +179,15 @@ function Chatbot() {
                                 <Accordion.Header><span className='fw-bold'>Step 6 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> Navigate back to channels and interfaces,enter operator id credentials under connection tab.</ListGroup.Item>
-                                        <ListGroup.Item as="li"> In the preview console, enter the create case command to start the case. .</ListGroup.Item>
+                                        <ListGroup.Item as="li">Then Create a function rule ( Create → Technical → Function )with following inputs:</ListGroup.Item>
+                                        <ListGroup.Item as="li">Text (String): QRCode text which will be encoded in the barcode</ListGroup.Item>
+                                        <ListGroup.Item as="li">Width (int): QRCode image width</ListGroup.Item>
+                                        <ListGroup.Item as="li">Height (int): QRCode image height</ListGroup.Item>
                                         <ListGroup.Item as="li">
                                             Details regarding the image.
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p7} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp5} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
@@ -197,15 +195,125 @@ function Chatbot() {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">
-                                <Accordion.Header><span className='fw-bold'>Step 7 :</span>&nbsp;<span>In Developer Studio </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 7 :</span>&nbsp;<span>Function rule </span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
-                                        <ListGroup.Item as="li"> A case will automatically be created and mapped accordingly.</ListGroup.Item>
+                                        <ListGroup.Item as="li">After creating the rule, Set the output of the function and “String”. .</ListGroup.Item>
+                                        <ListGroup.Item as="li">go to Imports and Exception tab and add the following imports:.</ListGroup.Item>
+                                        <ListGroup.Item as="li">java.io.ByteArrayOutputStream </ListGroup.Item>
+                                        <ListGroup.Item as="li">java.io.IOException </ListGroup.Item>
+                                        <ListGroup.Item as="li">java.nio.file.FileSystems  </ListGroup.Item>
+                                        <ListGroup.Item as="li">java.nio.file.Path  </ListGroup.Item>
+                                        <ListGroup.Item as="li">com.google.zxing.BarcodeFormat </ListGroup.Item>
+                                        <ListGroup.Item as="li">com.google.zxing.WriterException </ListGroup.Item>
+                                        <ListGroup.Item as="li">com.google.zxing.client.j2se.MatrixToImageConfig</ListGroup.Item>
+                                        <ListGroup.Item as="li">com.google.zxing.client.j2se.MatrixToImageWriter </ListGroup.Item>
+                                        <ListGroup.Item as="li">com.google.zxing.common.BitMatrix  </ListGroup.Item>
+                                        <ListGroup.Item as="li">com.google.zxing.qrcode.QRCodeWriter</ListGroup.Item>
+                                        <ListGroup.Item as="li">Also add “Exception” to Exceptions thrown.</ListGroup.Item>
                                         <ListGroup.Item as="li">
                                             Details regarding the image.
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p8} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp6} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp7} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="7">
+                                <Accordion.Header><span className='fw-bold'>Step 8 :</span>&nbsp;<span>Then click on the following buttons:</span></Accordion.Header>
+                                <Accordion.Body>
+                                    <ListGroup as="div" numbered>
+                                        <ListGroup.Item as="li">Test function compilation </ListGroup.Item>
+                                        <ListGroup.Item as="li">Generate function </ListGroup.Item>
+                                        <ListGroup.Item as="li">Generate Library</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={qrp8} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                        <ListGroup.Item as="li">the code basically pass the parameters (text, width, height) to Zxing library API and it will returnbyte[] of the QR code image. then we will convert the byte array into base64 code which we can use to display in HTML .</ListGroup.Item>
+                                    </ListGroup>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="8">
+                                <Accordion.Header><span className='fw-bold'>Step 9 :</span>&nbsp;<span>Create Control rule</span></Accordion.Header>
+                                <Accordion.Body>
+                                    <ListGroup as="div" numbered>
+                                        <ListGroup.Item as="li">finally we reached to the last step, Create a new Control rule (Create → User Interface →Control).</ListGroup.Item>
+                                        <ListGroup.Item as="li">Go to parameters tab and add the following required parameters:</ListGroup.Item>
+                                        <ListGroup.Item as="li">QRText (String)</ListGroup.Item>
+                                        <ListGroup.Item as="li">Width (Integer) </ListGroup.Item>
+                                        <ListGroup.Item as="li">Height (Integer)</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={qrp9} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="9">
+                                <Accordion.Header><span className='fw-bold'>Step 10 :</span>&nbsp;<span>in HTML tab do the following:</span></Accordion.Header>
+                                <Accordion.Body>
+                                    <ListGroup as="div" numbered>
+                                        <ListGroup.Item as="li">disable auto-generated HTML</ListGroup.Item>
+                                        <ListGroup.Item as="li">Category: Data Display</ListGroup.Item>
+                                        <ListGroup.Item as="li">Control Image: “webwb/pyQrCodeIcon.png”</ListGroup.Item>
+                                        <ListGroup.Item as="li">Add the following code to HTML Source</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={qrp10} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                        <ListGroup.Item as="li">the above code retrieve parameters values and pass them to the function we created in Step #2 then add the output to and HTML img tag.</ListGroup.Item>
+                                        <ListGroup.Item as="li">Notice that we img source starts with</ListGroup.Item>
+                                        <ListGroup.Item as="li">data:image/png;base64</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={qrp11} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            <Accordion.Item eventKey="10">
+                                <Accordion.Header><span className='fw-bold'>Step 11 :</span>&nbsp;<span>Testing QRCode control</span></Accordion.Header>
+                                <Accordion.Body>
+                                    <ListGroup as="div" numbered>
+                                        <ListGroup.Item as="li">To test the QRCode control open any section and add the QRCode control from Data displaymenu as shown below</ListGroup.Item>
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={qrp12} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                        <ListGroup.Item as="li">Open parameters tab and fill them with proper inputs:</ListGroup.Item>
+                                    
+                                        <ListGroup.Item as="li">
+                                            Details regarding the image.
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={qrp13} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp14} thumbnail className='stepsImage'/>
+                                                    <Image src={qrp15} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
@@ -232,7 +340,7 @@ function Chatbot() {
                                     {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
                                         return(
                                             <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={e1p1} className={`poster  media `} />
+                                                <Card.Img src={qrp1} className={`poster  media `} />
                                             </Container>
                                         )
                                     })}
@@ -243,7 +351,7 @@ function Chatbot() {
                                     {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
                                         return(
                                             <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={e1p2} className={`poster media `} />
+                                                <Card.Img src={qrp2} className={`poster media `} />
                                             </Container>
                                         )
                                     })}

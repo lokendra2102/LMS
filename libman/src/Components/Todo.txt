@@ -1,7 +1,6 @@
 TO-DO:
 	Active:
 		-> Add content,images. ****
-		-> Migrate the dots(.) in id's to underscore(_) in content.js
 		-> Add pricing to all the courses with premium true
 		-> Integrate payment/UPI number for application. ************
 
@@ -16,6 +15,7 @@ TO-DO:
 		-> Completed About,contact 
 		-> JSONObject encryption in local storage *****
 		-> Added Premium Configuration And Modal for Users
+		-> Migrate the dots(.) in id's to underscore(_) in content.js
 
 Future Works:
 	-> Migrate Validation Code Snippets Images To Code Level Snippets **
