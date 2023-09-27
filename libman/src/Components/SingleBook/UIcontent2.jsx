@@ -151,43 +151,20 @@ function UIcontent2() {
                             >
                             <Tab eventKey="Videos" title="Videos">
                                 <Container fluid className='d-flex m-0 p-0 flex-row movies justify-content-start align-items-center gap-3'>
-                                    {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
-                                        return(
-                                            <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={t8p1} className={`poster  media `} />
-                                            </Container>
-                                        )
-                                    })}
+                                    <Container fluid className="mainHeaderPosters m-0 p-0 ">
+                                        <Card.Img src={t8p1} className={`poster  media `} />
+                                    </Container>
                                 </Container>
                             </Tab>
                             <Tab eventKey="Images" title="Images">
                                 <Container fluid className='d-flex m-0 p-0 flex-row movies justify-content-start align-items-center gap-3'>
-                                    {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
-                                        return(
-                                            <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={t8p2} className={`poster media `} />
-                                            </Container>
-                                        )
-                                    })}
+                                    <Container fluid className="mainHeaderPosters m-0 p-0 ">
+                                        <Card.Img src={t8p2} className={`poster media `} />
+                                    </Container>
                                 </Container>
                             </Tab>
                         </Tabs>
                     </Card.Body>
-                    {/* <Card.Body className='cast_head'>
-                        <Card.Text className='pb-2 fw-bold fs-4 text-decoration-underline'>Our Instructors</Card.Text>
-                        <Container fluid className='d-flex flex-row actors gap-4'>
-                            {
-                                [1,2,3].map(e => {
-                                    return(
-                                        <div className='text-center'>
-                                            <Card.Img src={im} className="actor_image"/>
-                                            <Card.Text className='mt-2'>HELLOE</Card.Text>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </Container>
-                    </Card.Body> */}
                 </Card>
                 <Card className='w-100 border-0 p-xs-1 p-lg-3'>
                     <Card.Text className='fs-4 fw-bold ps-3 text-decoration-underline'>Course Reviews</Card.Text>
