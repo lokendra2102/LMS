@@ -1249,16 +1249,79 @@ const notes = {
         "explanation" : "coming Soon"
     },
 }
-const commonConcepts = [
-    "Application Definition", "Data Model", "Decision", "Integration-Connectors", "Integration-Mapping",
-	"Integration-Resources", "Integration-Services", "Organization", "Process", "Reports", "Security",
-    "Survey", "SysAdmin", "Technical", "User Interface"
-]
-const csaSpecificConcepts = ["ifsc implementation", "Deligation", "Retrive Data From datatype", "savables"]
+const saConcepts = [
+    "Activity",
+    "Auditing",
+    "Branch development",
+    "Case approvals",
+    "Case management and case life cycle",
+    "Circumstancing",
+    "Class and class hierarchy",
+    "Configuring layouts",
+    "Correspondence and work party",
+    "Creating pega application",
+    "Data pages",
+    "Data transform",
+    "Debugging",
+    "Decision shapes",
+    "Delegation",
+    "Design thinking",
+    "Duplicate case",
+    "Gathering requirements",
+    "Integration basics",
+    "Invite users",
+    "Multistep form",
+    "Optional actions",
+    "Pega Express Introduction",
+    "Process Design",
+    "Property rules",
+    "Relevant records",
+    "Reports",
+    "Routing",
+    "Rule creation",
+    "Rulesets",
+    "Security and security policies",
+    "Skipping stage or process",
+    "SLA",
+    "Testing",
+    "UI",
+    "Validations"
+];
+const ssaConcepts = [
+    "Advanced Reports",
+    "Application migration",
+    "Application rulesets",
+    "Application versioning",
+    "Background Processing",
+    "Branch development",
+    "Collections",
+    "Concurrent access and case locking",
+    "Constraints",
+    "Circumstancing",
+    "Data access patterns",
+    "Edit Validate Rule",
+    "Expression builder",
+    "Extending SLA",
+    "Flow action processing",
+    "GetNextWork",
+    "Integrations",
+    "Integration Settings and Errors",
+    "Multiple child cases",
+    "Organization Records",
+    "Parametrizing rules",
+    "Parallel Processing",
+    "Rule availability",
+    "Rule resolution algorithm",
+    "Security",
+    "Web Mashup"
+];
+
+
+const csaSpecificConcepts = ["ifsc implementation", "Retrive Data From datatype", "savables"]
 const cssaSpecificConcepts = ["Service connect-REST", "Service connect-SOAP"]
 
-const csaConcepts = [...commonConcepts, ...csaSpecificConcepts]
-const cssaConcepts = [...commonConcepts, ...cssaSpecificConcepts]
+const csaConcepts = [...saConcepts, ...csaSpecificConcepts]
+const cssaConcepts = [...ssaConcepts, ...cssaSpecificConcepts]
 
 const categoryMapping = {
     "1" : "cat_enhancement",
@@ -1281,7 +1344,7 @@ const devDetails = {
     "loki" : {
         "name" : "Lokendra S",
         "tag" : "Full Stack Web & Cross-Platform App Developer - Cloud Practitioner",
-        "desc" : "Lokendra S- -> Will fill later",
+        "desc" : "Lokendra S- -> Web Developer",
         "footerTag" : "Will add later"
     }
 }

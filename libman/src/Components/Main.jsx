@@ -25,6 +25,8 @@ import Realtimemail from './SingleBook/Realtimemail'
 
 
 
+
+
 import { categories } from '../util/content'
 import { categoryContent, path } from '../util/path'
 import Mcq from './Mcq/Mcq'
@@ -48,9 +50,11 @@ import Validation16 from './Notes/Pages/Validation16'
 import Validation17 from './Notes/Pages/Validation17'
 import Validation18 from './Notes/Pages/Validation18'
 import Validation19 from './Notes/Pages/Validation19'
+import Case_Management_CaseLifeCycle from './Notes/Pages/Case_Management_CaseLifeCycle'
 import Pagination from './Cards/Pagination'
 import ToastComponent from './Modals/Toast'
 import About from './About/About'
+import Rating from './SingleBook/Rating'
 
 
 function Main() {
@@ -152,7 +156,9 @@ function Main() {
             <Route path='/category/realtime_email' element={<Realtimemail/>} />
             <Route path='/category/qr-code_generation' element={<QRcode/>} />
             <Route path='/category/chatbot' element={<Chatbot/>} />
-            
+            <Route path='/category/rating' element={<Rating/>}/>
+            <Route path='/notes/csa/case-management-and-case-life-cycle' element={<Case_Management_CaseLifeCycle/>}/>
+            {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
           <Footer path={location.pathname}/>
           <ToastComponent toast={toast} setToast={setToast} message={message} />
