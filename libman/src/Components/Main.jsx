@@ -132,7 +132,7 @@ function Main() {
             
             <Route path='/category' element={<HomeCard user={user} width={username}/>} />
             {/* <Route path='/category/:projectId' element={<BookContent/>} /> */}
-            <Route path='/category/mobile-otp' element={<BookContent/>} />
+            <Route path='/category/mobile-otp' element={<Otp/>} />
             <Route path='/category/using_the_activity_to_store_the_records' element={<Activitycontent1/>} />
             <Route path='/category/activity_validation' element={<Activitycontent2/>} />
             <Route path='/category/update_details' element={<Activitycontent3/>} />
