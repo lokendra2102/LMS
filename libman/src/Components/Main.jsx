@@ -106,7 +106,7 @@ function Main() {
   return (
       <>
         {/* <Router> */}
-        <Header width={username} winWidth={w} updateMembership={updateMembership}/><Header width={username} winWidth={w} updateMembership={updateMembership}/>
+        <Header width={username} winWidth={w} updateMembership={updateMembership}/>
           <Routes>
             <Route index path='/' element={<HomeCard width={username}/>} />
             {/* <Route path='/contact' element={<HomeCard width={username}/>} /> */}
