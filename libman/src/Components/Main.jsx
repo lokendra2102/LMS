@@ -161,9 +161,9 @@ function Main() {
             <Route path='/category/chatbot' element={<Chatbot/>} />
             <Route path='/category/rating' element={<Rating/>}/>
             <Route path='/notes/csa/case-management-and-case-life-cycle' element={<Case_Management_CaseLifeCycle/>}/>
-            <Route path='notes/csa/creating-pega-application' element={<Application_Creation/>} />
-            <Route path='notes/csa/rule-creation' element={<Rule_Creation/>}/>
-            <Route path='notes/csa/rulesets' element={<Ruleset/>}/>
+            <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>} />
+            <Route path='/notes/csa/rule-creation' element={<Rule_Creation/>}/>
+            <Route path='/notes/csa/rulesets' element={<Ruleset/>}/>
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
           <Footer path={location.pathname}/>
