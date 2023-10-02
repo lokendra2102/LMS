@@ -166,6 +166,7 @@ function Main() {
             <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>} />
             <Route path='/notes/csa/rule-creation' element={<Rule_Creation/>}/>
             <Route path='/notes/csa/rulesets' element={<Ruleset/>}/>
+            <Route path='/notes/csa/activity' element={<Activity/>}/>
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
           <Footer path={location.pathname}/>
