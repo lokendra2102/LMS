@@ -58,6 +58,7 @@ import Rating from './SingleBook/Rating'
 import Application_Creation from './Notes/Pages/Application_Creation'
 import Rule_Creation from './Notes/Pages/Rule_Creation'
 import Ruleset from './Notes/Pages/Ruleset'
+import Activity from './Notes/Pages/Activity'
 
 
 function Main() {
@@ -164,6 +165,7 @@ function Main() {
             <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>} />
             <Route path='/notes/csa/rule-creation' element={<Rule_Creation/>}/>
             <Route path='/notes/csa/rulesets' element={<Ruleset/>}/>
+            <Route path='/notes/csa/activity' element={<Activity/>}/>
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
           <Footer path={location.pathname}/>
