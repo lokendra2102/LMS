@@ -63,6 +63,7 @@ import Auditing from './Notes/Pages/Auditing'
 import UI from './Notes/Pages/UI'
 import Testing from './Notes/Pages/Testing'
 import Sla from './Notes/Pages/Sla'
+import Skipping_stage_or_process from './Notes/Pages/Skipping_stage_or_process'
 
 function Main() {
   const location = useLocation();
@@ -173,6 +174,7 @@ function Main() {
             <Route path='/notes/csa/ui' element={<UI/>}/>
             <Route path='/notes/csa/testing' element={<Testing/>}/>
             <Route path='/notes/csa/sla' element={<Sla/>}/>
+            <Route path='/notes/csa/skipping-stage-or-process' element={<Skipping_stage_or_process/>}/>
           
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
