@@ -21,7 +21,7 @@ import Chatbot from './SingleBook/Chatbot'
 import Otp from './SingleBook/Otp'
 import QRcode from './SingleBook/QRcode'
 import Realtimemail from './SingleBook/Realtimemail'
-
+import Android from './SingleBook/Android'
 
 
 
@@ -58,6 +58,7 @@ import Rating from './SingleBook/Rating'
 import Application_Creation from './Notes/Pages/Application_Creation'
 import Rule_Creation from './Notes/Pages/Rule_Creation'
 import Ruleset from './Notes/Pages/Ruleset'
+import Activity from './Notes/Pages/Activity'
 
 
 function Main() {
@@ -157,6 +158,7 @@ function Main() {
             <Route path='/category/login_screen' element={<UIcontent2/>} />
             <Route path='/category/repeating_dynamic_layout' element={<UIcontent3/>} />
             <Route path='/category/realtime_email' element={<Realtimemail/>} />
+            <Route path='/category/android_app_development' element={<Android/>} />
             <Route path='/category/qr-code_generation' element={<QRcode/>} />
             <Route path='/category/chatbot' element={<Chatbot/>} />
             <Route path='/category/rating' element={<Rating/>}/>
