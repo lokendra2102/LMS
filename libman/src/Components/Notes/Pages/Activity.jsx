@@ -9,7 +9,7 @@ import v2 from '../../../Images/activity_2.jpg'
 import v3 from '../../../Images/activity_3.jpg'
 import v4 from '../../../Images/activity_4.jpg'
 import v5 from '../../../Images/activity_5.jpg'
-import v6 from '../../../Images/activity_5.jpg'
+
 
 function Activity() {
   return (
