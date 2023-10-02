@@ -31,7 +31,7 @@ import { categories } from '../util/content'
 import { categoryContent, path } from '../util/path'
 import Mcq from './Mcq/Mcq'
 import DemoNote from './Notes/Pages/DemoNote'
-import Valiadtion1 from './Notes/Pages/Valiadtion1'
+import Valiadtion1 from './Notes/Pages/Validation1'
 import Validation2 from './Notes/Pages/Validation2'
 import Validation3 from './Notes/Pages/Validation3'
 import Validation4 from './Notes/Pages/Validation4'
@@ -55,6 +55,9 @@ import Pagination from './Cards/Pagination'
 import ToastComponent from './Modals/Toast'
 import About from './About/About'
 import Rating from './SingleBook/Rating'
+import Application_Creation from './Notes/Pages/Application_Creation'
+import Rule_Creation from './Notes/Pages/Rule_Creation'
+import Ruleset from './Notes/Pages/Ruleset'
 
 
 function Main() {
@@ -158,6 +161,9 @@ function Main() {
             <Route path='/category/chatbot' element={<Chatbot/>} />
             <Route path='/category/rating' element={<Rating/>}/>
             <Route path='/notes/csa/case-management-and-case-life-cycle' element={<Case_Management_CaseLifeCycle/>}/>
+            <Route path='notes/csa/creating-pega-application' element={<Application_Creation/>} />
+            <Route path='notes/csa/rule-creation' element={<Rule_Creation/>}/>
+            <Route path='notes/csa/rulesets' element={<Ruleset/>}/>
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
           <Footer path={location.pathname}/>
