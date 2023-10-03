@@ -4,19 +4,19 @@ import {
 } from 'react-bootstrap'
 import Notes from '../Notes'
 import { Container } from 'react-bootstrap'
-import v1 from '../../../Images/Optional_1.jpg'
-import v2 from '../../../Images/Optional_2.jpg'
+import v1 from '../../../Images/Duplicate_1.jpg'
+import v2 from '../../../Images/Duplicate_2.jpg'
 
 
 
 
-function Optional_Actions() {
+function DuplicateCase() {
   return (
     <>
         {/* <Notes user={user} path={path} /> */}
         
         <Container fluid className='px-5 mt-4'>
-            <h3><b>Optional Actions</b></h3>
+            <h3><b>Duplicate Case</b></h3>
             <Image src={v1} thumbnail className='stepsImage'/>
             <Image src={v2} thumbnail className='stepsImage'/>
             
@@ -29,4 +29,4 @@ function Optional_Actions() {
   )
 }
 
-export default Optional_Actions
+export default DuplicateCase

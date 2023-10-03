@@ -68,6 +68,7 @@ import Routing from './Notes/Pages/Routing'
 import Reports from './Notes/Pages/Reports'
 import Optional_Actions from './Notes/Pages/Optional_Actions'
 import GatheringRequirements from './Notes/Pages/GatheringRequirements'
+import DuplicateCase from './Notes/Pages/DuplicateCase'
 
 function Main() {
   const location = useLocation();
@@ -183,6 +184,7 @@ function Main() {
             <Route path='/notes/csa/reports' element={<Reports/>}/>
             <Route path='/notes/csa/optional-actions' element={<Optional_Actions/>}/>
             <Route path='/notes/csa/gathering-requirements' element={<GatheringRequirements/>}/>
+            <Route path='/notes/csa/duplicate-case' element={<DuplicateCase/>}/>
           
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
