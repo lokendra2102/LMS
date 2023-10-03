@@ -18,19 +18,19 @@ import { IoWalletOutline } from 'react-icons/io5'
 
 import im from '../../Images/971.jpg'
 import e2p1 from '../../Images/otp_p1.png'
-import e1p2 from '../../Images/ui_t4_p2.png'
-import e1p3 from '../../Images/ui_t4_p3.png'
-import e1p4 from '../../Images/ui_t4_p4.png'
-import e1p5 from '../../Images/ui_t4_p5.png'
-import e1p6 from '../../Images/ui_t4_p6.png'
-import e1p7 from '../../Images/ui_t4_p7.png'
-import e1p8 from '../../Images/en_t1_p8.png'
-import e1p9 from '../../Images/ui_t4_p9.png'
-import e1p10 from '../../Images/ui_t4_p10.png'
-import e1p11 from '../../Images/ui_t4_p11.png'
-import e1p12 from '../../Images/ui_t4_p12.png'
-import e1p13 from '../../Images/ui_t4_p13.png'
-import e1p14 from '../../Images/ui_t4_p14.png'
+import e2p2 from '../../Images/otp_p2.png'
+import e2p3 from '../../Images/otp_p3.png'
+import e2p4 from '../../Images/otp_p4.png'
+import e2p5 from '../../Images/otp_p5.png'
+import e2p6 from '../../Images/otp_p6.png'
+import e2p7 from '../../Images/otp_p7.png'
+import e2p8 from '../../Images/otp_p8.png'
+import e2p9 from '../../Images/otp_p9.png'
+import e2p10 from '../../Images/otp_p10.png'
+import e2p11 from '../../Images/otp_p11.png'
+import e2p12 from '../../Images/otp_p12.png'
+import e2p13 from '../../Images/otp_p13.png'
+import e2p14 from '../../Images/otp_p14.png'
 
 
 
@@ -121,213 +121,158 @@ function Otp() {
                                         </ListGroup.Item>  
                                         <ListGroup.Item as="li"> Submit and save the case life cycle</ListGroup.Item>
                                         <ListGroup.Item as="li"> Now create an Activity,Create - Technical - Activity Activity Name: SendSMS Apply to</ListGroup.Item>
+                                        <ListGroup.Item as="li">Activity Name: SendSMS </ListGroup.Item>
+                                        <ListGroup.Item as="li">Apply to Class: (Our case type class) </ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="2">
-                                <Accordion.Header><span className='fw-bold'>Step 3 :</span>&nbsp;<span>CELL PROPERTIES TAB FOR DYNAMIC LAYOUT 2 </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 3 :</span>&nbsp;<span>In Activity Page</span></Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup as="div" numbered>
                                         
-                                        <ListGroup.Item as="li">Visibility Condition and actions tab</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p4} thumbnail className='stepsImage'/>
-                                                    <Image src={e1p5} thumbnail className='stepsImage'/>
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Save This Section</ListGroup.Item>
-                                        <ListGroup.Item as="li">Now SaveAs this STAR1 section 5 times and name them as STAR2,STAR2,STAR3, STAR4, STAR5</ListGroup.Item>
+                                        <ListGroup.Item as="li">Create and Open the Activity</ListGroup.Item>
+                                        <ListGroup.Item as="li">In the activity rule form under method give method as connect-REST</ListGroup.Item>
+                                        <ListGroup.Item as="li">Method: Connect-REST</ListGroup.Item>
+                                        <ListGroup.Item as="li">Expand the arrow and give Service Name as SendSMS and click on cross-hair icon and create and open.</ListGroup.Item>
+                                       
+                                        <ListGroup.Item as="li">After opening under endpoint URL provide URL: https://www.fast2sms.com/dev/bulkV2</ListGroup.Item>
+                                        <ListGroup.Item as="li">Now select Method tab, under method tab, under get in additional query string parameters</ListGroup.Item>
                                         
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="3">
-                                <Accordion.Header><span className='fw-bold'>Step 4 :</span>&nbsp;<span>Now Open STAR2 Section </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 4 :</span>&nbsp;<span>Check the parameters</span></Accordion.Header>
                                 <Accordion.Body>
+                                <ListGroup.Item as="li">NOTE: kindly enter your key in Authorization </ListGroup.Item>
                                     <ListGroup as="div">
-                                        <ListGroup.Item as="li">1. Dynamic Layount 1</ListGroup.Item>
-                                        <ListGroup.Item > Visiblity Expression :Ratings less than 2 .NOTE:in the place of less than put less than symbol</ListGroup.Item>
-                                        <ListGroup.Item > Action Set: Click, Set Value = 2</ListGroup.Item>
-                                        <ListGroup.Item as="li">2. Dynamic Layount 2</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Visiblity Expression :Ratings greater than or equal to 2 .  NOTE:in the place of greater than or equal to put symbol</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Action Set: Click, Set Value = 1</ListGroup.Item>
-                                        <ListGroup.Item as="li"> 3. Now Save the Section and move to next section</ListGroup.Item>
-                                        
+                                    <ListGroup.Item as="li">
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={e2p4} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                    <ListGroup.Item as="li">Save the service and test the connection. To test the connection, under Service tab scroll down to last and click on Test Connection</ListGroup.Item>
+                                    <ListGroup as="div">
+                                    <ListGroup.Item as="li">
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={e2p5} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="4">
-                                <Accordion.Header><span className='fw-bold'>Step 5 :</span>&nbsp;<span>Now Open STAR3 Section </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 5 :</span>&nbsp;<span>Check test connect</span></Accordion.Header>
                                 <Accordion.Body>
+                                <ListGroup as="div">
+                                    <ListGroup.Item as="li">
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={e2p6} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                    <ListGroup.Item as="li">Now create Data Transform</ListGroup.Item>
+                                    <ListGroup.Item as="li">Create -- Data Model -- Data Transform</ListGroup.Item>
+                                    <ListGroup.Item as="li">Apply to Class: Our Case type class</ListGroup.Item>
+                                    <ListGroup.Item as="li">After create and Open, Target: .pyTempInteger</ListGroup.Item>
+                                    <ListGroup.Item as="li">Source: @round(@random(1000,9999))</ListGroup.Item>
+                                    <ListGroup.Item as="li">Save the data transform.</ListGroup.Item>
                                     <ListGroup as="div">
-                                    <ListGroup.Item as="li">1. Dynamic Layount 1</ListGroup.Item>
-                                        <ListGroup.Item > Visiblity Expression :Ratings less than 3 .NOTE:in the place of less than put symbol</ListGroup.Item>
-                                        <ListGroup.Item > Action Set: Click, Set Value = 3</ListGroup.Item>
-                                        <ListGroup.Item as="li">2. Dynamic Layount 2</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Visiblity Expression :Ratings greater than or equal to 3 .NOTE:in the place of greater than or equal to  symbol</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Action Set: Click, Set Value = 2</ListGroup.Item>
-                                        <ListGroup.Item as="li"> 3. Now Save the Section and move to next section</ListGroup.Item>
+                                    <ListGroup.Item as="li">
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={e2p7} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="5">
-                                <Accordion.Header><span className='fw-bold'>Step 6 :</span>&nbsp;<span>Now Open STAR4 Section </span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 6 :</span>&nbsp;<span>Data Transform</span></Accordion.Header>
                                 <Accordion.Body>
                                 <ListGroup as="div">
-                                    <ListGroup.Item as="li">1. Dynamic Layount 1</ListGroup.Item>
-                                        <ListGroup.Item > Visiblity Expression :Ratings less than 4 .NOTE:in the place of less than put symbol</ListGroup.Item>
-                                        <ListGroup.Item > Action Set: Click, Set Value = 4</ListGroup.Item>
-                                        <ListGroup.Item as="li">2. Dynamic Layount 2</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Visiblity Expression :Ratings greater than or equal to 4 .NOTE:in the place of greater than or equal to  symbol</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Action Set: Click, Set Value = 3</ListGroup.Item>
-                                        <ListGroup.Item as="li"> 3. Now Save the Section and move to next section</ListGroup.Item>
+                                    <ListGroup.Item as="li">After creating Activity, Service and Data Transform, now open create section.</ListGroup.Item>
+                                        <ListGroup.Item as="li">In create section add button and double click on button and under actions -- create an action set2</ListGroup.Item>
+                                        <ListGroup.Item as="li"> Add an Event: Click</ListGroup.Item>
+                                        <ListGroup.Item as="li"> Add an action: Display Refresh and Flow in Modal Dialog</ListGroup.Item>
+                                        <ListGroup.Item as="li"> In display Refresh: Add created data transform and Activity</ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="6">
-                                <Accordion.Header><span className='fw-bold'>Step 7 :</span>&nbsp;<span> Now Open STAR5 Section</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 7 :</span>&nbsp;<span> Open a Section</span></Accordion.Header>
                                 <Accordion.Body>
-                                <ListGroup as="div">
-                                    <ListGroup.Item as="li">1. Dynamic Layount 1</ListGroup.Item>
-                                        <ListGroup.Item > Visiblity Expression :Ratings less than 5 .NOTE:in the place of less than put symbol</ListGroup.Item>
-                                        <ListGroup.Item > Action Set: Click, Set Value = 5</ListGroup.Item>
-                                        <ListGroup.Item as="li">2. Dynamic Layount 2</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Visiblity Expression :Ratings greater than or equal to 5 .NOTE:in the place of greater than or equal to  symbol</ListGroup.Item>
-                                        <ListGroup.Item as="li"> Action Set: Click, Set Value = 4</ListGroup.Item>
-                                        <ListGroup.Item as="li"> 3. Now Save the Section</ListGroup.Item>
-                                    </ListGroup>
+                                <ListGroup.Item as="li"> Add a Button in the casetype and open the action Event.</ListGroup.Item>
+                                <ListGroup.Item as="li">
+                                            <Container fluid className='py-4'>
+                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                                                    <Image src={e2p8} thumbnail className='stepsImage'/>
+                                                    <ListGroup.Item as="li"> Double click on 2nd connector and open the flow action</ListGroup.Item>
+                                                    <Image src={e2p9} thumbnail className='stepsImage'/>
+                                                    <ListGroup.Item as="li"> After create and open flow action under section create new section: Send_OTP(Section name)</ListGroup.Item>
+                                                    <Image src={e2p10} thumbnail className='stepsImage'/>
+                                                </Col>
+                                            </Container>
+                                        </ListGroup.Item>
+                                        
+                              
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="7">
-                                <Accordion.Header><span className='fw-bold'>Step 8 :</span>&nbsp;<span> In Developer studio</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 8 :</span>&nbsp;<span> Section</span></Accordion.Header>
                                 <Accordion.Body>
                                 <ListGroup as="div" numbered>
-                                <ListGroup.Item as="li">Create new Section Named as “Rating Star” and save it</ListGroup.Item>
-                                    <ListGroup.Item as="li">Now Click on Configure-User Interface-Gallery-Ui Elements</ListGroup.Item>
-                                    <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p6} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Scroll down ,You can see Sample and Combinations tab Under this Category,you can see “Ratings” .
-Open Ratings
-</ListGroup.Item>
-                                        
+                                <ListGroup.Item as="li">Create and open the Send_OTP section</ListGroup.Item>
+                                    <ListGroup.Item as="li">Now in Send_OTP section add text field and button (Create one enter otp property and give that property to added text field)</ListGroup.Item>
+                                    <ListGroup.Item as="li">For button, double click on button add event click event , actions: finish assignment and display refresh</ListGroup.Item>
+                                    <ListGroup.Item as="li">Now save all the previously opened tabs one by one.</ListGroup.Item>    
+                                    <ListGroup.Item as="li">Now creating validation Create -- Process -- Validate</ListGroup.Item>  
+                                    <ListGroup.Item as="li">Validation Name: ValidateOTP</ListGroup.Item>  
+                                    <ListGroup.Item as="li">Apply to Class: Case type class</ListGroup.Item>  
+                                    <ListGroup.Item as="li">After creating Validate rule.Under property add .EnterOTP property and add Condition</ListGroup.Item>  
+                                    <ListGroup.Item as="li">Select function: Compare two Values</ListGroup.Item>  
                                     </ListGroup>
                                     <ListGroup.Item as="li">
-                                            
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p7} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Click on View Design Time Cinfiguration</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p8} thumbnail className='stepsImage'/>
-                                                    
+                                                    <Image src={e2p11} thumbnail className='stepsImage'/>
+                                                    <Image src={e2p12} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey="8">
-                                <Accordion.Header><span className='fw-bold'>Step 9 :</span>&nbsp;<span> Now Open Rating Section Here(Double click on STARS Images)
-
-</span></Accordion.Header>
+                                <Accordion.Header><span className='fw-bold'>Step 9 :</span>&nbsp;<span> Save the validate rule</span></Accordion.Header>
                                 <Accordion.Body>
                                 <ListGroup as="div" numbered>
+                                <ListGroup.Item as="li">Select function: Compare two Values</ListGroup.Item>
+                                <ListGroup.Item as="li">Now open create flow and double click on create assignment step and open create flow action</ListGroup.Item>
+                                        <ListGroup.Item as="li">After opening create flow action under validation tab give the created validation. (ValidateOTP)</ListGroup.Item> 
                                 <ListGroup.Item as="li">
                                             
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p9} thumbnail className='stepsImage'/>
-                                                    
+                                                    <Image src={e2p13} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
                                         </ListGroup.Item>
-                                        <ListGroup.Item as="li">Now Open Source Tab here</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e2p1} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Now Copy Layout 1 And Paste it in Our New Created Section “Rating Star” and Also Copy Layout 2 and Paste it in Rating Star Section</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e2p1} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Now Our Rating Star Section Looks Like this</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p12} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Open the layout 2 ...2,3,4,5 columns and uncheck set width during execution
-Double Click on Hidden Context And give Property Name as .Rating
-</ListGroup.Item>
-                                        <ListGroup.Item as="li">Now Double Click on Small Stars And give Source as Our Section Names(STAR1,STAR2,STAR3,STAR4,STAR5)</ListGroup.Item>
-                                        <ListGroup.Item as="li">Go to Star1,2,3,4,5 sections and change the first dynamic layout...Layout Format to default</ListGroup.Item>
-                                        <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p13} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item as="li">Save all the tabs</ListGroup.Item>
+
+                                        <ListGroup.Item as="li">Save the flow.</ListGroup.Item>
+                                        <ListGroup.Item as="li">Now create a case and check weather it is working fine or not.</ListGroup.Item>
+                                        <ListGroup.Item as="li">Run the case life cycle</ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>
                             </Accordion.Item>
-                            <Accordion.Item eventKey="9">
-                                <Accordion.Header><span className='fw-bold'>Step 10 :</span>&nbsp;<span>In Developer Studio</span></Accordion.Header>
-                                <Accordion.Body>
-                                <ListGroup as="div" numbered>
-                                <ListGroup.Item as="li">Now in Our Case Type Create Feedback Stage ,And give field name as rate this app</ListGroup.Item>
-                                    <ListGroup.Item as="li">In Configure view Give any property for Creating Section.</ListGroup.Item>
-                                    <ListGroup.Item as="li">Now Open Rate this App section And Drag RATING STAR Section here </ListGroup.Item>
-                                    <ListGroup.Item as="li">Save and run and the output should look like this. </ListGroup.Item>  
-                                    <ListGroup.Item as="li">
-                                            
-                                            <Container fluid className='py-4'>
-                                                <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                                                    <Image src={e1p14} thumbnail className='stepsImage'/>
-                                                    
-                                                </Col>
-                                            </Container>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            
-                            
                         </Accordion>
                     </Card.Body>
                     <hr />
@@ -355,7 +300,7 @@ Double Click on Hidden Context And give Property Name as .Rating
                                     {[1,2,3,4,5,6,7,8,9,10].map((e,id)=>{
                                         return(
                                             <Container fluid key={id} className="mainHeaderPosters m-0 p-0 ">
-                                                <Card.Img src={e1p2} className={`poster media `} />
+                                                <Card.Img src={e2p2} className={`poster media `} />
                                             </Container>
                                         )
                                     })}
