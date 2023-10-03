@@ -70,6 +70,7 @@ import Optional_Actions from './Notes/Pages/Optional_Actions'
 import GatheringRequirements from './Notes/Pages/GatheringRequirements'
 import DuplicateCase from './Notes/Pages/DuplicateCase'
 import DesignThinking from './Notes/Pages/DesignThinking'
+import DataTransform from './Notes/Pages/DataTransform'
 
 function Main() {
   const location = useLocation();
@@ -187,6 +188,7 @@ function Main() {
             <Route path='/notes/csa/gathering-requirements' element={<GatheringRequirements/>}/>
             <Route path='/notes/csa/duplicate-case' element={<DuplicateCase/>}/>
             <Route path='/notes/csa/design-thinking' element={<DesignThinking/>}/>
+            <Route path='/notes/csa/data-transform' element={<DataTransform/>}/>
           
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
