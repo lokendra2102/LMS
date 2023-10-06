@@ -1317,10 +1317,10 @@ const ssaConcepts = [
 ];
 
 
-const csaSpecificConcepts = ["ifsc implementation", "Retrive Data From datatype", "savables"]
+//const csaSpecificConcepts = ["ifsc implementation", "Retrive Data From datatype", "savables"]
 const cssaSpecificConcepts = ["Service connect-REST", "Service connect-SOAP"]
 
-const csaConcepts = [...saConcepts, ...csaSpecificConcepts]
+const csaConcepts = [...saConcepts]
 const cssaConcepts = [...ssaConcepts, ...cssaSpecificConcepts]
 
 const categoryMapping = {

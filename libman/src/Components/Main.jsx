@@ -71,6 +71,13 @@ import GatheringRequirements from './Notes/Pages/GatheringRequirements'
 import DuplicateCase from './Notes/Pages/DuplicateCase'
 import DesignThinking from './Notes/Pages/DesignThinking'
 import DataTransform from './Notes/Pages/DataTransform'
+import Branch_Development from './Notes/Pages/Branch_Development'
+import CaseApprovals from './Notes/Pages/Case_Approvals'
+import Circumstancing from './Notes/Pages/Circumstancing'
+import Correspondence from './Notes/Pages/Correspondence'
+import Layouts from './Notes/Pages/Configuring_Layouts'
+import Class_Hierarchy from './Notes/Pages/Class_Hierarchy'
+import DataPages from './Notes/Pages/DataPages'
 
 function Main() {
   const location = useLocation();
@@ -189,6 +196,12 @@ function Main() {
             <Route path='/notes/csa/duplicate-case' element={<DuplicateCase/>}/>
             <Route path='/notes/csa/design-thinking' element={<DesignThinking/>}/>
             <Route path='/notes/csa/data-transform' element={<DataTransform/>}/>
+            <Route path='/notes/csa/branch-development' element={<Branch_Development/>}/>
+            <Route path='/notes/csa/case-approvals' element={<CaseApprovals/>}/>
+            <Route path='/notes/csa/circumstancing' element={<Circumstancing/>}/>
+            <Route path='/notes/csa/correspondence-and-work-party' element={<Correspondence/>}/>
+            <Route path='/notes/csa/configuring-layouts' element={<Layouts/>}/>
+            <Route path='/notes/csa/data-pages' element={<DataPages/>}/>
           
             {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
           </Routes>
