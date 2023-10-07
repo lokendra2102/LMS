@@ -43,10 +43,10 @@ function Footer({path}) {
               <NavLink to="/" className='text-dark text-decoration-none'>home</NavLink>
             </Nav.Item>
             <Nav.Item className='text-uppercase text-dark'>
-              <NavLink to="/user/:id/favourite" className='text-dark text-decoration-none'>favourites</NavLink>
+              <NavLink to="/user/favourite" className='text-dark text-decoration-none'>favourites</NavLink>
             </Nav.Item>
             <Nav.Item className='text-uppercase text-dark'>
-              <NavLink to="/user/:id/cart" className='text-dark text-decoration-none'>Cart</NavLink>
+              <NavLink to="/user/cart" className='text-dark text-decoration-none'>Cart</NavLink>
             </Nav.Item>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} className="social_icon d-flex justify-content-center">

@@ -21,7 +21,7 @@ const path = (pathname = "") => {
 }
 
 const categoryContent = (path = "", isSub = false, categories) => {
-    var data;
+    let data;
     if(path === ""){
         data ={}
         Object.keys(categories).map(ele => {
@@ -38,6 +38,7 @@ const categoryContent = (path = "", isSub = false, categories) => {
                     data[ele].price = 45
                 }
             }
+            return data
         })
     }else if(isSub){
         data = {}
@@ -53,6 +54,7 @@ const categoryContent = (path = "", isSub = false, categories) => {
             if(categories[`sub_${path}`][ele].hasOwnProperty("Premium")){
                 data[ele].price = 45
             }
+            return data
         })
     }
     return data

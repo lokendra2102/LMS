@@ -27,11 +27,15 @@ function NavHead({width, user, userSignOut, winWidth}) {
   return (
     <>
         <Container fluid className='px-5 mb-3 mt-4 header_container'>
-            <Row className='py-2'>
-                <Col xs={6} sm={6} md={2} lg={3}>
-                    <h1 className='fs-1 fw-bold app_name mb-0'>PEGA#</h1>
+            <Row className='py-2 headerRow align-items-center'>
+                <Col xs={12} sm={6} md={2} lg={3} className='productContainer'>
+                    <h1 className='fs-2 fw-bold app_name mb-0'>
+                        <NavLink className='pb-0 text-decoration-none text-dark' to='/'>
+                            PEGA#
+                        </NavLink>
+                    </h1>
                 </Col>
-                <Col xs={6} sm={6} md={7} lg={6} className="searchScreen d-flex justify-content-center align-items-center">
+                <Col xs={12} sm={6} md={7} lg={6} className="searchScreen d-flex justify-content-center align-items-center">
                     <InputGroup className="w-75 searchScreen_input">
                         <InputGroup.Text id="search_icon bg-transparent"><FiSearch/></InputGroup.Text>
                         <FormControl
@@ -44,12 +48,12 @@ function NavHead({width, user, userSignOut, winWidth}) {
                         <InputGroup.Text id="book_name">Search</InputGroup.Text>
                     </InputGroup>
                 </Col>
-                <Col  xs={6} sm={6} md={3} lg={3} className="d-flex justify-content-center align-items-center">
+                <Col xs={12} sm={6} md={3} lg={3} className="d-flex justify-content-center align-items-center userBtnContainer">
                     {(user && user !== "null") ? 
                         <Container fluid  className='d-flex justify-content-end align-items-end'>
                             {user.ispremium ? 
                                 <Nav className=''>
-                                    <NavLink className='me-2 pb-0 border-0 rounded-2 text-decoration-none' to='/user/:id/cart'>
+                                    <NavLink className='me-2 pb-0 border-0 rounded-2 text-decoration-none' to='/user/cart'>
                                         <Button className='btn-warning d-flex justify-content-center align-items-center text-light'>
                                             <IconContext.Provider value = {{className:winWidth > "1350" ? "fs-4" : "fs-4"}}>
                                                 <FaCrown />
@@ -74,7 +78,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                                             Edit Profile
                                         </Dropdown.Item>
                                         <Dropdown.Item as={'p'} className='mb-0 d-flex justify-content-start align-items-center'>
-                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/user/:id/cart'>
+                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/user/cart'>
                                                 <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
                                                     <FiShoppingCart /> 
                                                 </IconContext.Provider>
@@ -82,7 +86,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                                             </NavLink>
                                         </Dropdown.Item>
                                         <Dropdown.Item as={'p'} className='mb-0 d-flex justify-content-start align-items-center'>
-                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to="/user/:id/favourite">
+                                            <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to="/user/favourite">
                                                 <IconContext.Provider value = {{className:"favourites_icon me-2 my-auto"}}>
                                                     <FiHeart /> 
                                                 </IconContext.Provider>

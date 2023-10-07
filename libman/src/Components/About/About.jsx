@@ -1,9 +1,7 @@
 import React from 'react'
 import HomeCardHeader from '../Modals/HomeCardHeader'
 import CarouselUtil from './Carousel'
-import { Col, Container, Form, Row, Button } from 'react-bootstrap'
-import { IconContext } from 'react-icons'
-import { GrNext } from 'react-icons/gr'
+import { Col, Container, Form, Row } from 'react-bootstrap'
 
 function About({paths}) {
   return (
@@ -12,12 +10,12 @@ function About({paths}) {
             <HomeCardHeader paths={paths} isAbout={true} />
             <Container fluid className="carouselContainer">
                 <Container fluid className='px-5 py-4 carouselAbout'>
-                    <p className='mb-3 text-capitalize text-center fs-3 fw-bold text-decoration-underline'>our team</p>
+                    <p className='mb-3 text-capitalize text-center fs-3 fw-bold text-decoration-underline ourTeam'>our team</p>
                     <CarouselUtil />
                 </Container>
             </Container>
             <Container fluid className='carouselContact px-3'>
-                <Container fluid className='px-5 py-4 text-light'>
+                <Container fluid className='px-5 py-4 text-light contactContainer'>
                     <p className='mb-0 fs-3 fw-bold text-center text-decoration-underline'>Contact Us</p>
                     <Row className='px-5 mt-3'>
                         <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6} className='product_updates py-5 px-4 rounded-2'>

@@ -93,7 +93,11 @@ body{
 }
 .card_body .book_name{
     font-size: 1.1rem !important;
-    margin-bottom: 00.2rem !important;
+    margin-bottom: 0.2rem !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .card_body .book_author{
     opacity: 0.5;
@@ -427,11 +431,130 @@ ul.list-group{
     background-color: #eff6ff !important;
 }
 .supportingTeam{
-    background-color: #e0e1dd !important;
+    background-color: #d4e5fc !important;
 }
 
+/* 404 Page */
+.notFoundImage{
+    width: 50vw;
+}
+.notFoundImage > img, .noAccessImg > img, .EmptyImg > img{
+    width: 100%;
+}
+.goBackBtn{
+    border: 1px solid #6c63ff !important;
+    background-color: #9791e6 !important;
+    color: #FDFFFC !important;
+    font-size: 0.75rem !important;
+}
+.goBackBtn:hover{
+    background-color: #6c63ff !important;
+    color: #fdfffc !important;
+}
+.notFoundText{
+    font-size: 1rem !important;
+}
+
+.noAccessImg{
+    width: 20vw;
+}
+.EmptyImg{
+    width: 20vw;
+}
 /*----------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
+@media only screen and (max-width:375px){
+    .header_sm_style{
+    }
+    .aboutCheck .company, .company{
+        flex-direction: column !important;
+        padding: 1rem 0 0 0 !important;
+    }
+    .ourTeam, .aboutHead > h1{
+        font-size: 1.35rem !important;
+    }
+    .about_text, .carouselItemHead, .footer_container .product_header, .login_fav{
+        font-size: 1rem !important;
+    }
+    .carouselItemTag{
+        font-size: 0.75rem !important;
+    }
+    .carouselItemDesc, .home_nav_svg{
+        font-size: 0.86rem !important;
+    }
+    .searchScreen{
+        display: none !important;
+    }
+    .searchScreen_small{
+        display: block !important;
+        margin: 1rem auto !important;
+        width: 100% !important;
+    }
+    .header_container{
+        padding: 1rem !important;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+    .flexSupport{
+        flex-direction: column !important;
+    }
+    .carousel-image{
+        max-width: 25vw !important;
+    }
+    .bookContainer, .book_head{
+        padding: 0.2rem !important;
+    }
+    .office .office_header,.contact .contact_header, .card_body .book_name{
+        font-size: 1rem !important;
+        letter-spacing: 0.02rem !important;
+    }
+    .contact_desc,.office_desc,.botton_nav,.bottom_nav_container .copyright p{
+        font-size: 0.8rem !important;
+    }
+    .footer_container > div {
+        padding: 0.4rem 0.75rem !important;
+    }
+    .buy_btn .buy_text{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        font-size: 0.84rem !important;
+    }
+    .favourite_cont{
+        padding: 0 !important;
+    }
+}
+@media only screen and (max-width:577px){
+    .aboutHead{
+        padding: 1.25rem 0.75rem !important;
+    }
+    .aboutCheck > .carouselContact, .aboutCheck > .carouselContact > .contactContainer, .aboutCheck > .carouselContact > .contactContainer > div{
+        padding: 1rem 0.5rem !important;
+    }
+    .aboutCheck .contact_desc{
+       margin-bottom: 0 !important;
+    }
+    .carouselAbout{
+        padding: 1.25rem 1rem !important;
+    }
+    .headerRow{
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    .headerRow > div{
+        width: auto !important;
+    }
+    .headerRow .searchScreen_small{
+        width: 100% !important;
+    }
+    .noAccessImg{
+        width: 60vw;
+    }
+    .EmptyImg{
+        width: 70vw;
+    }
+}
 @media only screen and (min-width:350px) and (max-width:577px){
     .app_name{
         font-size: 2rem !important;
@@ -588,6 +711,14 @@ ul.list-group{
 /* -----------------------   CART       ------------------------------- */
 /* -----------------------   CART       ------------------------------- */
 }
+@media only screen and (min-width:576px){
+    .notFoundText{
+        font-size: 1.4rem !important;
+    }
+    .goBackBtn{
+        font-size: 1rem !important;
+    }
+}
 @media only screen and (min-width:576px) and (max-width:768px){
     .home_nav{
         width: 50%;
@@ -610,9 +741,9 @@ ul.list-group{
     .card_img_container .rating_btn{
         right: 30%;
     }
-    .buy_btn .buy_text{
+    /* .buy_btn .buy_text{
         display: none;
-    }
+    } */
     .card_body .card_icon1{
         margin-right: 0 !important;
     }
@@ -644,6 +775,13 @@ ul.list-group{
     /* -----------------------   CART       ------------------------------- */
     .carousel-image{
         max-width: 15vw !important;
+    }
+
+    .noAccessImg{
+        width: 30vw;
+    }
+    .EmptyImg{
+        width: 50vw;
     }
 }
 @media only screen and (min-width:768px) and (max-width:992px){
@@ -680,6 +818,13 @@ ul.list-group{
     .carousel-image{
         max-width: 12vw !important;
     }
+
+    .noAccessImg{
+        width: 30vw;
+    }
+    .EmptyImg{
+        width: 50vw;
+    }
 }
 @media only screen and (min-width:992px) and (max-width:1140px){
     .card_img_container .heart_btn{
@@ -707,6 +852,13 @@ ul.list-group{
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
+    }
+
+    .noAccessImg{
+        width: 30vw;
+    }
+    .EmptyImg{
+        width: 40vw;
     }
 }
 @media only screen and (min-width:1400px) and (max-width:1501px){

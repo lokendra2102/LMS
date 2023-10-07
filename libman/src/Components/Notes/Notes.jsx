@@ -1,11 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {
-  Button,
-  Card,
-  Container,
-  Dropdown,
-  Row,
-
+  Container
 } from 'react-bootstrap'
 
 function Notes({path}) {

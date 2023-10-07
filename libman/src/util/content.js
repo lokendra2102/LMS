@@ -1,4 +1,4 @@
-var categories = {
+let categories = {
     "cat_enhancement": {
         "id": "001",
         "name": "Enhancement",

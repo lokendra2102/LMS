@@ -4,17 +4,15 @@ import {
     Button,
     Col,
     Card,
-
 } from 'react-bootstrap'
 import { BsStarFill,BsStarHalf,BsStar,BsCartPlus } from 'react-icons/bs'
 import { FaCrown } from 'react-icons/fa'
-// import { TbCards,TbPremiumRights } from 'react-icons/tb'
 import { IoHeartOutline, IoHeart } from 'react-icons/io5'
 import { IconContext } from 'react-icons'
+import { useNavigate } from 'react-router-dom'
 
 import im from '../../Images/971.jpg'
 import Login from '../Modals/Login'
-import { useNavigate } from 'react-router-dom'
 import CheckoutModal from '../Checkout/CheckoutModal'
 
 function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse, loginModal}) {
@@ -47,12 +45,10 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
         }
     }, [data])
 
-    const cardRef = React.createRef(0);
-
     const handleProject = (e) => {
         e.preventDefault()
-        var cardIndex = document.querySelector(`.card-index-${data.id}`);
-        var category = (data.name.toLowerCase());
+        let cardIndex = document.querySelector(`.card-index-${data.id}`);
+        let category = (data.name.toLowerCase());
         category = category.includes(" ") ? category.replaceAll(" ","_") : category;
         if(user && user.ispremium === false){
             if(cardIndex.querySelector('.cart_btn') && cardIndex.querySelector('.cart_btn').contains(e.target)){
@@ -66,9 +62,15 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
             if(data.isSub){
                 navigate(`/category?category=${category}`)
             }else{
-                if(user && user.ispremium === false){
-                    if(data.isPremium){
-                        handleBuyNow(e, category);
+                if(data.isPremium){
+                    if(user){
+                        if(user.ispremium === false){
+                            handleBuyNow(e, category);
+                        }else{
+                            navigate(`/category/${category}`)
+                        }
+                    }else{
+                        setShow(true)
                     }
                 }else{
                     navigate(`/category/${category}`)
@@ -142,15 +144,17 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                             <Container fluid className='d-flex justify-content-between align-items-center favourite_cont'>
                                 <Card.Title className='col-9 fs-5 book_name text-capitalize' data-name={data.name}>{data.name}</Card.Title>
                                 <Container fluid className='col-3 d-flex justify-content-end align-items-end heart_btn_cont'>
-                                    <Button variant="none" className='p-0 fs-5 heart_btn1 shadow-none'>
-                                        <IconContext.Provider value = {{className:`heart_icon`}}>
-                                            {
-                                                fav.has(data.id.toString()) ? 
-                                                <IoHeart />:
-                                                <IoHeartOutline />   
-                                            }
-                                        </IconContext.Provider>
-                                    </Button>
+                                    {!data.isSub ? 
+                                        <Button variant="none" className='p-0 fs-5 heart_btn1 shadow-none'>
+                                            <IconContext.Provider value = {{className:`heart_icon`}}>
+                                                {
+                                                    fav.has(data.id.toString()) ? 
+                                                    <IoHeart />:
+                                                    <IoHeartOutline />   
+                                                }
+                                            </IconContext.Provider>
+                                        </Button>
+                                    : <></>}
                                 </Container>
                             </Container>
                         }

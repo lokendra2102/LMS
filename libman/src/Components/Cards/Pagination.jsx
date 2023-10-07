@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import { IconContext } from 'react-icons'
 import { GrNext, GrPrevious } from 'react-icons/gr'
+import { useSearchParams } from "react-router-dom";
 
 import { notes } from '../../util/content'
 import Mcq from '../Mcq/Mcq'
@@ -10,17 +11,35 @@ function Pagination({user}) {
     const usersPerPage = 10
     const users = Object.keys(notes);
     const [ mcq,setMcq ] = useState(users.slice(0,usersPerPage))
+    let [searchParams, setSearchParams] = useSearchParams();
     const [ page,setPage ] = useState(0)
-
+    const pageCount = Math.ceil(users.length/usersPerPage)
     
+    useEffect(()=>{
+        if(searchParams && searchParams.get("page")){
+            let params = searchParams.get("page");
+            if(params-1 >= pageCount){
+                changePage({ selected : pageCount-1 })
+            }else{
+                changePage({ selected : params-1 })
+            }
+        }
+    },[])
+
     useEffect(()=>{
         const currPage = usersPerPage * page
         setMcq(users.slice(currPage,currPage+usersPerPage))
     },[page])
     
-    const pageCount = Math.ceil(users.length/usersPerPage)
     const changePage = ({ selected }) => {
         setPage(selected)
+        setSearchParams({
+            "page" : selected + 1
+        })
+        const accordionOpen = document.querySelectorAll(".accordianHead [aria-expanded='true']")
+        accordionOpen.forEach((ele, index) => {
+            ele.innerText = "Show Answer"
+        })
     }
 
   return (
@@ -44,6 +63,7 @@ function Pagination({user}) {
                 breakLabel='. . .'
                 pageRangeDisplayed={2}
                 onPageChange = {changePage}
+                forcePage={page}
                 containerClassName = {"paginationButtons col-12 my-4 d-flex flex-wrap justify-content-center align-items-center"}
                 previousLinkClassName = {"previousBtn d-flex justify-content-center align-items-center px-3 py-2"}
                 nextLinkClassName = {"nextBtn d-flex justify-content-center align-items-center px-3 py-2"}

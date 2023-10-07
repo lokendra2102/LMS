@@ -1,7 +1,4 @@
 import React from 'react'
-import {
-    Image
-} from 'react-bootstrap'
 import Notes from '../Notes'
 import { Container } from 'react-bootstrap'
 

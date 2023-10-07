@@ -19,7 +19,6 @@ import { IoWalletOutline } from 'react-icons/io5'
 import im from '../../Images/971.jpg'
 import e2p1 from '../../Images/otp_p1.png'
 import e2p2 from '../../Images/otp_p2.png'
-import e2p3 from '../../Images/otp_p3.png'
 import e2p4 from '../../Images/otp_p4.png'
 import e2p5 from '../../Images/otp_p5.png'
 import e2p6 from '../../Images/otp_p6.png'
@@ -30,7 +29,6 @@ import e2p10 from '../../Images/otp_p10.png'
 import e2p11 from '../../Images/otp_p11.png'
 import e2p12 from '../../Images/otp_p12.png'
 import e2p13 from '../../Images/otp_p13.png'
-import e2p14 from '../../Images/otp_p14.png'
 
 
 

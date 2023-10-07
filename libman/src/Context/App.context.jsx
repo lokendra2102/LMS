@@ -18,7 +18,8 @@ export const AppContext = ({children}) => {
   
   const abortController = new AbortController();
   const [data,setData] = useState("")
-  var [user, setUser] = useState(localStorage.getItem("google-user") && decryptData(localStorage.getItem("google-user").toString()) !== "null" && localStorage.getItem("google-user") !== "null" ? JSON.parse(decryptData(localStorage.getItem("google-user").toString())) : null);
+  let [user, setUser] = useState(localStorage.getItem("google-user") && decryptData(localStorage.getItem("google-user").toString()) !== "null" && localStorage.getItem("google-user") !== "null" ? JSON.parse(decryptData(localStorage.getItem("google-user").toString())) : null);
+  
   // const [location, setLocation] = useState();
   const [ paths, setPath ] = useState("")
   const [ category, setCategories ] = useState({})

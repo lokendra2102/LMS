@@ -3,9 +3,7 @@
     ".read": true,
     ".write": true,
     "users": {
-          // "$usersId": {
               ".indexOn": ["username", "email"]
-            // }
         }
   }
 }

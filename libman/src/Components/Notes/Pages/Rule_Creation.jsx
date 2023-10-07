@@ -1,10 +1,6 @@
 import React from 'react'
-import {
-    Image
-} from 'react-bootstrap'
 import Notes from '../Notes'
 import { Container } from 'react-bootstrap'
-import v12 from '../../../Images/v_p12.png'
 
 function Rule_Creation() {
   return (

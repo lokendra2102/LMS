@@ -59,9 +59,9 @@ function NavLinks({updateMembership, user}) {
                                 }
                             </DropdownButton>
                         </DropdownButton>
-                        <NavLink className='text-uppercase home_nav px-3 nav-link' to="/notes/mcq">MCQ</NavLink>
-                        <NavLink className='text-uppercase home_nav px-3 nav-link' to="/user/:id/favourite">favourites</NavLink>
-                        <NavLink className='text-uppercase home_nav px-3 nav-link' to="/user/:id/cart">cart</NavLink>
+                        <NavLink className='text-uppercase home_nav px-3 nav-link' to="/notes/mcq?page=1">MCQ</NavLink>
+                        <NavLink className='text-uppercase home_nav px-3 nav-link' to="/user/favourite">favourites</NavLink>
+                        <NavLink className='text-uppercase home_nav px-3 nav-link' to="/user/cart">cart</NavLink>
 
                     </Nav>
                     {!user ? <></> :

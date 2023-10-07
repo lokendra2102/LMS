@@ -3,6 +3,7 @@ TO-DO:
 		-> Add content,images. ****
 		-> Add pricing to all the courses with premium true
 		-> Integrate payment/UPI number for application. ************
+		-> Add "P" or any unique char followed by underscore ("_") to all the ID's in content.js (as number is not a valid query selector).
 
 	Completed:
 		-> Add ADSENSE Integration To webapp. **** (Implementation Pending)
