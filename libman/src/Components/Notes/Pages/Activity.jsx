@@ -9,15 +9,17 @@ import v2 from '../../../Images/activity_2.jpg'
 import v3 from '../../../Images/activity_3.jpg'
 import v4 from '../../../Images/activity_4.jpg'
 import v5 from '../../../Images/activity_5.jpg'
+import ClipBoard from '../../ClipBoard/ClipBoard'
 
 
-function Activity() {
+function Activity({toast, setMessage}) {
   return (
     <>
         {/* <Notes user={user} path={path} /> */}
         
-        <Container fluid className='px-5 mt-4'>
+        <Container fluid className='px-5 mt-4 note-container'>
             <h3><b>Activities</b></h3>
+            <ClipBoard name={"LOKI"} code={"lokisdbcjhwbs"} toast={toast} setMessage={setMessage}/>
             <Image src={v1} thumbnail className='stepsImage'/>
             <Image src={v2} thumbnail className='stepsImage'/>
             <Image src={v3} thumbnail className='stepsImage'/>

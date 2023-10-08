@@ -461,6 +461,28 @@ ul.list-group{
 .EmptyImg{
     width: 20vw;
 }
+
+/* CLIPBOARD START */
+.code-snippet{
+    background-color: #d4e5fc !important;
+}
+.copy-icon{
+    color: #fdfffc !important;
+    height: 2rem !important;
+}
+.copy-icon > svg{
+    height: 100% !important;
+    width: 100% !important;
+}
+.code-header{
+    background-color: #9791e6 !important;
+    color: #fdfffc !important;
+}
+.clipboard-name{
+    letter-spacing: 0.07rem;
+}
+/* CLIPBOARD END */
+
 /*----------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media only screen and (max-width:375px){
@@ -553,6 +575,9 @@ ul.list-group{
     }
     .EmptyImg{
         width: 70vw;
+    }
+    .note-container{
+        padding: 0.25rem 0.75rem !important;
     }
 }
 @media only screen and (min-width:350px) and (max-width:577px){

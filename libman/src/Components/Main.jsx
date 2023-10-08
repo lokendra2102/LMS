@@ -76,7 +76,7 @@ import { categoryContent, path } from '../util/path'
 
 function Main() {
   const location = useLocation();
-  const { user, paths, setPath, setCategories, toast, setToast, message, updateMembership } = useContext(BookContext);
+  const { user, paths, setPath, setCategories, toast, setToast, message, updateMembership, setMessage } = useContext(BookContext);
   const [ username, setUsername ] = useState((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
 
   useEffect(() => {
@@ -182,7 +182,7 @@ function Main() {
               <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>} />
               <Route path='/notes/csa/rule-creation' element={<Rule_Creation/>}/>
               <Route path='/notes/csa/rulesets' element={<Ruleset/>}/>
-              <Route path='/notes/csa/activity' element={<Activity/>}/>
+              <Route path='/notes/csa/activity' element={<Activity toast={setToast} setMessage={setMessage}/>}/>
               <Route path='/notes/csa/ui' element={<UI/>}/>
               <Route path='/notes/csa/testing' element={<Testing/>}/>
               <Route path='/notes/csa/sla' element={<Sla/>}/>
