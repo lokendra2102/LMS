@@ -480,13 +480,29 @@ ul.list-group{
 }
 .clipboard-name{
     letter-spacing: 0.07rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 /* CLIPBOARD END */
 
 /*----------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
+@media only screen and (max-width:280px){
+    .clipboard-name{
+        font-size: 1rem !important;
+    }
+}
 @media only screen and (max-width:375px){
-    .header_sm_style{
+    .code-header{
+        padding: 0 0.5rem !important;
+    }
+    .clipboard-name{
+        font-size: 1rem !important;
+    }
+    .copy-icon{
+        height: 3rem !important;
     }
     .aboutCheck .company, .company{
         flex-direction: column !important;
@@ -581,6 +597,9 @@ ul.list-group{
     }
 }
 @media only screen and (min-width:350px) and (max-width:577px){
+    .copy-icon{
+        height: 3rem !important;
+    }
     .app_name{
         font-size: 2rem !important;
     }

@@ -54,7 +54,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                             {user.ispremium ? 
                                 <Nav className=''>
                                     <NavLink className='me-2 pb-0 border-0 rounded-2 text-decoration-none' to='/user/cart'>
-                                        <Button className='btn-warning d-flex justify-content-center align-items-center text-light'>
+                                        <Button name='Premium Button' className='btn-warning d-flex justify-content-center align-items-center text-light'>
                                             <IconContext.Provider value = {{className:winWidth > "1350" ? "fs-4" : "fs-4"}}>
                                                 <FaCrown />
                                             </IconContext.Provider> 
@@ -107,7 +107,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                     :
                         <Container fluid  className='d-flex justify-content-end align-items-end'>
                             <Nav>
-                                <Button type='button' className='bg-dark px-3 border border-none' onClick={() => handleShow()}>Login</Button>
+                                <Button name='Login' type='button' className='bg-dark px-3 border border-none' onClick={() => handleShow()}>Login</Button>
                             </Nav>
                         </Container>
                     }

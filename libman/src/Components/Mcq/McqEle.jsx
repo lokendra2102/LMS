@@ -5,9 +5,7 @@ import {
     Container,
 } from 'react-bootstrap'
 
-import { notes } from '../../util/content';
-
-function McqEle({ele,index}) {
+function McqEle({ele,index, notes}) {
     const [active, setActive] = useState(2);
     const ref = useRef(0)
     const handleClick = (e,ans,ind) => {
@@ -29,16 +27,16 @@ function McqEle({ele,index}) {
         <Container fluid>
             <Card className="mx-4 mb-3">
                 <Card.Body>
-                    <Card.Title>{notes[ele].id}. {notes[ele].question}</Card.Title>
+                    <Card.Title>{notes.id}. {notes.question}</Card.Title>
                     <Container fluid className='d-flex flex-wrap my-2 mb-4 mt-3 accordion_mcq'>
-                        {notes[ele].options.map((option,ind) => {
+                        {notes.options.map((option,ind) => {
                             return (
                                 <Card.Text key={ind} className='col-6'><b style={{fontWeight : 500}}>{((ind+1) + 9).toString(36).toUpperCase()}.</b> {option}</Card.Text>
                             )
                         })}
                         <Accordion className='w-100' activeKey={active} onSelect={(e) => handleSelect(e)}>
                             <Accordion.Item eventKey={`D_${ele}_0`}>
-                                <Accordion.Header className={`D_${ele}_0 accordianHead`} ref={ref} onClick={(e) => handleClick(e, notes[ele].answer, notes[ele].options.indexOf(notes[ele].answer))}>Show Answer</Accordion.Header>
+                                <Accordion.Header className={`D_${ele}_0 accordianHead`} ref={ref} onClick={(e) => handleClick(e, notes.answer, notes.options.indexOf(notes.answer))}>Show Answer</Accordion.Header>
                                 {/* <Accordion.Body className='ps-3'>
                                     <strong style={{fontWeight : 500}} className='fs-5'>Explanation</strong> : {notes[ele].explanation}
                                 </Accordion.Body> */}

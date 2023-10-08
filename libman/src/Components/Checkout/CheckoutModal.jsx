@@ -162,7 +162,7 @@ function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, 
                                                 {"\u20B9"} {parseFloat(totalPrice) + parseFloat(convFee)}
                                             </Card.Text>
                                             </Container>
-                                            <Button
+                                            <Button name='Checkout Button'
                                             onClick = {() => handleCheckout()}
                                             className='buy_now_cart_btn w-100 mt-3 py-2 bg-dark text-light shadow-none'
                                             >Checkout</Button>

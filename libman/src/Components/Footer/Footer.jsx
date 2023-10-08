@@ -50,22 +50,22 @@ function Footer({path}) {
             </Nav.Item>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={4} className="social_icon d-flex justify-content-center">
-            <Button className="twitter_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
+            <Button name='Twitter Link' className="twitter_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
               <IconContext.Provider value = {{className:"twitter"}}>
                 <BsTwitter  />
               </IconContext.Provider>
             </Button>
-            <Button className="facebook_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
+            <Button name='Facebook Link' className="facebook_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
               <IconContext.Provider value = {{className:"facebook"}}>
                 <BsFacebook  />
               </IconContext.Provider>
             </Button>
-            <Button className="linkedin_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
+            <Button name='Linekdin Link' className="linkedin_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
               <IconContext.Provider value = {{className:"linkedin"}}>
                 <BsLinkedin  />
               </IconContext.Provider>
             </Button>
-            <Button className="github_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
+            <Button name='Gihtub Link' className="github_icon shadow-none rounded-0 w-0 bg-transparent text-dark border border-0 fs-5">
               <IconContext.Provider value = {{className:"github"}}>
                 <BsGithub  />
               </IconContext.Provider>

@@ -77,7 +77,7 @@ function CartTotal({col_sm,col_md, col_lg, col_xl, col_xxl, buyCourse, user, dat
                   {"\u20B9"} {parseFloat(totalPrice).toFixed(2)}
                   </Card.Text>
                 </Container>
-                <Button 
+                <Button name='Checkout Button'
                   className='buy_now_cart_btn w-100 mt-3 py-2 bg-dark text-light shadow-none'
                   onClick={handleClick}
                 >Checkout</Button>

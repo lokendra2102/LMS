@@ -17,7 +17,7 @@ function BuyPremiumModal({show, handleClose, updateMembership}) {
                 <Container fluid className='pill_nav d-flex flex-column justify-content-center align-items-center'>
                     <p className='text-center w-100 mb-4 bg-danger text-light shadow-sm px-3 py-2 rounded-2'>Note : Membership is not refundable</p>
                     <Container fluid className='qr_code'>
-                        <Button onClick={() => updateMembership(true)}>
+                        <Button name='Buy Premium' onClick={() => updateMembership(true)}>
                             Buy Premium
                         </Button>
                     </Container>

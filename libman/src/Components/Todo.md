@@ -7,11 +7,12 @@
 - Add pricing to all the courses with premium true <br>
 - Integrate payment/UPI number for application. ************ <br>
 - Add "P" or any unique char followed by underscore ("_") to all the ID's in content.js (as number is not a valid query selector). <br>
-- Remove all images from the build and replace it with **https://lokendra2102.github.io/github-flow/{filename.extension}** <br>
+- Remove all images from the build and replace it with **gitub + {filename.extension}** *Note: made github url available globally. kindly pass the "github" as parameter to component refer:Main.jsx line:142* <br>
 - Project Gallery in all the pages is looped with same image repeatedly. Modify it asasp. **(refer commmit 198b5718c70ff7f50d3b0bc0e8ad7bb36aa03627)** <br>
 - Project Gallery - Remove the videos tab in pages which don't have videos. **(refer commmit 198b5718c70ff7f50d3b0bc0e8ad7bb36aa03627)** <br>
 - Add dummy course reviews for all pages else remove it. <br>
 - Add author content if necessary else remove it <br>
+- Add ***name*** attribute to all the button tags where it's used in all pages. *refer Card.jsx line:143* <br>
 
 ## Completed:
 ---
@@ -26,7 +27,9 @@
 - JSONObject encryption in local storage ***** <br>
 - Added Premium Configuration And Modal for Users <br>
 - Migrate the dots(.) in id's to underscore(_) in ***content.js***<br>
+- Migrate Validation Code Snippets Images To Code Level Snippets ** <br>
+- Migrate all the images to cloud ** <br>
 
 ## Future Works:
 ---
-- Migrate Validation Code Snippets Images To Code Level Snippets ** <br>
+- Take individual svg of icons used and move it to either cloud or local build depending upon size. <br>

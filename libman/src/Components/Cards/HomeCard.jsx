@@ -8,14 +8,12 @@ import {
 import Cards from './Card'
 import { BookContext } from '../../Context/App.context'
 import HomeCardHeader from '../Modals/HomeCardHeader'
-import NotFoundSvg from "../../Images/noaccess.svg"
-import EmptySvg from "../../Images/empty.svg"
 
 import { BiArrowBack } from "react-icons/bi"
 import { IconContext } from 'react-icons'
 import { NavLink } from 'react-router-dom'
 
-function HomeCard({width, location}) {
+function HomeCard({location, github}) {
     const { paths, category, user, buyCourse, bought, cart, fav, removeCartCourse, loginModal } = useContext(BookContext);
 
     return (
@@ -26,9 +24,9 @@ function HomeCard({width, location}) {
                     {
                         location && location[0] === "favourite" ? 
                             (!user ? 
-                                <Container fluid className='text-center text-capitalize py-5 my-5'>
+                                <Container fluid className='text-center text-capitalize py-2 my-3'>
                                     <Container fluid className='noAccessImg'>
-                                        <Image src={NotFoundSvg} rounded className=''/>
+                                        <Image src={github+"noaccess.svg"} rounded className='' loading='lazy'/>
                                     </Container>
                                     <p className='mb-0 fs-4 fw-normal mt-3 login_fav'>
                                         Kindly Login and Come back to view this page.
@@ -56,9 +54,9 @@ function HomeCard({width, location}) {
                                     )
                                 })
                             :
-                                <Container fluid className='text-center text-capitalize py-5 my-5'>
+                                <Container fluid className='text-center text-capitalize py-2 my-3'>
                                     <Container fluid className='EmptyImg'>
-                                        <Image src={EmptySvg} rounded className=''/>
+                                        <Image src={github+"empty.svg"} rounded className='' loading='lazy'/>
                                     </Container>
                                     <p className='mb-0 fs-4 fw-medium login_fav'>
                                         Kindly add a course to favourites and get back.

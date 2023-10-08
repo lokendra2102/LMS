@@ -122,7 +122,7 @@ function Login({handleClose, show, loginModal, setShow}) {
                                     <Form.Group className="mb-3" >
                                         <Form.Check type="checkbox" onFocus={() => setErr(null)} className='shadow-none' label="Remember me" />
                                     </Form.Group>
-                                    <Button
+                                    <Button name='Login'
                                         onClick={Validator} 
                                         variant="dark" 
                                         className='w-100 shadow-none login_btn' 
@@ -202,7 +202,7 @@ function Login({handleClose, show, loginModal, setShow}) {
                                     <Form.Group className="mb-3" >
                                         <Form.Check type="checkbox" onFocus={() => setErr(null)} className='shadow-none' label="Remember me" />
                                     </Form.Group>
-                                    <Button 
+                                    <Button name='Signup'
                                         onClick={Validator} 
                                         variant="dark" 
                                         className='w-100 shadow-none login_btn' 

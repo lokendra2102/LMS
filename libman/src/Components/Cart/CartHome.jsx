@@ -5,13 +5,11 @@ import { IconContext } from 'react-icons'
 import { NavLink } from 'react-router-dom'
 
 import { categories, categoryMapping } from '../../util/content'
-import NotFoundSvg from "../../Images/noaccess.svg"
-import EmptySvg from "../../Images/empty.svg"
 import CartProducts from './CartProducts'
 import CartTotal from './CartTotal'
 import { BookContext } from '../../Context/App.context'
 
-function CartHome() {
+function CartHome({github}) {
   const { user, buyCourse, cart} = useContext(BookContext)
   const [ cartItems, setCartItems ] = useState(new Set());
 
@@ -38,7 +36,7 @@ function CartHome() {
                 (!user ? 
                   <Container fluid className='text-center text-capitalize py-5 my-5'>
                     <Container fluid className='noAccessImg'>
-                        <Image src={NotFoundSvg} rounded className=''/>
+                        <Image src={github+"noaccess.svg"} rounded className='' loading='lazy'/>
                     </Container>
                     <p className='mb-0 fs-4 fw-normal mt-3 login_fav'>
                         Kindly Login and Come back to view this page.
@@ -60,7 +58,7 @@ function CartHome() {
                     </>
                   : <Container fluid className='text-center text-capitalize py-5 my-5'>
                       <Container fluid className='EmptyImg'>
-                        <Image src={EmptySvg} rounded className=''/>
+                        <Image src={github+"empty.svg"} rounded className='' loading='lazy'/>
                       </Container>
                       <p className='mb-0 fs-4 fw-medium login_fav'>
                         Kindly add a course to cart and get back.

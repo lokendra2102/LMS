@@ -127,11 +127,11 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
             <Col key={data.id} xs={12} sm={6} md={6} lg={4} xl={4} xxl={3} className={`mb-3 card-index-${data.id}`} onClick={handleProject}>
                 <Card className='w-100 h-100 border-0 card_parent p-0 shadow'>
                     <Container fluid className='card_img_container'>
-                        <Card.Img variant="top" className='card_img' src={data.image ? data.image : im} />
+                        <Card.Img variant="top" className='card_img' alt={data.name} src={data.image ? data.image : im} />
                         {
                             !bought.has(`${data.id}`) ?
                                 (data.isPremium && !data.isSub) && 
-                                <Button className='heart_btn shadow btn-light'>
+                                <Button name='Premium Button' className='heart_btn shadow btn-light'>
                                     <IconContext.Provider value = {{className:"premium_icon"}}>
                                         <FaCrown />
                                     </IconContext.Provider>
@@ -145,7 +145,7 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                                 <Card.Title className='col-9 fs-5 book_name text-capitalize' data-name={data.name}>{data.name}</Card.Title>
                                 <Container fluid className='col-3 d-flex justify-content-end align-items-end heart_btn_cont'>
                                     {!data.isSub ? 
-                                        <Button variant="none" className='p-0 fs-5 heart_btn1 shadow-none'>
+                                        <Button name='Favourite Button' variant="none" className='p-0 fs-5 heart_btn1 shadow-none'>
                                             <IconContext.Provider value = {{className:`heart_icon`}}>
                                                 {
                                                     fav.has(data.id.toString()) ? 
@@ -191,12 +191,12 @@ function Cards({data, path, user, buyCourse, bought, cart, fav, removeCartCourse
                                     !bought.has(`${data.id}`) ?
                                         (data.isPremium && !data.isSub) && 
                                         <>
-                                            <Button variant="light" className='cart_btn shadow-none'>
+                                            <Button name='Cart Button' variant="light" className='cart_btn shadow-none'>
                                                 <IconContext.Provider value = {{className:"card_icon"}}>
                                                     <BsCartPlus />
                                                 </IconContext.Provider>
                                             </Button>
-                                            <Button variant="dark" className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
+                                            <Button name='Buy Button' variant="dark" className='fs-6 buy_btn shadow-none d-flex justify-content-center align-items-center text-uppercase'>
                                                 {/* <IconContext.Provider value = {{className:"card_icon1"}}>
                                                     <TbCards /> 
                                                 </IconContext.Provider> */}

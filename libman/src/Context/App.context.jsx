@@ -9,6 +9,7 @@ export const AppContext = ({children}) => {
   const encryptData = (data) => CryptoJS.AES.encrypt(data, SECRET_KEY).toString();
   const decryptData = (data) => CryptoJS.AES.decrypt(data, SECRET_KEY).toString(CryptoJS.enc.Utf8);
   const proxyUrl = 'https://project-rainfall-828851007.development.catalystserverless.com/server/pega/';
+  const githubFlowUrl = 'https://lokendra2102.github.io/github-flow/'
   // const proxyUrl = "http://localhost:3000/server/pega/"
   const headers = {
     "Content-Type": "application/json",
@@ -291,6 +292,10 @@ export const AppContext = ({children}) => {
     <BookContext.Provider value={{
       data : data,
       // location : location,
+
+      // github Flow
+      github : githubFlowUrl,
+      headers : headers,
 
       // Toast
       toast : toast,

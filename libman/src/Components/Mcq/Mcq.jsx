@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import {
-    Accordion,
-    Card,
     Container,
 } from 'react-bootstrap'
-import { notes } from '../../util/content'
 import McqEle from './McqEle';
 
-function Mcq({user, mcq}) {
+function Mcq({mcq, notes}) {
 
     return (
         <Container fluid className='mt-5'>
@@ -16,7 +13,7 @@ function Mcq({user, mcq}) {
             </Container>
             {mcq.map((e,index) => {
                 return(
-                    <McqEle key={index} index={index} ele={e} />
+                    <McqEle key={index} index={index} ele={e} notes={notes[e]} />
                 )
             })}
         </Container>

@@ -19,7 +19,7 @@ function Activity({toast, setMessage}) {
         
         <Container fluid className='px-5 mt-4 note-container'>
             <h3><b>Activities</b></h3>
-            <ClipBoard name={"LOKI"} code={"lokisdbcjhwbs"} toast={toast} setMessage={setMessage}/>
+            <ClipBoard name={"Code Copied Failed. Please check if browser supports copying content."} code={"Code Copied Failed. Please check if browser supports copying content."} toast={toast} setMessage={setMessage}/>
             <Image src={v1} thumbnail className='stepsImage'/>
             <Image src={v2} thumbnail className='stepsImage'/>
             <Image src={v3} thumbnail className='stepsImage'/>

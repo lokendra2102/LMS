@@ -67,7 +67,7 @@ function NavLinks({updateMembership, user}) {
                     {!user ? <></> :
                         user && user.ispremium ? <></> :
                         <Nav className='me-5 shadow-sm' onClick={handleShow}>
-                            <Button className='btn-warning d-flex justify-content-center align-items-center text-light'>
+                            <Button name='Premium Button' className='btn-warning d-flex justify-content-center align-items-center text-light'>
                                 <IconContext.Provider value = {{className:"me-2"}}>
                                     <FaCrown />
                                 </IconContext.Provider> Buy Premium

@@ -76,7 +76,11 @@ import { categoryContent, path } from '../util/path'
 
 function Main() {
   const location = useLocation();
-  const { user, paths, setPath, setCategories, toast, setToast, message, updateMembership, setMessage } = useContext(BookContext);
+  const { 
+    user, paths, setPath, setCategories, toast, 
+    setToast, message, updateMembership, 
+    setMessage, github, headers 
+  } = useContext(BookContext);
   const [ username, setUsername ] = useState((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
 
   useEffect(() => {
@@ -128,21 +132,21 @@ function Main() {
           <Container fluid className="flex-grow-1">
             <Routes>
 
-              <Route index path='/' element={<HomeCard width={username}/>} />
-              {/* <Route path='/contact' element={<HomeCard width={username}/>} /> */}
+              <Route index path='/' element={<HomeCard width={username} github={github} />} />
+              {/* <Route path='/contact' element={<HomeCard width={username} github={github}/>} /> */}
               <Route path='/about' element={<About paths={paths}/>} />
-              <Route path='/mock-drives' element={<HomeCard width={username}/>} />
+              <Route path='/mock-drives' element={<HomeCard width={username} github={github}/>} />
               <Route path="notes">
                 {/* <Route path="csa/:id" element={<Notes user={user} />} /> */}
                 <Route path='csa/demo' element={<DemoNote user={user} path={paths}/>} />
                 
                 <Route path="cssa/:id" element={<Notes user={user} />} />
               </Route>
-              <Route path='/user/favourite' element={<HomeCard user={user} width={username} location={location.pathname.split("/").slice(-1)}/>} />
-              <Route path='/notes/mcq' element={<Pagination user={user}/>} />
-              <Route path='/user/cart' element={<CartHome />} />
+              <Route path='/user/favourite' element={<HomeCard user={user} width={username} github={github} location={location.pathname.split("/").slice(-1)}/>} />
+              <Route path='/notes/mcq' element={<Pagination user={user} github={github} headers={headers} toast={setToast} setMessage={setMessage} />} />
+              <Route path='/user/cart' element={<CartHome github={github} />} />
               
-              <Route path='/category' element={<HomeCard user={user} width={username}/>} />
+              <Route path='/category' element={<HomeCard user={user} width={username} github={github}/>} />
               {/* <Route path='/category/:projectId' element={<BookContent/>} /> */}
               <Route path='/category/mobile-otp' element={<Otp/>} />
               <Route path='/category/using_the_activity_to_store_the_records' element={<Activitycontent1/>} />
@@ -204,7 +208,7 @@ function Main() {
               {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
 
               {/* 404 Page - Start */}
-              <Route path="*" element={<NotFound/>} />
+              <Route path="*" element={<NotFound github={github} headers={headers} />} />
               {/* 404 Page - End */}
             </Routes>
           </Container>
