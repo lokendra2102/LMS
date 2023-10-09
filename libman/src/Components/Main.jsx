@@ -68,6 +68,7 @@ import Circumstancing from './Notes/Pages/Circumstancing'
 import Correspondence from './Notes/Pages/Correspondence'
 import Layouts from './Notes/Pages/Configuring_Layouts'
 import DataPages from './Notes/Pages/DataPages'
+import Class_Hierarchy from './Notes/Pages/Class_Hierarchy'
 import NotFound from './NotFound/NotFound'
 
 // UTILS
@@ -203,7 +204,8 @@ function Main() {
               <Route path='/notes/csa/circumstancing' element={<Circumstancing/>}/>
               <Route path='/notes/csa/correspondence-and-work-party' element={<Correspondence/>}/>
               <Route path='/notes/csa/configuring-layouts' element={<Layouts/>}/>
-              <Route path='/notes/csa/data-pages' element={<DataPages/>}/>
+              <Route path='/notes/csa/data-pages' element={<DataPages  />}/>
+              <Route path='notes/csa/class-and-class-hierarchy' element={<Class_Hierarchy/>}/>
             
               {/* <Route path='/notes/csa/creating-pega-application' element={<Application_Creation/>}/> */}
 
