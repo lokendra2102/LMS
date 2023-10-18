@@ -8,7 +8,6 @@ import {
     InputGroup,
     Nav,
     Button,
-
 } from 'react-bootstrap'
 import { FiSearch,FiShoppingCart,FiHeart } from 'react-icons/fi'
 import { IconContext } from 'react-icons'
@@ -17,10 +16,35 @@ import { BiEditAlt } from 'react-icons/bi'
 import { NavLink } from 'react-router-dom'
 import Login from '../Modals/Login'
 import { FaCrown } from 'react-icons/fa'
+import { searchComponent } from '../../util/content'
 
 
 function NavHead({width, user, userSignOut, winWidth}) {
     const [show, setShow] = useState(false);
+    const [ inp, setInp ] = useState('')
+
+    const HandleChange = (e) => {
+        const dropDownBtn = document.querySelector(".searchContainer")
+        dropDownBtn.innerHTML = "";
+        let isEmpty = true;
+        const searchResults = searchComponent.filter((ele) => {
+            const isPresent = ele.indexOf(e.target.value) !== -1
+            if(isPresent){
+                isEmpty = false;
+            }
+            return isPresent
+        });
+        e.target.value !== "" ? dropDownBtn.style.display = "block" : dropDownBtn.style.display = "none"
+        if(!isEmpty && e.target.value !== ""){
+            dropDownBtn.innerHTML += (`<p class="dropdown-item mb-1 fw-medium fs-5 text-decoration-underline search-header py-1 text-capitalize">Search Results For : <span class="fw-bold">${e.target.value}</span></a>`)
+            searchResults.map((ele) => {
+                dropDownBtn.innerHTML += (`<a class="dropdown-item fw-medium py-1 text-capitalize" href="/category/${ele.replaceAll(' ','_')}">${ele}</a>`)
+            })
+        }else{
+            dropDownBtn.innerHTML += (`<p class="mb-0 dropdown-item fw-medium py-1">No Results Found For Text : <span class="fw-bold">${e.target.value}</span></p>\n`)
+        }
+        setInp(e.target.value)
+    }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -43,9 +67,11 @@ function NavHead({width, user, userSignOut, winWidth}) {
                             aria-label=""
                             aria-describedby="book_name"
                             type='search'
-                            className="shadow-none"
-                        />
-                        <InputGroup.Text id="book_name">Search</InputGroup.Text>
+                            className="shadow-none rounded-end"
+                            value={inp}
+                            onChange={HandleChange}
+                        ></FormControl>
+                        <Container fluid className='searchContainer rounded py-2 px-3' style={{display:"none"}}></Container>
                     </InputGroup>
                 </Col>
                 <Col xs={12} sm={6} md={3} lg={3} className="d-flex justify-content-center align-items-center userBtnContainer">
@@ -122,7 +148,8 @@ function NavHead({width, user, userSignOut, winWidth}) {
                             type='search'
                             className="shadow-none"
                         />
-                        <InputGroup.Text id="book_name">Search</InputGroup.Text>
+                        <Container fluid className='searchContainer rounded py-2 px-3'>
+                        </Container>
                     </InputGroup>
                 </Col>
             </Row>

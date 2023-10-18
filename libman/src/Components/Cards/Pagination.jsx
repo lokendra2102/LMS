@@ -79,6 +79,7 @@ function Pagination({user, github, toast, setMessage}) {
         <Mcq user={user} mcq={mcq} notes={githubMcq}/>
         <div className='p-0 d-flex justify-content-center align-items-center'>
         {/* <Mcq user={user} mcq={mcq}/> */}
+        {JSON.stringify(githubMcq) !== "{}" ?
             <ReactPaginate
                 previousLabel = {
                     <IconContext.Provider value = {{className:"prev_icon me-1 text-center"}}>
@@ -102,6 +103,9 @@ function Pagination({user, github, toast, setMessage}) {
                 disabledClassName = {"paginationDisabled"}
                 activeClassName = {"paginationActive"}
             />
+        : 
+            <></> 
+        }
         </div>
     </>
   )

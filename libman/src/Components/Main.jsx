@@ -107,6 +107,9 @@ function Main() {
   }, [w])
 
   useEffect(() => {
+    if(document.body.classList.contains("modal-open")){
+      document.querySelector(".btn-close").click();
+    }
     const loc = location.pathname.split("/");
     if(loc.includes("notes")){
       setPath(loc.splice(-2))

@@ -214,9 +214,9 @@ function Otp() {
                                             <Container fluid className='py-4'>
                                                 <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                                                     <Image src={e2p8} thumbnail className='stepsImage'/>
-                                                    <ListGroup.Item as="li"> Double click on 2nd connector and open the flow action</ListGroup.Item>
+                                                    <ListGroup.Item as="p" className='mb-0'> Double click on 2nd connector and open the flow action</ListGroup.Item>
                                                     <Image src={e2p9} thumbnail className='stepsImage'/>
-                                                    <ListGroup.Item as="li"> After create and open flow action under section create new section: Send_OTP(Section name)</ListGroup.Item>
+                                                    <ListGroup.Item as="p" className='mb-0'> After create and open flow action under section create new section: Send_OTP(Section name)</ListGroup.Item>
                                                     <Image src={e2p10} thumbnail className='stepsImage'/>
                                                 </Col>
                                             </Container>
