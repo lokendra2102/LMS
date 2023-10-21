@@ -423,7 +423,7 @@ ul.list-group{
 }
 /* CLIPBOARD END */
 
-.searchScreen_input .searchContainer{
+.searchScreen_input .searchContainer, .searchScreen_input .searchContainerSmall{
     max-height: 20vh !important;
     overflow-y: scroll !important;
     overflow-x: scroll !important;
@@ -433,8 +433,12 @@ ul.list-group{
     color: #1b263b !important;
     margin-top: 3rem !important;
 }
+.searchScreen_input .searchContainerSmall{
+    position: relative !important;
+    margin-top: 1rem !important;
+}
 
-.searchScreen_input .searchContainer > a:hover{
+.searchScreen_input .searchContainer > a:hover, .searchScreen_input .searchContainerSmall > a:hover{
     text-decoration: underline !important;
     color: #1d4ed8 !important;
 }

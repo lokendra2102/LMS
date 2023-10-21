@@ -24,7 +24,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
     const [ inp, setInp ] = useState('')
 
     const HandleChange = (e) => {
-        const dropDownBtn = document.querySelector(".searchContainer")
+        const dropDownBtn = document.querySelector(`.${e.target.getAttribute("data-classname")}`)
         dropDownBtn.innerHTML = "";
         let isEmpty = true;
         const searchResults = searchComponent.filter((ele) => {
@@ -36,12 +36,12 @@ function NavHead({width, user, userSignOut, winWidth}) {
         });
         e.target.value !== "" ? dropDownBtn.style.display = "block" : dropDownBtn.style.display = "none"
         if(!isEmpty && e.target.value !== ""){
-            dropDownBtn.innerHTML += (`<p class="dropdown-item mb-1 fw-medium fs-5 text-decoration-underline search-header py-1 text-capitalize">Search Results For : <span class="fw-bold">${e.target.value}</span></a>`)
+            dropDownBtn.innerHTML += (`<div class="d-flex flex-row align-items-center justify-content-start dropdown-item"><p class="mb-1 fw-medium fs-5 text-decoration-underline search-header py-1 text-capitalize opacity-75">Search Results For : </p><p class="fw-bold fs-5 mb-1">&nbsp;${e.target.value}</p></div>`)
             searchResults.map((ele) => {
                 dropDownBtn.innerHTML += (`<a class="dropdown-item fw-medium py-1 text-capitalize" href="/category/${ele.replaceAll(' ','_')}">${ele}</a>`)
             })
         }else{
-            dropDownBtn.innerHTML += (`<p class="mb-0 dropdown-item fw-medium py-1">No Results Found For Text : <span class="fw-bold">${e.target.value}</span></p>\n`)
+            dropDownBtn.innerHTML += (`<div class="d-flex flex-row align-items-center justify-content-start"><p class="mb-0 fw-medium py-1 opacity-75">No Results Found For Text : </p><p class="mb-0 fw-bold opacity-100">&nbsp;${e.target.value}</p></div>\n`)
         }
         setInp(e.target.value)
     }
@@ -68,6 +68,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                             aria-describedby="book_name"
                             type='search'
                             className="shadow-none rounded-end"
+                            data-classname="searchContainer"
                             value={inp}
                             onChange={HandleChange}
                         ></FormControl>
@@ -139,17 +140,19 @@ function NavHead({width, user, userSignOut, winWidth}) {
                     }
                 </Col>
                 <Col xs={12} className="searchScreen_small d-none d-flex justify-content-center align-items-center">
-                    <InputGroup className="w-100">
+                    <InputGroup className="w-100 searchScreen_input">
                         <InputGroup.Text id="search_icon bg-transparent"><FiSearch/></InputGroup.Text>
                         <FormControl
-                            placeholder={`Enter Book Name`}
+                            placeholder={`Enter Search Query`}
                             aria-label=""
                             aria-describedby="book_name"
                             type='search'
-                            className="shadow-none"
-                        />
-                        <Container fluid className='searchContainer rounded py-2 px-3'>
-                        </Container>
+                            className="shadow-none rounded-end"
+                            value={inp}
+                            data-classname="searchContainerSmall"
+                            onChange={HandleChange}
+                        ></FormControl>
+                        <Container fluid className='searchContainerSmall rounded py-2 px-3' style={{display:"none"}}></Container>
                     </InputGroup>
                 </Col>
             </Row>
