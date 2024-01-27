@@ -500,11 +500,13 @@ const ssaConcepts = [
     "Web Mashup"
 ];
 
+// The value will be the position where the object present.
+// Eg  : "cat_multiple_mail_sender" is inside "sub_enhancement".
 const categoryMapping = {
     "003" : "cat_interview",
   
-    "015" : "cat_enhancement&sub_enhancement&cat_multiple_mail_sender",
-    "018" : "sub_enhancement&cat_multiple_mail_sender",
+    "015" : "sub_enhancement&cat_multiple_mail_sender",
+    "018" : "sub_enhancement&cat_file_transfer",
     "019" : "sub_enhancement&cat_email_listner",
     "020" : "sub_enhancement&cat_add_to_cart",
     "021" : "sub_enhancement&cat_toast_message",
