@@ -137,7 +137,7 @@ let categories = {
             "sub" : true
         },
         "cat_decision":{
-            "id": "030_3",
+            "id": "030-3",
             "name": "Decision",
             "Premium": true
         },
@@ -500,19 +500,60 @@ const ssaConcepts = [
     "Web Mashup"
 ];
 
+const categoryMapping = {
+    "003" : "cat_interview",
+  
+    "015" : "cat_enhancement&sub_enhancement&cat_multiple_mail_sender",
+    "018" : "sub_enhancement&cat_multiple_mail_sender",
+    "019" : "sub_enhancement&cat_email_listner",
+    "020" : "sub_enhancement&cat_add_to_cart",
+    "021" : "sub_enhancement&cat_toast_message",
+    "022" : "sub_enhancement&cat_send_whatsapp_msg",
+    "024" : "sub_enhancement&cat_dynamic_login",
+    "026" : "sub_enhancement&cat_restrict_permission",
+    "027" : "sub_enhancement&cat_track_status",
+    "029" : "sub_enhancement&cat_export_data",
+  
+    "011-2" : "sub_otp&cat_mobile_otp",
+    
+    "030-3" : "sub_concepts&cat_decision",
+    "030-5" : "sub_concepts&cat_orgranization",
+    "030-8" : "sub_concepts&cat_security",
+    "040-2" : "sub_concepts&cat_userinterface",
+  
+    "030-2-1" : "sub_data_model&cat_retrive_data",
+  
+    "030-4-1" : "sub_integration&cat_IFSC_CODE",
+    "030-4-2" : "sub_integration&cat_service_connect_rest",
+    "030-4-3" : "sub_integration&cat_service_connect_soap",
+  
+    "030-7-1" : "sub_reports&cat_deligation",
+  
+    "04-111" : "sub_technical&cat_activity",
+  
+    "04-02" : "sub_validations&cat_visible",
+    "04-05" : "sub_validations&cat_emailid_code",
+    "04-06" : "sub_validations&cat_phone_number",
+    "04-08" : "sub_validations&cat_card_number",
+    "04-09" : "sub_validations&cat_cvv",
+    "04-11" : "sub_validations&cat_toget_future",
+    "04-14" : "sub_validations&cat_mobile_number_thatstarts",
+    "04-15" : "sub_validations&cat_age_calucations",
+    "04-16" : "sub_validations&cat_notice_peroid",
+    "04-17" : "sub_validations&cat_split_date",
+    "04-18" : "sub_validations&cat_validating_age",
+    "04-19" : "sub_validations&cat_registrating_number_code",
+  
+    "05-03" : "sub_ui&cat_repaeting_dynamic_layout",
+    "05-04" : "sub_ui&cat_rating"
+    
+}
 
 //const csaSpecificConcepts = ["ifsc implementation", "Retrive Data From datatype", "savables"]
 const cssaSpecificConcepts = ["Service connect-REST", "Service connect-SOAP"]
 
 const csaConcepts = [...saConcepts]
 const cssaConcepts = [...ssaConcepts, ...cssaSpecificConcepts]
-
-const categoryMapping = {
-    "1" : "cat_enhancement",
-    "011" : "sub_otp",
-    "011_2" : "cat_otp",
-    
-}
 
 const devDetails = {
     "rajeev" : {
@@ -528,7 +569,7 @@ const devDetails = {
     "loki" : {
         "name" : "Lokendra S",
         "tag" : "Full Stack Web & Cross-Platform App Developer - Cloud Practitioner",
-        "desc" : "Lokendra S- -> Web Developer",
+        "desc" : "Lokendra S is a Cloud and Full Stack developer currently working in Zoho Catalyst - A Serverless platform. I'm an optimistic person and a code geek who loves to teach stuff. Incase if you got stuck or in need of guidance in Cloud and Full stack (I use React Native for native mobile) development drop me an inbox in LinkedIn or you can mail to slokendra2102@gmail.com",
         "footerTag" : "Will add later"
     }
 }

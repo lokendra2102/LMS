@@ -10,7 +10,7 @@ function About({paths}) {
             <HomeCardHeader paths={paths} isAbout={true} />
             <Container fluid className="carouselContainer">
                 <Container fluid className='px-5 py-4 carouselAbout'>
-                    <p className='mb-3 text-capitalize text-center fs-3 fw-bold text-decoration-underline ourTeam'>our team</p>
+                    <p className='mb-3 text-capitalize text-center fs-3 fw-semibold text-decoration-underline ourTeam'>our team</p>
                     <CarouselUtil />
                 </Container>
             </Container>

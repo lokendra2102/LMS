@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -7,10 +6,10 @@
 }
 body{
     background-color: #fdfffc;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* -----------------------   HOME       ------------------------------- */
+/* -----------------------   HOME   ------------------------------- */
 .userName,.logout_btn{
     border: 1px solid #fe5f55 !important;
     background-color: rgba(254, 95, 85, 0.15);
@@ -65,6 +64,15 @@ body{
     font-size: 1.5rem !important;
     background-color: #fdfffc;
 }
+/* .card_img_container .rating_btn{
+    position: absolute;
+    top: 4%;
+    right: 23%;
+    border-radius: 10%;
+    border: 1px solid #577399 !important;
+    background-color: rgba(87, 115, 153, 0.7);
+    color: #fdfffc;
+} */
 .heart_btn .heart_icon{
     font-size: 1.3rem !important;
     color: #fe5f55;
@@ -167,6 +175,21 @@ ul{
     font-weight: 600 !important;
     letter-spacing: 0.03rem;
 }
+/* .product_updates .input_email{
+    background-color: transparent !important;
+    color: #fdfffc !important;
+    border: none !important;
+    border-bottom:1px solid #fdfffc !important;
+}
+.product_updates .input_email::placeholder{
+    color: #fdfffc !important;
+    opacity: 0.5;
+}
+.product_updates .input_submit{
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom:1px solid #fdfffc !important;
+} */
 .tab-content{
     width: 80%;
 }
@@ -207,6 +230,15 @@ ul{
 .remove_cart{
     color: #fe5f55 !important;
 }
+/* .quan_btn{
+    border: none !important;
+    background-color: rgba(87, 115, 153, 0.2) !important;
+    color: #011627 !important;
+}
+.quan_btn:hover{
+    background-color: rgba(87, 115, 153, 0.8) !important;
+    color: #fdfffc !important;
+} */
 sub{
     bottom: -0.11rem !important;
     opacity: 0.5;
@@ -226,6 +258,11 @@ sup{
 }
 /* -----------------------   CART       ------------------------------- */
 /*---------------------------   SINGLE BOOK       ---------------------------------------*/
+.single_book_img_container{
+    /* width: 50% !important;
+    height: 50% !important; */
+    /* aspect-ratio: 16/9 !important; */
+}
 .about_book_header{
     letter-spacing: 0.1rem !important;
 }
@@ -352,7 +389,7 @@ ul.list-group{
     padding-right: 0 !important;
 }
 .aboutHead > *{
-    letter-spacing: 0.15rem !important;
+    letter-spacing: 0.05rem !important;
 }
 .carousel-image{
     max-width: 9vw !important;
@@ -379,7 +416,7 @@ ul.list-group{
 }
 .goBackBtn{
     border: 1px solid #6c63ff !important;
-    background-color: #9791e6 !important;
+    background-color: #6c63ff !important;
     color: #FDFFFC !important;
     font-size: 0.75rem !important;
 }
@@ -422,25 +459,26 @@ ul.list-group{
     overflow: hidden;
 }
 /* CLIPBOARD END */
-
-.searchScreen_input .searchContainer, .searchScreen_input .searchContainerSmall{
+.searchScreen_input .searchContainer{
     max-height: 20vh !important;
-    overflow-y: scroll !important;
-    overflow-x: scroll !important;
+    overflow-y: auto !important;
+    overflow-x: auto !important;
     z-index: 4 !important;
     position: absolute !important;
-    background-color: #eff6ff !important;
+    background-color: #FDFFFC !important;
     color: #1b263b !important;
     margin-top: 3rem !important;
 }
-.searchScreen_input .searchContainerSmall{
-    position: relative !important;
-    margin-top: 1rem !important;
-}
 
-.searchScreen_input .searchContainer > a:hover, .searchScreen_input .searchContainerSmall > a:hover{
+.searchScreen_input .searchContainer > a:hover{
     text-decoration: underline !important;
     color: #1d4ed8 !important;
+}
+
+.dropdown-login .dropdown-item:active{
+    background-color: transparent !important;
+    color: red !important;
+    outline: none !important;
 }
 
 /*----------------------------------------------------------------------------------------*/

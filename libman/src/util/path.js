@@ -13,6 +13,9 @@ const path = (pathname = "") => {
         case "favourite":
             path = "Favourite";
             break;
+        case "my-courses":
+            path = "My Courses";
+            break;
         default:
             path = "Categories"
             break;

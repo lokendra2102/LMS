@@ -33,7 +33,7 @@ function CarouselUtil() {
                 })}
             </Carousel>
             <Container fluid className='supportingTeam py-3 rounded'>
-                <p className="fs-3 fw-bold my-4 text-center text-decoration-underline ourTeam"
+                <p className="fs-3 fw-semibold my-4 text-center text-decoration-underline ourTeam"
                 >Supporting Staff</p>
                 <Container fluid className='d-flex flexSupport
                     justify-content-center align-items-start

@@ -14,7 +14,7 @@ import { IconContext } from 'react-icons'
 import { NavLink } from 'react-router-dom'
 
 function HomeCard({location, github}) {
-    const { paths, category, user, buyCourse, bought, cart, fav, removeCartCourse, loginModal } = useContext(BookContext);
+    const { paths, category, user, buyCourse, bought, cart, fav, removeCartCourse, loginModal, updateMembership } = useContext(BookContext);
 
     return (
         <Container fluid className='mt-5'>
@@ -49,7 +49,7 @@ function HomeCard({location, github}) {
                                             user={user} buyCourse={buyCourse}
                                             bought = {bought} cart = {cart}
                                             fav = {fav} removeCartCourse = {removeCartCourse}
-                                            loginModal = {loginModal}
+                                            loginModal = {loginModal} updateMembership = {updateMembership}
                                         /> 
                                     )
                                 })
@@ -72,6 +72,21 @@ function HomeCard({location, github}) {
                                 </Container>
                             ))
                         :
+                        location && location[0] === "my-courses" ?
+                            (bought.size > 0 &&  
+                                bought.forEach((ele,index) =>{
+                                    return(
+                                        <Cards key={index} data={category[ele]} 
+                                            cat={category} path={paths} 
+                                            user={user} buyCourse={buyCourse}
+                                            bought = {bought} cart = {cart}
+                                            fav = {fav} removeCartCourse = {removeCartCourse}
+                                            loginModal = {loginModal} updateMembership = {updateMembership}
+                                        /> 
+                                    )
+                                })
+                            )
+                        :
                         Object.keys(category).map((ele,index) =>{
                             return(
                                 <Cards key={index} data={category[ele]} 
@@ -79,7 +94,7 @@ function HomeCard({location, github}) {
                                     user={user} buyCourse={buyCourse}
                                     bought = {bought} cart = {cart}
                                     fav = {fav} removeCartCourse = {removeCartCourse}
-                                    loginModal = {loginModal}
+                                    loginModal = {loginModal} updateMembership = {updateMembership}
                                 /> 
                             )
                         })

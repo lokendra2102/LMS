@@ -8,6 +8,7 @@ import {
     InputGroup,
     Nav,
     Button,
+
 } from 'react-bootstrap'
 import { FiSearch,FiShoppingCart,FiHeart } from 'react-icons/fi'
 import { IconContext } from 'react-icons'
@@ -78,7 +79,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                 <Col xs={12} sm={6} md={3} lg={3} className="d-flex justify-content-center align-items-center userBtnContainer">
                     {(user && user !== "null") ? 
                         <Container fluid  className='d-flex justify-content-end align-items-end'>
-                            {user.ispremium ? 
+                            {user.isPremium ? 
                                 <Nav className=''>
                                     <NavLink className='me-2 pb-0 border-0 rounded-2 text-decoration-none' to='/user/cart'>
                                         <Button name='Premium Button' className='btn-warning d-flex justify-content-center align-items-center text-light'>
@@ -92,19 +93,20 @@ function NavHead({width, user, userSignOut, winWidth}) {
                             <Nav>
                                 <Dropdown
                                     drop='bottom'
+                                    className='dropdown-login'
                                 >
                                     <Dropdown.Toggle className='d-flex justify-content-center align-items-center userName shadow-none' id="dropdown-basic">
                                         <p className='mb-0 userName_p'>{width}</p>
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item className='d-flex justify-content-start align-items-center'>
+                                        {/* <Dropdown.Item className='d-flex justify-content-start align-items-center'>
                                             <IconContext.Provider value = {{className:"edit_icon fs-6 me-2 my-auto"}}>
                                                 <BiEditAlt /> 
                                             </IconContext.Provider>
                                             Edit Profile
-                                        </Dropdown.Item>
-                                        <Dropdown.Item as={'p'} className='mb-0 d-flex justify-content-start align-items-center'>
+                                        </Dropdown.Item> */}
+                                        <Dropdown.Item as={'p'} className='remove-focus mb-0 d-flex justify-content-start align-items-center'>
                                             <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to='/user/cart'>
                                                 <IconContext.Provider value = {{className:"cart_icon me-2 my-auto"}}>
                                                     <FiShoppingCart /> 
@@ -112,7 +114,7 @@ function NavHead({width, user, userSignOut, winWidth}) {
                                                 Cart
                                             </NavLink>
                                         </Dropdown.Item>
-                                        <Dropdown.Item as={'p'} className='mb-0 d-flex justify-content-start align-items-center'>
+                                        <Dropdown.Item as={'p'} className='remove-focus mb-0 d-flex justify-content-start align-items-center'>
                                             <NavLink className='text-uppercase px-3 nav-link nav-link-drop' to="/user/favourite">
                                                 <IconContext.Provider value = {{className:"favourites_icon me-2 my-auto"}}>
                                                     <FiHeart /> 

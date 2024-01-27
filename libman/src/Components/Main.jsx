@@ -80,7 +80,7 @@ function Main() {
   const { 
     user, paths, setPath, setCategories, toast, 
     setToast, message, updateMembership, 
-    setMessage, github, headers 
+    setMessage, github, headers, bought 
   } = useContext(BookContext);
   const [ username, setUsername ] = useState((user && user !== "null") ? (typeof user === "string" ? JSON.parse(user).username : user.username) : null)
 
@@ -96,7 +96,7 @@ function Main() {
       if (w < 451 && username && username !== "null"){
         setUsername(username[0])
       }else{
-        setUsername(username)
+        setUsername(user?.username)
       }
     }
       
@@ -147,6 +147,7 @@ function Main() {
                 <Route path="cssa/:id" element={<Notes user={user} />} />
               </Route>
               <Route path='/user/favourite' element={<HomeCard user={user} width={username} github={github} location={location.pathname.split("/").slice(-1)}/>} />
+              <Route path='/user/my-courses' element={<HomeCard user={user} width={username} github={github} location={location.pathname.split("/").slice(-1)}/>} />
               <Route path='/notes/mcq' element={<Pagination user={user} github={github} headers={headers} toast={setToast} setMessage={setMessage} />} />
               <Route path='/user/cart' element={<CartHome github={github} />} />
               
@@ -163,7 +164,7 @@ function Main() {
               <Route path='/category/email_id_code' element={<Validation5/>} />
               <Route path='/category/phone_number_validation' element={<Validation6/>} />
               <Route path='/category/name_validation' element={<Validation7/>} />
-              <Route path='/category/card_number_validation' element={<Validation8/>} />
+              <Route path='/category/card_number_validation' element={<Validation8 user={user} isPremium={true} bought={bought} id={"04-08"}/>} />
               <Route path='/category/cvv_validation' element={<Validation9/>} />
               <Route path='/category/pin_code' element={<Validation10/>} />
               <Route path='/category/to_get_a_future_date_from_today' element={<Validation11/>} />

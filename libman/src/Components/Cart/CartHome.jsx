@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Container, Image, Row } from 'react-bootstrap'
-import { BiArrowBack } from "react-icons/bi"
+import { BiArrowBack, BiArrowFromRight } from "react-icons/bi"
 import { IconContext } from 'react-icons'
 import { NavLink } from 'react-router-dom'
 
@@ -10,23 +10,25 @@ import CartTotal from './CartTotal'
 import { BookContext } from '../../Context/App.context'
 
 function CartHome({github}) {
-  const { user, buyCourse, cart} = useContext(BookContext)
+  const { user, buyCourse, cart, removeCartCourse} = useContext(BookContext)
   const [ cartItems, setCartItems ] = useState(new Set());
 
-  cart.forEach((ele) => {
-    Object.keys(categoryMapping).map(e => {
-      if(ele === e){
-        if(e.includes("_")){
-          categories[categoryMapping[e.split("_")[0]]][categoryMapping[e]].category=categoryMapping[e.split("_")[0]]
-          setCartItems(course => new Set(course).add(categories[categoryMapping[e.split("_")[0]]][categoryMapping[e]]));
-        }else{
-          categories[categoryMapping[e]].category=categoryMapping[e]
-          setCartItems(course => new Set(course).add(categories[categoryMapping[e]]));
-        }
-      }
-      return ""
-    })
-  })
+  useEffect(() => {
+    // let mainArr = new Set();
+    // if(cart){
+    //   cart.forEach(ele => {
+    //     if(categoryMapping[ele]){
+    //       let catArray = categoryMapping[ele].split("&")
+    //       let arr = {...categories};
+    //       catArray = catArray.map(e => { arr = arr[e]; return e; })
+    //       if(arr.Premium){
+    //         mainArr.add(arr);
+    //       }
+    //     }
+    //   })
+    // }
+    setCartItems(cart);
+  }, [cart])
 
   return (
       <>
@@ -53,7 +55,7 @@ function CartHome({github}) {
                   :
                   (cartItems.size > 0 ? 
                     <>
-                      <CartProducts col_sm={12} col_md={12} col_lg={7} col_xl={7} col_xxl={7} data={cartItems} buyCourse={buyCourse}/>
+                      <CartProducts col_sm={12} col_md={12} col_lg={7} col_xl={7} col_xxl={7} data={cartItems} buyCourse={buyCourse} removeCartCourse={removeCartCourse} />
                       <CartTotal col_sm={12} col_md={12} col_lg={4} col_xl={4} col_xxl={4} data={cartItems} buyCourse={buyCourse} user={user}/>
                     </>
                   : <Container fluid className='text-center text-capitalize py-5 my-5'>

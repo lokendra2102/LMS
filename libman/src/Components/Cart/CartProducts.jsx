@@ -9,17 +9,17 @@ import {
 
 import im from '../../Images/971.jpg'
 
-function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl, data, buyCourse}) {
+function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl, data, buyCourse, removeCartCourse}) {
   const handleRemoveCartItem = (id) => {
     id = id.toString().replaceAll('.','_')
-    buyCourse([id], "remove")
+    removeCartCourse(id, "cart")
   }
   return (
     <Col sm={col_sm} md={col_md} lg={col_lg} xl={col_xl} xxl={col_xxl} >
       <p className='fs-2 cart_header text-uppercase fw-bold'>bag</p>
-      {data.forEach(e => {
+      {Array.from(data).map(e => {
         return(
-          <Row key={e} className='mb-3 shadow-sm cart_product_container'>
+          <Row key={e.id} className='mb-3 shadow-sm cart_product_container'>
             <Col xs={12} sm={4} md={5} lg={4} xl={4} xxl={4} className=" d-flex justify-content-center align-items-center">
               <Container fluid className='p-1 cart_img_container'>
                 <Card.Img variant="top" className='w-100 h-100 cart_img' src={im} />
@@ -28,7 +28,7 @@ function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl, data, buyCourse})
             <Col xs={8} sm={5} md={5} lg={6} xl={6} xxl={6} className="my-auto">
               <Card className='w-100 border-0'>
                 <Card.Body className='p-2'>
-                  <Card.Title className='fs-6 text-decoration-underline text-uppercase cart_isbn_number'>{e.category.slice(4)}</Card.Title>
+                  <Card.Title className='fs-6 text-decoration-underline text-uppercase cart_isbn_number'>{e.category ? e.category.slice(4) : ''}</Card.Title>
                   <Card.Title className='fs-5 book_cart_author fw-bold text-capitalize'>{e.name}</Card.Title>
                   <Container fluid className='p-0 my-3'>
                     {
@@ -43,7 +43,7 @@ function CartProducts({col_sm,col_md, col_lg, col_xl, col_xxl, data, buyCourse})
                   </Container>
                   <Container fluid className='p-0 d-flex gap-3'>
                     <Card.Text className='mb-0 text-decoration-underline remove_cart' 
-                      onClick={() => handleRemoveCartItem(e.id)}
+                      onClick={() => handleRemoveCartItem(e.id)} style={{cursor: 'pointer'}}
                     >
                       Remove
                     </Card.Text>

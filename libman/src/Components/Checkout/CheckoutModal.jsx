@@ -13,14 +13,15 @@ import {IoLogoPaypal} from  'react-icons/io5'
 import {RiMastercardFill} from 'react-icons/ri'
 import {SiPaytm} from 'react-icons/si'
 
-function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, user, isFromCart, totalPrice, convFee}) {
+function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, user, isFromCart, totalPrice, convFee, isBuyPremium}) {
     const [ cardName, setCardName ] = useState('');
     const [ cardNumber, setCardNumber ] = useState('');
     const [ cardExpiry, setCardExpiry ] = useState('');
     const [ cardCvv, setCardCvv ] = useState('');
 
     const handleCheckout = () => {
-        let idArr = data.map(ele => ele.id )
+        let idArr = []
+        data.map(ele => { idArr.push(ele.id); return ele; });
         buyCourse(idArr)
     }
 
@@ -41,8 +42,13 @@ function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, 
                     <Container fluid className=''>
                         <Row className='d-flex flex-column flex-column-reverse flex-lg-row '>
                             <Col className='address_check_container'>
-                                <p className='ps-2 fs-5 mb-0 fw-bold'>Check out</p>
-                                <p className='ps-2 fs-6 fw-normal mt-1 text-decoration-underline back_to_bag'>Back to my bag</p>
+                                {
+                                    isFromCart ? 
+                                    <>
+                                        <p className='ps-2 fs-5 mb-0 fw-bold'>Check out</p>
+                                        <p className='ps-2 fs-6 fw-normal mt-1 text-decoration-underline back_to_bag'>Back to my bag</p>
+                                    </> : ""
+                                }
 
                                 <Card className="border-0">
                                             <p className='payment_header fs-5 fw-bold'>Payment Information</p>
@@ -145,7 +151,8 @@ function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, 
                                                     Sub Total
                                                 </Card.Text>
                                                 <Card.Text className='mb-0'>
-                                                    {"\u20B9"} {parseFloat(totalPrice) + parseFloat(convFee)}
+                                                    {"\u20B9"} {parseFloat(totalPrice)} 
+                                                    {/*  + parseFloat(convFee) */}
                                                 </Card.Text>
                                             </Container>
                                         </Card.Body>
@@ -159,12 +166,13 @@ function CheckoutModal({handleShow,setShow, handleClose, show, data, buyCourse, 
                                                 Estimated Total
                                             </Card.Text>
                                             <Card.Text className='mb-0'>
-                                                {"\u20B9"} {parseFloat(totalPrice) + parseFloat(convFee)}
+                                                {"\u20B9"} {parseFloat(totalPrice)} 
+                                                {/*  + parseFloat(convFee) */}
                                             </Card.Text>
                                             </Container>
                                             <Button name='Checkout Button'
-                                            onClick = {() => handleCheckout()}
-                                            className='buy_now_cart_btn w-100 mt-3 py-2 bg-dark text-light shadow-none'
+                                            onClick = {isBuyPremium ? () => console.log("YEAH") : () => handleCheckout()}
+                                            className='buy_now_cart_btn w-100 mt-3 py-2 border-0 bg-dark text-light shadow-none'
                                             >Checkout</Button>
                                         </Card.Body>
                                         </Card>
